@@ -2,7 +2,6 @@ package com.nemonotfound;
 
 import com.nemonotfound.entity.mob.VenomEntity;
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.biome.v1.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -14,7 +13,6 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
@@ -59,15 +57,13 @@ public class NemosCreatures implements ModInitializer {
 
 		BiomeModifications.addSpawn(biomeSelection, SpawnGroup.MONSTER, VENOM, 100, 4, 4);
 		BiomeModification biomeModification = BiomeModifications.create(new Identifier("entity.minecraft.skeleton"));
-		biomeModification.add(ModificationPhase.REMOVALS, biomeSelection, context -> {
-			context.getSpawnSettings().addSpawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(VENOM, 100, 4, 4));
-		});
+		biomeModification.add(ModificationPhase.REMOVALS, biomeSelection, context ->
+				context.getSpawnSettings().addSpawn(SpawnGroup.MONSTER,
+						new SpawnSettings.SpawnEntry(VENOM, 100, 4, 4)));
 	}
 
 	private void registerItems() {
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "venom_spawn_egg"), VENOM_SPAWN_EGG);
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> {
-			content.add(VENOM_SPAWN_EGG);
-		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(VENOM_SPAWN_EGG));
 	}
 }

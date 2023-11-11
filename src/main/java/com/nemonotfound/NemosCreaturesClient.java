@@ -1,7 +1,6 @@
 package com.nemonotfound;
 
 import com.nemonotfound.client.render.entity.VenomEntityRenderer;
-import com.nemonotfound.client.render.entity.feature.VenomOverlayFeatureRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
