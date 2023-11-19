@@ -2,5 +2,7 @@
   "entity.nemos-creatures.venomous_skeleton": "Venomous Skeleton",
   "item.nemos-creatures.venomous_skeleton_spawn_egg": "Venomous Skeleton Spawn Egg",
   "entity.nemos-creatures.venomous_spider": "Venomous Spider",
-  "item.nemos-creatures.venomous_spider_spawn_egg": "Venomous Spider Spawn Egg"
+  "item.nemos-creatures.venomous_spider_spawn_egg": "Venomous Spider Spawn Egg",
+  "entity.nemos-creatures.venomous_zombie": "Venomous Zombie",
+  "item.nemos-creatures.venomous_zombie_spawn_egg": "Venomous Zombie Spawn Egg"
 }

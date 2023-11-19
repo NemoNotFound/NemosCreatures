@@ -17,7 +17,7 @@ public class VenomousSkeletonEntityRenderer extends SkeletonEntityRenderer {
     private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/entity/skeleton/venomous_skeleton.png");
 
     public VenomousSkeletonEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, NemosCreaturesClient.VENOMOUS_SKELETON,NemosCreaturesClient.VENOMOUS_SKELETON__INNER_ARMOR,
+        super(context, NemosCreaturesClient.VENOMOUS_SKELETON,NemosCreaturesClient.VENOMOUS_SKELETON_INNER_ARMOR,
                 NemosCreaturesClient.VENOMOUS_SKELETON_OUTER_ARMOR);
         this.addFeature(new VenomousSkeletonOverlayFeatureRenderer<>(this, context.getModelLoader()));
     }
