@@ -28,14 +28,14 @@ public class VenomousSpiderEntity extends SpiderEntity {
     public boolean tryAttack(Entity target) {
         if (super.tryAttack(target)) {
             if (target instanceof LivingEntity) {
-                int i = 0;
+                int durationMultiplier = 0;
                 if (this.getWorld().getDifficulty() == Difficulty.NORMAL) {
-                    i = 7;
+                    durationMultiplier = 7;
                 } else if (this.getWorld().getDifficulty() == Difficulty.HARD) {
-                    i = 15;
+                    durationMultiplier = 15;
                 }
-                if (i > 0) {
-                    ((LivingEntity)target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, i * 20, 0), this);
+                if (durationMultiplier > 0) {
+                    ((LivingEntity)target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, durationMultiplier * 20, 0), this);
                 }
             }
             return true;

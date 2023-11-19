@@ -1,7 +1,8 @@
 package com.nemonotfound;
 
-import com.nemonotfound.client.render.entity.VenomousSpiderEntityRenderer;
 import com.nemonotfound.client.render.entity.VenomousSkeletonEntityRenderer;
+import com.nemonotfound.client.render.entity.VenomousSpiderEntityRenderer;
+import com.nemonotfound.entity.Entities;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -28,8 +29,8 @@ public class NemosCreaturesClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        EntityRendererRegistry.register(NemosCreatures.VENOMOUS_SKELETON, VenomousSkeletonEntityRenderer::new);
-        EntityRendererRegistry.register(NemosCreatures.VENOMOUS_SPIDER, VenomousSpiderEntityRenderer::new);
+        EntityRendererRegistry.register(Entities.VENOMOUS_SKELETON, VenomousSkeletonEntityRenderer::new);
+        EntityRendererRegistry.register(Entities.VENOMOUS_SPIDER, VenomousSpiderEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON__INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
