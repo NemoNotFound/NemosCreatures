@@ -13,9 +13,9 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 
-public class VenomEntity extends AbstractSkeletonEntity {
+public class VenomousSkeletonEntity extends AbstractSkeletonEntity {
 
-    public VenomEntity(EntityType<? extends AbstractSkeletonEntity> entityType, World world) {
+    public VenomousSkeletonEntity(EntityType<? extends AbstractSkeletonEntity> entityType, World world) {
         super(entityType, world);
     }
 

@@ -14,22 +14,22 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
-import static com.nemonotfound.NemosCreaturesClient.VENOM_OUTER;
+import static com.nemonotfound.NemosCreaturesClient.VENOMOUS_SKELETON_OUTER;
 
 @Environment(value= EnvType.CLIENT)
-public class VenomOverlayFeatureRenderer <T extends MobEntity & RangedAttackMob, M extends EntityModel<T>>
+public class VenomousSkeletonOverlayFeatureRenderer<T extends MobEntity & RangedAttackMob, M extends EntityModel<T>>
         extends FeatureRenderer<T, M> {
 
-    private static final Identifier SKIN = new Identifier(MOD_ID, "textures/entity/skeleton/venom_overlay.png");
+    private static final Identifier SKIN = new Identifier(MOD_ID, "textures/entity/skeleton/venomous_skeleton_overlay.png");
     private final SkeletonEntityModel<T> model;
 
-    public VenomOverlayFeatureRenderer(FeatureRendererContext<T, M> context, EntityModelLoader loader) {
+    public VenomousSkeletonOverlayFeatureRenderer(FeatureRendererContext<T, M> context, EntityModelLoader loader) {
         super(context);
-        this.model = new SkeletonEntityModel(loader.getModelPart(VENOM_OUTER));
+        this.model = new SkeletonEntityModel(loader.getModelPart(VENOMOUS_SKELETON_OUTER));
     }
 
     @Override
     public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, T entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
-        VenomOverlayFeatureRenderer.render(this.getContextModel(), this.model, SKIN, matrices, vertexConsumers, light, entity, limbAngle, limbDistance, animationProgress, headYaw, headPitch, tickDelta, 1.0f, 1.0f, 1.0f);
+        VenomousSkeletonOverlayFeatureRenderer.render(this.getContextModel(), this.model, SKIN, matrices, vertexConsumers, light, entity, limbAngle, limbDistance, animationProgress, headYaw, headPitch, tickDelta, 1.0f, 1.0f, 1.0f);
     }
 }
