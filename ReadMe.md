@@ -7,4 +7,5 @@ I would appreciate it a lot!
 ## Features
 
 - Jungle
-  - New mob "Venom" spawns instead of Skeleton. "Venom" shoots poisonous arrows and sometimes also drops them when dying. It's a skeleton which lives only in the Jungle.
+  - "Venomous Skeleton" spawns instead of "Skeleton". It shoots poisonous arrows and sometimes also drops them when dying.
+  - "Venomous Spider" spawns instead of "Spider". It's bites are toxic, so keep distance!
