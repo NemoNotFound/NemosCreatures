@@ -1,5 +1,6 @@
 package com.nemonotfound;
 
+import com.nemonotfound.client.render.entity.VenomousCreeperEntityRenderer;
 import com.nemonotfound.client.render.entity.VenomousSkeletonEntityRenderer;
 import com.nemonotfound.client.render.entity.VenomousSpiderEntityRenderer;
 import com.nemonotfound.client.render.entity.VenomousZombieEntityRenderer;
@@ -11,6 +12,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.model.Dilation;
 import net.minecraft.client.model.TexturedModelData;
+import net.minecraft.client.render.entity.CreeperEntityRenderer;
 import net.minecraft.client.render.entity.model.*;
 import net.minecraft.util.Identifier;
 
@@ -34,6 +36,7 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityRendererRegistry.register(Entities.VENOMOUS_SKELETON, VenomousSkeletonEntityRenderer::new);
         EntityRendererRegistry.register(Entities.VENOMOUS_SPIDER, VenomousSpiderEntityRenderer::new);
         EntityRendererRegistry.register(Entities.VENOMOUS_ZOMBIE, VenomousZombieEntityRenderer::new);
+        EntityRendererRegistry.register(Entities.VENOMOUS_CREEPER, VenomousCreeperEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
