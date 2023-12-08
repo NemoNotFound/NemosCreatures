@@ -11,3 +11,5 @@ I would appreciate it a lot!
   - "Venomous Spider" spawns instead of "Spider". It's bites are toxic, so keep distance!
   - "Venomous Zombie" spawns instead of "Zombie". His hands are covered with poison, so don't let him touch you!
   - "Venomous Creeper" spawns instead of "Creeper". Don't let him explode, but if you do, then make sure to not be in the middle of the explosion, because his explosion creates a poisonous cloud!
+- Desert
+  - "Scorched Skeleton" spawns instead of "Skeleton". It's arrows dries you out and lets you starve to death, so better dodge them!
