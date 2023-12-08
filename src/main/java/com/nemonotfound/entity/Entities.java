@@ -42,7 +42,7 @@ public class Entities {
                     .dimensions(EntityDimensions.fixed(0.6f, 1.7f))
                     .build());
     public static final EntityType<ScorchedSkeletonEntity> SCORCHED_SKELETON = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "desert_skeleton"),
+            new Identifier(MOD_ID, "scorched_skeleton"),
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, ScorchedSkeletonEntity::new)
                     .dimensions(EntityDimensions.fixed(0.6f, 1.99f))
                     .build());
