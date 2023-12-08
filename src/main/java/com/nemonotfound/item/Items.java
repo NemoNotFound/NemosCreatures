@@ -22,16 +22,20 @@ public class Items {
             new FabricItemSettings());
     public static final Item VENOMOUS_CREEPER_SPAWN_EGG = new SpawnEggItem(Entities.VENOMOUS_CREEPER, 894731, 87040,
             new FabricItemSettings());
+    public static final Item SCORCHED_SKELETON_SPAWN_EGG = new SpawnEggItem(Entities.SCORCHED_SKELETON, 7497817, 5262145,
+            new FabricItemSettings());
 
     public static void registerItems() {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "venomous_skeleton_spawn_egg"), VENOMOUS_SKELETON_SPAWN_EGG);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "venomous_spider_spawn_egg"), VENOMOUS_SPIDER_SPAWN_EGG);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "venomous_zombie_spawn_egg"), VENOMOUS_ZOMBIE_SPAWN_EGG);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "venomous_creeper_spawn_egg"), VENOMOUS_CREEPER_SPAWN_EGG);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "scorched_skeleton_spawn_egg"), SCORCHED_SKELETON_SPAWN_EGG);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(VENOMOUS_SKELETON_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(VENOMOUS_SPIDER_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(VENOMOUS_ZOMBIE_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(VENOMOUS_CREEPER_SPAWN_EGG));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(SCORCHED_SKELETON_SPAWN_EGG));
     }
 }
