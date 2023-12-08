@@ -8,5 +8,7 @@
   "entity.nemos-creatures.venomous_creeper": "Venomous Creeper",
   "item.nemos-creatures.venomous_creeper_spawn_egg": "Venomous Creeper Spawn Egg",
   "entity.nemos-creatures.scorched_skeleton": "Scorched Skeleton",
-  "item.nemos-creatures.scorched_skeleton_spawn_egg": "Scorched Skeleton Spawn Egg"
+  "item.nemos-creatures.scorched_skeleton_spawn_egg": "Scorched Skeleton Spawn Egg",
+  "entity.nemos-creatures.sand_spider": "Sand Spider",
+  "item.nemos-creatures.sand_spider_spawn_egg": "Sand Spider Spawn Egg"
 }

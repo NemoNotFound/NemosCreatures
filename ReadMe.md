@@ -13,3 +13,4 @@ I would appreciate it a lot!
   - "Venomous Creeper" spawns instead of "Creeper". Don't let him explode, but if you do, then make sure to not be in the middle of the explosion, because his explosion creates a poisonous cloud!
 - Desert
   - "Scorched Skeleton" spawns instead of "Skeleton". It's arrows dries you out and lets you starve to death, so better dodge them!
+  - "Sand Spider" spawns instead of "Spider". It's a small spider, but don't let this fool you. Their bites will hurt a lot and make you starve! 

@@ -28,7 +28,7 @@ public class NemosCreaturesClient implements ClientModInitializer {
     public static final EntityModelLayer SCORCHED_SKELETON = new EntityModelLayer(new Identifier(MOD_ID, "scorched_skeleton"), "main");
     public static final EntityModelLayer SCORCHED_SKELETON_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "scorched_skeleton"), "inner_armor");
     public static final EntityModelLayer SCORCHED_SKELETON_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "scorched_skeleton"), "outer_armor");
-
+    public static final EntityModelLayer SAND_SPIDER = new EntityModelLayer(new Identifier(MOD_ID, "sand_spider"), "main");
 
     @Override
     public void onInitializeClient() {
@@ -37,6 +37,7 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityRendererRegistry.register(Entities.VENOMOUS_ZOMBIE, VenomousZombieEntityRenderer::new);
         EntityRendererRegistry.register(Entities.VENOMOUS_CREEPER, VenomousCreeperEntityRenderer::new);
         EntityRendererRegistry.register(Entities.SCORCHED_SKELETON, ScorchedSkeletonEntityRenderer::new);
+        EntityRendererRegistry.register(Entities.SAND_SPIDER, SandSpiderEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
@@ -49,5 +50,6 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(SCORCHED_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(SCORCHED_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(SCORCHED_SKELETON_OUTER_ARMOR, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(SAND_SPIDER, SpiderEntityModel::getTexturedModelData);
     }
 }
