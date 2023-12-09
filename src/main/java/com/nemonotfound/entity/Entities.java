@@ -51,6 +51,11 @@ public class Entities {
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, SandSpiderEntity::new)
                     .dimensions(EntityDimensions.fixed(0.4f, 0.2f))
                     .build());
+    public static final EntityType<MummyEntity> MUMMY = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MOD_ID, "mummy"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, MummyEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.6f, 1.95f))
+                    .build());
 
     public static void registerSpawnRestrictions() {
         SpawnRestriction.register(VENOMOUS_SKELETON, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
@@ -65,6 +70,8 @@ public class Entities {
                 HostileEntity::canSpawnInDark);
         SpawnRestriction.register(SAND_SPIDER, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING,
                 HostileEntity::canSpawnInDark);
+        SpawnRestriction.register(MUMMY, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
+                HostileEntity::canSpawnInDark);
     }
 
     public static void registerAttributes() {
@@ -74,6 +81,7 @@ public class Entities {
         FabricDefaultAttributeRegistry.register(VENOMOUS_CREEPER, VenomousZombieEntity.createZombieAttributes());
         FabricDefaultAttributeRegistry.register(SCORCHED_SKELETON, ScorchedSkeletonEntity.createAbstractSkeletonAttributes());
         FabricDefaultAttributeRegistry.register(SAND_SPIDER, SandSpiderEntity.createSandSpiderAttributes());
+        FabricDefaultAttributeRegistry.register(MUMMY, MummyEntity.createMummyAttributes());
     }
 
     public static void replaceMobsForBiomes() {
@@ -91,6 +99,7 @@ public class Entities {
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_CREEPER, 100, 4, 4);
         BiomeModifications.addSpawn(desert, SpawnGroup.MONSTER, SCORCHED_SKELETON, 100, 4, 4);
         BiomeModifications.addSpawn(desert, SpawnGroup.MONSTER, SAND_SPIDER, 100, 4, 4);
+        BiomeModifications.addSpawn(desert, SpawnGroup.MONSTER, MUMMY, 100, 4, 4);
 
         removeMobFromBiome(jungle, skeletonKey);
         removeMobFromBiome(jungle, spiderKey);
@@ -98,6 +107,7 @@ public class Entities {
         removeMobFromBiome(jungle, creeperKey);
         removeMobFromBiome(desert, skeletonKey);
         removeMobFromBiome(desert, spiderKey);
+        removeMobFromBiome(desert, zombieKey);
     }
 
     private static void removeMobFromBiome(Predicate<BiomeSelectionContext> biomeSelection, String entityKey) {
