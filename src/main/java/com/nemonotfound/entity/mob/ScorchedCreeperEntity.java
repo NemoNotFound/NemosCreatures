@@ -9,20 +9,20 @@ import net.minecraft.world.World;
 import java.util.Collection;
 import java.util.List;
 
-public class VenomousCreeperEntity extends CreeperEntity {
+public class ScorchedCreeperEntity extends CreeperEntity {
 
-    public VenomousCreeperEntity(EntityType<? extends CreeperEntity> entityType, World world) {
+    public ScorchedCreeperEntity(EntityType<? extends CreeperEntity> entityType, World world) {
         super(entityType, world);
     }
 
     @Override
     public Collection<StatusEffectInstance> getStatusEffects() {
-        return List.of(new StatusEffectInstance(StatusEffects.POISON, 600, 1));
+        return List.of(new StatusEffectInstance(StatusEffects.HUNGER, 600, 1));
     }
 
     @Override
     public boolean canHaveStatusEffect(StatusEffectInstance effect) {
-        if (effect.getEffectType() == StatusEffects.POISON) {
+        if (effect.getEffectType() == StatusEffects.HUNGER) {
             return false;
         }
         return super.canHaveStatusEffect(effect);

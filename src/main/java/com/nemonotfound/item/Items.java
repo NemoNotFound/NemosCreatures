@@ -28,6 +28,8 @@ public class Items {
             new FabricItemSettings());
     public static final Item MUMMY_SPAWN_EGG = new SpawnEggItem(Entities.MUMMY, 11572567, 5326381,
             new FabricItemSettings());
+    public static final Item SCORCHED_CREEPER_SPAWN_EGG = new SpawnEggItem(Entities.SCORCHED_CREEPER, 7497817, 15000247,
+            new FabricItemSettings());
 
     public static void registerItems() {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "venomous_skeleton_spawn_egg"), VENOMOUS_SKELETON_SPAWN_EGG);
@@ -37,6 +39,7 @@ public class Items {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "scorched_skeleton_spawn_egg"), SCORCHED_SKELETON_SPAWN_EGG);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sand_spider_spawn_egg"), SAND_SPIDER_SPAWN_EGG);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "mummy_spawn_egg"), MUMMY_SPAWN_EGG);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "scorched_creeper_spawn_egg"), SCORCHED_CREEPER_SPAWN_EGG);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(VENOMOUS_SKELETON_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(VENOMOUS_SPIDER_SPAWN_EGG));
@@ -45,5 +48,6 @@ public class Items {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(SCORCHED_SKELETON_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(SAND_SPIDER_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(MUMMY_SPAWN_EGG));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(SCORCHED_CREEPER_SPAWN_EGG));
     }
 }

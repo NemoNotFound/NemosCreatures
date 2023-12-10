@@ -15,3 +15,4 @@ I would appreciate it a lot!
   - "Scorched Skeleton" spawns instead of "Skeleton". It's arrows dries you out and lets you starve to death, so better dodge them!
   - "Sand Spider" spawns instead of "Spider". It's a small spider, but don't let this fool you. Their bites will hurt a lot and make you starve!
   - "Mummy" spawns instead of "Zombie". If I could choose to be punched by a "Mummy" or a "Zombie", I'd choose the zombie everytime! Due to the preservation of it's body, it has 50% more health and 100% more damage, but luckily it gets slowed down by the bandages, so run away!
+  - "Scorched Creeper" spawns instead of "Creeper". His explosion spreads particles which will dry you out and make you starve, so better don't let him explode!

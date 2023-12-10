@@ -12,5 +12,7 @@
   "entity.nemos-creatures.sand_spider": "Sand Spider",
   "item.nemos-creatures.sand_spider_spawn_egg": "Sand Spider Spawn Egg",
   "entity.nemos-creatures.mummy": "Mummy",
-  "item.nemos-creatures.mummy_spawn_egg": "Mummy Spawn Egg"
+  "item.nemos-creatures.mummy_spawn_egg": "Mummy Spawn Egg",
+  "entity.nemos-creatures.scorched_creeper": "Scorched Creeper",
+  "item.nemos-creatures.scorched_creeper_spawn_egg": "Scorched Creeper Spawn Egg"
 }
