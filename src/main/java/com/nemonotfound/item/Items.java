@@ -30,6 +30,9 @@ public class Items {
             new FabricItemSettings());
     public static final Item SCORCHED_CREEPER_SPAWN_EGG = new SpawnEggItem(Entities.SCORCHED_CREEPER, 7497817, 15000247,
             new FabricItemSettings());
+    public static final Item CRIMSON_SKELETON_SPAWN_EGG = new SpawnEggItem(Entities.CRIMSON_SKELETON, 7497817, 15000247,
+            new FabricItemSettings());
+    public static final Item FIRE_ARROW = new FireArrowItem(new FabricItemSettings());
 
     public static void registerItems() {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "venomous_skeleton_spawn_egg"), VENOMOUS_SKELETON_SPAWN_EGG);
@@ -40,6 +43,8 @@ public class Items {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sand_spider_spawn_egg"), SAND_SPIDER_SPAWN_EGG);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "mummy_spawn_egg"), MUMMY_SPAWN_EGG);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "scorched_creeper_spawn_egg"), SCORCHED_CREEPER_SPAWN_EGG);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "crimson_skeleton_spawn_egg"), CRIMSON_SKELETON_SPAWN_EGG);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "fire_arrow"), FIRE_ARROW);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(VENOMOUS_SKELETON_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(VENOMOUS_SPIDER_SPAWN_EGG));
@@ -49,5 +54,6 @@ public class Items {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(SAND_SPIDER_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(MUMMY_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(SCORCHED_CREEPER_SPAWN_EGG));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(CRIMSON_SKELETON_SPAWN_EGG));
     }
 }

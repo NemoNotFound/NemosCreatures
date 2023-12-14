@@ -14,5 +14,8 @@
   "entity.nemos-creatures.mummy": "Mummy",
   "item.nemos-creatures.mummy_spawn_egg": "Mummy Spawn Egg",
   "entity.nemos-creatures.scorched_creeper": "Scorched Creeper",
-  "item.nemos-creatures.scorched_creeper_spawn_egg": "Scorched Creeper Spawn Egg"
+  "item.nemos-creatures.scorched_creeper_spawn_egg": "Scorched Creeper Spawn Egg",
+  "entity.nemos-creatures.crimson_skeleton": "Crimson Skeleton",
+  "item.nemos-creatures.crimson_skeleton_spawn_egg": "Crimson Skeleton Spawn Egg",
+  "item.nemos-creatures.fire_arrow": "Fire Arrow"
 }

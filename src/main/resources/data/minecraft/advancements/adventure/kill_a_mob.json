@@ -1,6 +1,20 @@
 {
   "parent": "minecraft:adventure/root",
   "criteria": {
+    "nemos-creatures:crimson_skeleton": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "nemos-creatures:crimson_skeleton"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
     "nemos-creatures:mummy": {
       "conditions": {
         "entity": [

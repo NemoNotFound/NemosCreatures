@@ -1,6 +1,7 @@
 package com.nemonotfound.entity;
 
 import com.nemonotfound.entity.mob.*;
+import com.nemonotfound.entity.projectile.FireArrowEntity;
 import net.fabricmc.fabric.api.biome.v1.*;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -61,6 +62,16 @@ public class Entities {
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, ScorchedCreeperEntity::new)
                     .dimensions(EntityDimensions.fixed(0.6f, 1.7f))
                     .build());
+    public static final EntityType<CrimsonSkeletonEntity> CRIMSON_SKELETON = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MOD_ID, "crimson_skeleton"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, CrimsonSkeletonEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.6f, 1.99f))
+                    .build());
+    public static final EntityType<FireArrowEntity> FIRE_ARROW = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MOD_ID, "fire_arrow"),
+            FabricEntityTypeBuilder.<FireArrowEntity>create(SpawnGroup.MONSTER, FireArrowEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.6f, 1.99f))
+                    .build());
 
     public static void registerSpawnRestrictions() {
         SpawnRestriction.register(VENOMOUS_SKELETON, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
@@ -79,6 +90,8 @@ public class Entities {
                 HostileEntity::canSpawnInDark);
         SpawnRestriction.register(SCORCHED_CREEPER, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
                 HostileEntity::canSpawnInDark);
+        SpawnRestriction.register(CRIMSON_SKELETON, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
+                HostileEntity::canSpawnInDark);
     }
 
     public static void registerAttributes() {
@@ -90,6 +103,7 @@ public class Entities {
         FabricDefaultAttributeRegistry.register(SAND_SPIDER, SandSpiderEntity.createSandSpiderAttributes());
         FabricDefaultAttributeRegistry.register(MUMMY, MummyEntity.createMummyAttributes());
         FabricDefaultAttributeRegistry.register(SCORCHED_CREEPER, ScorchedCreeperEntity.createCreeperAttributes());
+        FabricDefaultAttributeRegistry.register(CRIMSON_SKELETON, CrimsonSkeletonEntity.createAbstractSkeletonAttributes());
     }
 
     public static void replaceMobsForBiomes() {
@@ -100,6 +114,7 @@ public class Entities {
 
         Predicate<BiomeSelectionContext> jungle = BiomeSelectors.tag(BiomeTags.IS_JUNGLE);
         Predicate<BiomeSelectionContext> desert = BiomeSelectors.tag(BiomeTags.of("is_desert"));
+        Predicate<BiomeSelectionContext> crimsonForest = BiomeSelectors.tag(BiomeTags.of("is_crimson_forest"));
 
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_SKELETON, 100, 4, 4);
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_SPIDER, 100, 4, 4);
@@ -109,6 +124,7 @@ public class Entities {
         BiomeModifications.addSpawn(desert, SpawnGroup.MONSTER, SAND_SPIDER, 100, 4, 4);
         BiomeModifications.addSpawn(desert, SpawnGroup.MONSTER, MUMMY, 100, 4, 4);
         BiomeModifications.addSpawn(desert, SpawnGroup.MONSTER, SCORCHED_CREEPER, 100, 4, 4);
+        BiomeModifications.addSpawn(crimsonForest, SpawnGroup.MONSTER, CRIMSON_SKELETON, 40, 1, 1);
 
         removeMobFromBiome(jungle, skeletonKey);
         removeMobFromBiome(jungle, spiderKey);

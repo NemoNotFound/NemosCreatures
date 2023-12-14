@@ -32,6 +32,10 @@ public class NemosCreaturesClient implements ClientModInitializer {
     public static final EntityModelLayer MUMMY = new EntityModelLayer(new Identifier(MOD_ID, "mummy"), "main");
     public static final EntityModelLayer MUMMY_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "mummy"), "inner_armor");
     public static final EntityModelLayer MUMMY_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "mummy"), "outer_armor");
+    public static final EntityModelLayer CRIMSON_SKELETON = new EntityModelLayer(new Identifier(MOD_ID, "crimson_skeleton"), "main");
+    public static final EntityModelLayer CRIMSON_SKELETON_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "crimson_skeleton"), "inner_armor");
+    public static final EntityModelLayer CRIMSON_SKELETON_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "crimson_skeleton"), "outer_armor");
+
 
 
     @Override
@@ -44,6 +48,8 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityRendererRegistry.register(Entities.SAND_SPIDER, SandSpiderEntityRenderer::new);
         EntityRendererRegistry.register(Entities.MUMMY, MummyEntityRenderer::new);
         EntityRendererRegistry.register(Entities.SCORCHED_CREEPER, ScorchedCreeperEntityRenderer::new);
+        EntityRendererRegistry.register(Entities.CRIMSON_SKELETON, CrimsonSkeletonEntityRenderer::new);
+        EntityRendererRegistry.register(Entities.FIRE_ARROW, FireArrowEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
@@ -60,6 +66,8 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(MUMMY, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
         EntityModelLayerRegistry.registerModelLayer(MUMMY_INNER_ARMOR, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
         EntityModelLayerRegistry.registerModelLayer(MUMMY_OUTER_ARMOR, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
-
+        EntityModelLayerRegistry.registerModelLayer(CRIMSON_SKELETON, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(CRIMSON_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(CRIMSON_SKELETON_OUTER_ARMOR, SkeletonEntityModel::getTexturedModelData);
     }
 }
