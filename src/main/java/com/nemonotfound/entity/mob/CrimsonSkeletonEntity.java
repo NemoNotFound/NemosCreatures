@@ -1,7 +1,7 @@
 package com.nemonotfound.entity.mob;
 
 import com.nemonotfound.item.FireArrowItem;
-import com.nemonotfound.item.Items;
+import com.nemonotfound.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -88,7 +88,7 @@ public class CrimsonSkeletonEntity extends AbstractSkeletonEntity {
     }
 
     private static PersistentProjectileEntity createArrowProjectile(LivingEntity entity, ItemStack stack, float damageModifier) {
-        FireArrowItem arrowItem = (FireArrowItem)(stack.getItem() instanceof FireArrowItem ? stack.getItem() : Items.FIRE_ARROW);
+        FireArrowItem arrowItem = (FireArrowItem)(stack.getItem() instanceof FireArrowItem ? stack.getItem() : ModItems.FIRE_ARROW);
         PersistentProjectileEntity persistentProjectileEntity = arrowItem.createArrow(entity.getWorld(), stack, entity);
         persistentProjectileEntity.applyEnchantmentEffects(entity, damageModifier);
 

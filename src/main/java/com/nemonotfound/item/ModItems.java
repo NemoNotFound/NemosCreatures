@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
 
-public class Items {
+public class ModItems {
 
     public static final Item VENOMOUS_SKELETON_SPAWN_EGG = new SpawnEggItem(Entities.VENOMOUS_SKELETON, 0xC1C1C1, 5884716,
             new FabricItemSettings());

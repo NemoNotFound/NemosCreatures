@@ -1,7 +1,7 @@
 package com.nemonotfound;
 
 import com.nemonotfound.entity.Entities;
-import com.nemonotfound.item.Items;
+import com.nemonotfound.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +19,7 @@ public class NemosCreatures implements ModInitializer {
 		Entities.registerSpawnRestrictions();
 		Entities.registerAttributes();
 		Entities.replaceMobsForBiomes();
-		Items.registerItems();
+		ModItems.registerItems();
 	}
 
 
