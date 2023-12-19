@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "nemos-creatures:item/fire_arrow"
+    "layer0": "nemos-weapons:item/fire_arrow"
   }
 }

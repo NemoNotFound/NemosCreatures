@@ -25,13 +25,20 @@
               "function": "minecraft:looting_enchant"
             }
           ],
-          "name": "nemos-creatures:fire_arrow"
+          "name": "minecraft:arrow"
         }
       ],
       "rolls": 1.0
     },
     {
       "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "chance": 0.8,
+          "condition": "minecraft:random_chance_with_looting",
+          "looting_multiplier": 1
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",

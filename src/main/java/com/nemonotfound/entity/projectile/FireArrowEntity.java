@@ -12,6 +12,10 @@ public class FireArrowEntity extends ArrowEntity {
         super(entityType, world);
     }
 
+    public FireArrowEntity(World world, double x, double y, double z, ItemStack stack) {
+        super(world, x, y, z, stack);
+    }
+
     public FireArrowEntity(World world, LivingEntity owner, ItemStack stack) {
         super(world, owner, stack);
     }

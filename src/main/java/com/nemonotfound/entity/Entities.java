@@ -19,6 +19,7 @@ import net.minecraft.world.Heightmap;
 import java.util.function.Predicate;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
+import static com.nemonotfound.NemosCreatures.NEMOS_WEAPONS_MOD_ID;
 
 public class Entities {
 
@@ -68,7 +69,7 @@ public class Entities {
                     .dimensions(EntityDimensions.fixed(0.6f, 1.99f))
                     .build());
     public static final EntityType<FireArrowEntity> FIRE_ARROW = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "fire_arrow"),
+            new Identifier(NEMOS_WEAPONS_MOD_ID, "fire_arrow"),
             FabricEntityTypeBuilder.<FireArrowEntity>create(SpawnGroup.MONSTER, FireArrowEntity::new)
                     .dimensions(EntityDimensions.fixed(0.5f, 0.5f))
                     .build());
