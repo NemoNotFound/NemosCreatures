@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 public class NemosCreatures implements ModInitializer {
 
 	public static final String MOD_ID = "nemos-creatures";
-	public static final String NEMOS_WEAPONS_MOD_ID = "nemos-weapons";
     public static final Logger log = LoggerFactory.getLogger(MOD_ID);
 
 

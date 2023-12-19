@@ -1,25 +1,16 @@
 package com.nemonotfound.item;
 
 import com.nemonotfound.entity.Entities;
-import com.nemonotfound.entity.projectile.FireArrowEntity;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.DispenserBlock;
-import net.minecraft.block.dispenser.ProjectileDispenserBehavior;
-import net.minecraft.entity.projectile.PersistentProjectileEntity;
-import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Position;
-import net.minecraft.world.World;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
-import static com.nemonotfound.NemosCreatures.NEMOS_WEAPONS_MOD_ID;
 
 public class ModItems {
 
@@ -41,12 +32,10 @@ public class ModItems {
             new FabricItemSettings());
     public static final Item CRIMSON_SKELETON_SPAWN_EGG = new SpawnEggItem(Entities.CRIMSON_SKELETON, 7497817, 15000247,
             new FabricItemSettings());
-    public static final Item FIRE_ARROW = new FireArrowItem(new FabricItemSettings());
 
     public static void registerItems() {
         registerItemsToRegistry();
         addItemsToItemGroup();
-        registerDispenserBehavior();
     }
 
     private static void registerItemsToRegistry() {
@@ -59,7 +48,6 @@ public class ModItems {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "mummy_spawn_egg"), MUMMY_SPAWN_EGG);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "scorched_creeper_spawn_egg"), SCORCHED_CREEPER_SPAWN_EGG);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "crimson_skeleton_spawn_egg"), CRIMSON_SKELETON_SPAWN_EGG);
-        Registry.register(Registries.ITEM, new Identifier(NEMOS_WEAPONS_MOD_ID, "fire_arrow"), FIRE_ARROW);
     }
 
     private static void addItemsToItemGroup() {
@@ -72,17 +60,5 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(MUMMY_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(SCORCHED_CREEPER_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(CRIMSON_SKELETON_SPAWN_EGG));
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(content -> content.add(FIRE_ARROW));
-    }
-
-    private static void registerDispenserBehavior() {
-        DispenserBlock.registerBehavior(FIRE_ARROW, new ProjectileDispenserBehavior(){
-            @Override
-            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
-                FireArrowEntity fireArrowEntity = new FireArrowEntity(world, position.getX(), position.getY(), position.getZ(), stack.copyWithCount(1));
-                fireArrowEntity.pickupType = PersistentProjectileEntity.PickupPermission.ALLOWED;
-                return fireArrowEntity;
-            }
-        });
     }
 }

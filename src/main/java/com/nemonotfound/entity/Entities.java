@@ -1,7 +1,6 @@
 package com.nemonotfound.entity;
 
 import com.nemonotfound.entity.mob.*;
-import com.nemonotfound.entity.projectile.FireArrowEntity;
 import net.fabricmc.fabric.api.biome.v1.*;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -19,7 +18,6 @@ import net.minecraft.world.Heightmap;
 import java.util.function.Predicate;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
-import static com.nemonotfound.NemosCreatures.NEMOS_WEAPONS_MOD_ID;
 
 public class Entities {
 
@@ -67,11 +65,6 @@ public class Entities {
             new Identifier(MOD_ID, "crimson_skeleton"),
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, CrimsonSkeletonEntity::new)
                     .dimensions(EntityDimensions.fixed(0.6f, 1.99f))
-                    .build());
-    public static final EntityType<FireArrowEntity> FIRE_ARROW = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(NEMOS_WEAPONS_MOD_ID, "fire_arrow"),
-            FabricEntityTypeBuilder.<FireArrowEntity>create(SpawnGroup.MONSTER, FireArrowEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f))
                     .build());
 
     public static void registerSpawnRestrictions() {

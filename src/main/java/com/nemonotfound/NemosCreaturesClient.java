@@ -49,7 +49,6 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityRendererRegistry.register(Entities.MUMMY, MummyEntityRenderer::new);
         EntityRendererRegistry.register(Entities.SCORCHED_CREEPER, ScorchedCreeperEntityRenderer::new);
         EntityRendererRegistry.register(Entities.CRIMSON_SKELETON, CrimsonSkeletonEntityRenderer::new);
-        EntityRendererRegistry.register(Entities.FIRE_ARROW, FireArrowEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
