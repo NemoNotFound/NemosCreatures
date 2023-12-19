@@ -30,7 +30,7 @@ public class ModItems {
             new FabricItemSettings());
     public static final Item SCORCHED_CREEPER_SPAWN_EGG = new SpawnEggItem(Entities.SCORCHED_CREEPER, 7497817, 15000247,
             new FabricItemSettings());
-    public static final Item CRIMSON_SKELETON_SPAWN_EGG = new SpawnEggItem(Entities.CRIMSON_SKELETON, 7497817, 15000247,
+    public static final Item CRIMSON_SKELETON_SPAWN_EGG = new SpawnEggItem(Entities.CRIMSON_SKELETON, 6118749, 11280416,
             new FabricItemSettings());
 
     public static void registerItems() {
