@@ -16,3 +16,5 @@ I would appreciate it a lot!
   - "Sand Spider" spawns instead of "Spider". It's a small spider, but don't let this fool you. Their bites will hurt a lot and make you starve! Oh, and he will dry you out!
   - "Mummy" spawns instead of "Zombie". If I could choose to be punched by a "Mummy" or a "Zombie", I'd choose the zombie everytime! Due to the preservation of it's body, it has 50% more health and 100% more damage, but luckily it gets slowed down by the bandages, so run away!
   - "Scorched Creeper" spawns instead of "Creeper". His explosion spreads particles which will dry you out and make you starve, so better don't let him explode!
+- Crimson Forest
+  - "Crimson Skeleton". His time in the crimson forest made him learn how to work with fire. It's always equipped with a flame bow, so get a shield, a splash potion of water or simply run!

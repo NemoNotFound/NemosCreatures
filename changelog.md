@@ -1,8 +1,8 @@
 ### Additions
-- Added "Scorched Skeleton"
-- Added "Sand Spider"
-- Added "Mummy"
-- Added "Scorched Creeper"
+- Added "Crimson Skeleton"
+
+### Changes
+- Scorched Skeleton is now slightly less likely to drop bones
 
 ### Fixes
 - Poison cloud of "Venomous Creeper" does not give poison effect
