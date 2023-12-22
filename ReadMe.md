@@ -17,4 +17,6 @@ I would appreciate it a lot!
   - "Mummy" spawns instead of "Zombie". If I could choose to be punched by a "Mummy" or a "Zombie", I'd choose the zombie everytime! Due to the preservation of it's body, it has 50% more health and 100% more damage, but luckily it gets slowed down by the bandages, so run away!
   - "Scorched Creeper" spawns instead of "Creeper". His explosion spreads particles which will dry you out and make you starve, so better don't let him explode!
 - Crimson Forest
-  - "Crimson Skeleton". His time in the crimson forest made him learn how to work with fire. It's always equipped with a flame bow, so get a shield, a splash potion of water or simply run!
+  - "Crimson Skeleton". His time in the crimson forest made him learn how to work with fire. He's always equipped with a flame bow and the worst thing is, that the flame's heat increases the arrow's thermal energy and makes it shoot even faster! So get a shield, a splash potion of water or simply run!
+- Warped Forest
+  - "Warped Skeleton". He definitely spent too much time with endermen. Its arrows won't just shoot, but teleport to you!

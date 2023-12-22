@@ -1,7 +1,6 @@
 package com.nemonotfound.entity.mob;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -23,9 +22,9 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.World;
 
-public class CrimsonSkeletonEntity extends AbstractSkeletonEntity {
+public class WarpedSkeletonEntity extends AbstractSkeletonEntity {
 
-    public CrimsonSkeletonEntity(EntityType<? extends AbstractSkeletonEntity> entityType, World world) {
+    public WarpedSkeletonEntity(EntityType<? extends AbstractSkeletonEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -61,7 +60,7 @@ public class CrimsonSkeletonEntity extends AbstractSkeletonEntity {
 
     @Override
     public float getSoundPitch() {
-        return 0.8F;
+        return 1.1F;
     }
 
     @Override
@@ -90,7 +89,6 @@ public class CrimsonSkeletonEntity extends AbstractSkeletonEntity {
     protected void initEquipment(Random random, LocalDifficulty localDifficulty) {
         super.initEquipment(random, localDifficulty);
         ItemStack bow = new ItemStack(Items.BOW);
-        bow.addEnchantment(Enchantments.FLAME, 1);
         this.equipStack(EquipmentSlot.MAINHAND, bow);
     }
 
@@ -106,12 +104,20 @@ public class CrimsonSkeletonEntity extends AbstractSkeletonEntity {
     public void shootAt(LivingEntity target, float pullProgress) {
         ItemStack itemStack = this.getProjectileType(this.getStackInHand(ProjectileUtil.getHandPossiblyHolding(this, Items.BOW)));
         PersistentProjectileEntity persistentProjectileEntity = this.createArrowProjectile(itemStack, pullProgress);
-        double d = target.getX() - this.getX();
-        double e = target.getBodyY(0.3333333333333333) - persistentProjectileEntity.getY();
-        double f = target.getZ() - this.getZ();
-        double g = Math.sqrt(d * d + f * f);
-        persistentProjectileEntity.setVelocity(d, e + g * (double)0.1f, f, 2.5f, 7 - this.getWorld().getDifficulty().getId() * 4);
-        this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0f, 1.0f / (this.getRandom().nextFloat() * 0.4f + 0.8f));
+        double distanceX = target.getX() - this.getX();
+        double distanceY = target.getBodyY(0.3333333333333333) - persistentProjectileEntity.getY();
+        double distanceZ = target.getZ() - this.getZ();
+        double g = Math.sqrt(distanceX * distanceX + distanceZ * distanceZ);
+        boolean isXTooClose = distanceX < 1 && distanceX > -1;
+        boolean isZTooClose = distanceZ < 1 && distanceZ > -1;
+        double newDistanceX = isXTooClose ? 0 : distanceX > 1 ? -1 : 1;
+        double newDistanceZ = isZTooClose ? 0 : distanceZ > 1 ? -1 : 1;
+        double newXPosition = isXTooClose ? this.getX() : target.getX() + newDistanceX;
+        double newZPosition = isZTooClose ? this.getZ() : target.getZ() + newDistanceZ;
+
+        persistentProjectileEntity.updatePosition(newXPosition, target.getBodyY(0.3333333333333333), newZPosition);
+        persistentProjectileEntity.setVelocity(distanceX, distanceY + g * (double)0.2f, distanceZ, 1.8f, 0);
+        this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0f, 1.0f / (this.getRandom().nextFloat() * 0.2f + 0.6f));
         this.getWorld().spawnEntity(persistentProjectileEntity);
     }
 }

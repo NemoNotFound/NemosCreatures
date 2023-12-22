@@ -44,6 +44,11 @@ public class MummyEntity extends ZombieEntity {
         return 0.7F;
     }
 
+    @Override
+    protected boolean isAffectedByDaylight() {
+        return false;
+    }
+
     public static DefaultAttributeContainer.Builder createMummyAttributes() {
         return ZombieEntity.createZombieAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 30.0)

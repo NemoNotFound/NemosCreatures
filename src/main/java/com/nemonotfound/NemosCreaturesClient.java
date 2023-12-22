@@ -35,8 +35,9 @@ public class NemosCreaturesClient implements ClientModInitializer {
     public static final EntityModelLayer CRIMSON_SKELETON = new EntityModelLayer(new Identifier(MOD_ID, "crimson_skeleton"), "main");
     public static final EntityModelLayer CRIMSON_SKELETON_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "crimson_skeleton"), "inner_armor");
     public static final EntityModelLayer CRIMSON_SKELETON_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "crimson_skeleton"), "outer_armor");
-
-
+    public static final EntityModelLayer WARPED_SKELETON = new EntityModelLayer(new Identifier(MOD_ID, "warped_skeleton"), "main");
+    public static final EntityModelLayer WARPED_SKELETON_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "warped_skeleton"), "inner_armor");
+    public static final EntityModelLayer WARPED_SKELETON_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "warped_skeleton"), "outer_armor");
 
     @Override
     public void onInitializeClient() {
@@ -49,6 +50,7 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityRendererRegistry.register(Entities.MUMMY, MummyEntityRenderer::new);
         EntityRendererRegistry.register(Entities.SCORCHED_CREEPER, ScorchedCreeperEntityRenderer::new);
         EntityRendererRegistry.register(Entities.CRIMSON_SKELETON, CrimsonSkeletonEntityRenderer::new);
+        EntityRendererRegistry.register(Entities.WARPED_SKELETON, WarpedSkeletonEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
@@ -68,5 +70,8 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(CRIMSON_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(CRIMSON_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(CRIMSON_SKELETON_OUTER_ARMOR, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_OUTER_ARMOR, SkeletonEntityModel::getTexturedModelData);
     }
 }

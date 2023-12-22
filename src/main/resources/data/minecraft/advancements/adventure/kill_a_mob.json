@@ -1,6 +1,20 @@
 {
   "parent": "minecraft:adventure/root",
   "criteria": {
+    "nemos-creatures:warped_skeleton": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "nemos-creatures:warped_skeleton"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
     "nemos-creatures:crimson_skeleton": {
       "conditions": {
         "entity": [
