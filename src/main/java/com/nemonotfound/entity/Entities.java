@@ -66,6 +66,11 @@ public class Entities {
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, CrimsonSkeletonEntity::new)
                     .dimensions(EntityDimensions.fixed(0.6f, 1.99f))
                     .build());
+    public static final EntityType<WarpedSkeletonEntity> WARPED_SKELETON = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MOD_ID, "warped_skeleton"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, WarpedSkeletonEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.6f, 1.99f))
+                    .build());
 
     public static void registerSpawnRestrictions() {
         SpawnRestriction.register(VENOMOUS_SKELETON, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
@@ -86,6 +91,8 @@ public class Entities {
                 HostileEntity::canSpawnInDark);
         SpawnRestriction.register(CRIMSON_SKELETON, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
                 HostileEntity::canSpawnInDark);
+        SpawnRestriction.register(WARPED_SKELETON, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
+                HostileEntity::canSpawnInDark);
     }
 
     public static void registerAttributes() {
@@ -98,6 +105,7 @@ public class Entities {
         FabricDefaultAttributeRegistry.register(MUMMY, MummyEntity.createMummyAttributes());
         FabricDefaultAttributeRegistry.register(SCORCHED_CREEPER, ScorchedCreeperEntity.createCreeperAttributes());
         FabricDefaultAttributeRegistry.register(CRIMSON_SKELETON, CrimsonSkeletonEntity.createAbstractSkeletonAttributes());
+        FabricDefaultAttributeRegistry.register(WARPED_SKELETON, WarpedSkeletonEntity.createAbstractSkeletonAttributes());
     }
 
     public static void replaceMobsForBiomes() {
@@ -109,6 +117,7 @@ public class Entities {
         Predicate<BiomeSelectionContext> jungle = BiomeSelectors.tag(BiomeTags.IS_JUNGLE);
         Predicate<BiomeSelectionContext> desert = BiomeSelectors.tag(BiomeTags.of("is_desert"));
         Predicate<BiomeSelectionContext> crimsonForest = BiomeSelectors.tag(BiomeTags.of("is_crimson_forest"));
+        Predicate<BiomeSelectionContext> warpedForest = BiomeSelectors.tag(BiomeTags.of("is_warped_forest"));
 
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_SKELETON, 100, 4, 4);
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_SPIDER, 100, 4, 4);
@@ -119,6 +128,7 @@ public class Entities {
         BiomeModifications.addSpawn(desert, SpawnGroup.MONSTER, MUMMY, 100, 4, 4);
         BiomeModifications.addSpawn(desert, SpawnGroup.MONSTER, SCORCHED_CREEPER, 100, 4, 4);
         BiomeModifications.addSpawn(crimsonForest, SpawnGroup.MONSTER, CRIMSON_SKELETON, 40, 1, 1);
+        BiomeModifications.addSpawn(warpedForest, SpawnGroup.MONSTER, WARPED_SKELETON, 60, 1, 1);
 
         removeMobFromBiome(jungle, skeletonKey);
         removeMobFromBiome(jungle, spiderKey);
