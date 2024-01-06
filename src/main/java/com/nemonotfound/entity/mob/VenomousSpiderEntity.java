@@ -12,7 +12,6 @@ import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import org.joml.Vector3f;
 
 public class VenomousSpiderEntity extends SpiderEntity {
 
@@ -52,15 +51,5 @@ public class VenomousSpiderEntity extends SpiderEntity {
     @Override
     protected float getActiveEyeHeight(EntityPose pose, EntityDimensions dimensions) {
         return 0.5f;
-    }
-
-    @Override
-    protected Vector3f getPassengerAttachmentPos(Entity passenger, EntityDimensions dimensions, float scaleFactor) {
-        return new Vector3f(0.0f, dimensions.height, 0.0f);
-    }
-
-    @Override
-    protected float getUnscaledRidingOffset(Entity vehicle) {
-        return vehicle.getWidth() <= this.getWidth() ? -0.21875f : 0.0f;
     }
 }

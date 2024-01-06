@@ -101,7 +101,7 @@ public class WarpedSkeletonEntity extends AbstractSkeletonEntity {
     }
 
     @Override
-    public void shootAt(LivingEntity target, float pullProgress) {
+    public void attack(LivingEntity target, float pullProgress) {
         ItemStack itemStack = this.getProjectileType(this.getStackInHand(ProjectileUtil.getHandPossiblyHolding(this, Items.BOW)));
         PersistentProjectileEntity persistentProjectileEntity = this.createArrowProjectile(itemStack, pullProgress);
         double distanceX = target.getX() - this.getX();
