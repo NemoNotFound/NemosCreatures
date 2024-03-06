@@ -17,6 +17,11 @@ import static com.nemonotfound.NemosCreatures.MOD_ID;
 @Environment(EnvType.CLIENT)
 public class NemosCreaturesClient implements ClientModInitializer {
 
+    private static final Dilation ARMOR_DILATION = new Dilation(1.0f);
+    private static final Dilation HAT_DILATION = new Dilation(0.5f);
+    TexturedModelData armorModelData = TexturedModelData.of(ArmorEntityModel.getModelData(ARMOR_DILATION), 64, 32);
+    TexturedModelData hatModelData = TexturedModelData.of(ArmorEntityModel.getModelData(HAT_DILATION), 64, 32);
+
     public static final EntityModelLayer VENOMOUS_SKELETON = new EntityModelLayer(new Identifier(MOD_ID, "venomous_skeleton"), "main");
     public static final EntityModelLayer VENOMOUS_SKELETON_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "venomous_skeleton"), "inner_armor");
     public static final EntityModelLayer VENOMOUS_SKELETON_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "venomous_skeleton"), "outer_armor");
@@ -53,25 +58,25 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityRendererRegistry.register(Entities.WARPED_SKELETON, WarpedSkeletonEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON, SkeletonEntityModel::getTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON_OUTER_ARMOR, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON_INNER_ARMOR, () -> hatModelData);
+        EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON_OUTER_ARMOR, () -> armorModelData);
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON_OUTER, () -> TexturedModelData.of(BipedEntityModel.getModelData(new Dilation(0.25f), 0.0f), 64, 32));
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SPIDER, SpiderEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_ZOMBIE, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
-        EntityModelLayerRegistry.registerModelLayer(VENOMOUS_ZOMBIE_INNER_ARMOR, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
-        EntityModelLayerRegistry.registerModelLayer(VENOMOUS_ZOMBIE_OUTER_ARMOR, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
+        EntityModelLayerRegistry.registerModelLayer(VENOMOUS_ZOMBIE_INNER_ARMOR, () -> hatModelData);
+        EntityModelLayerRegistry.registerModelLayer(VENOMOUS_ZOMBIE_OUTER_ARMOR, () -> armorModelData);
         EntityModelLayerRegistry.registerModelLayer(SCORCHED_SKELETON, SkeletonEntityModel::getTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(SCORCHED_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(SCORCHED_SKELETON_OUTER_ARMOR, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(SCORCHED_SKELETON_INNER_ARMOR, () -> hatModelData);
+        EntityModelLayerRegistry.registerModelLayer(SCORCHED_SKELETON_OUTER_ARMOR, () -> armorModelData);
         EntityModelLayerRegistry.registerModelLayer(SAND_SPIDER, SpiderEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(MUMMY, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
-        EntityModelLayerRegistry.registerModelLayer(MUMMY_INNER_ARMOR, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
-        EntityModelLayerRegistry.registerModelLayer(MUMMY_OUTER_ARMOR, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
+        EntityModelLayerRegistry.registerModelLayer(MUMMY_INNER_ARMOR, () -> hatModelData);
+        EntityModelLayerRegistry.registerModelLayer(MUMMY_OUTER_ARMOR, () -> armorModelData);
         EntityModelLayerRegistry.registerModelLayer(CRIMSON_SKELETON, SkeletonEntityModel::getTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(CRIMSON_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(CRIMSON_SKELETON_OUTER_ARMOR, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(CRIMSON_SKELETON_INNER_ARMOR, () -> hatModelData);
+        EntityModelLayerRegistry.registerModelLayer(CRIMSON_SKELETON_OUTER_ARMOR, () -> armorModelData);
         EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON, SkeletonEntityModel::getTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_INNER_ARMOR, SkeletonEntityModel::getTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_OUTER_ARMOR, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_INNER_ARMOR, () -> hatModelData);
+        EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_OUTER_ARMOR, () -> armorModelData);
     }
 }
