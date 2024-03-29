@@ -29,7 +29,10 @@ public class VenomousSpiderEntity extends SpiderEntity {
         if (super.tryAttack(target)) {
             if (target instanceof LivingEntity) {
                 int durationMultiplier = 0;
-                if (this.getWorld().getDifficulty() == Difficulty.NORMAL) {
+
+                if (this.getWorld().getDifficulty() == Difficulty.EASY) {
+                    durationMultiplier = 3;
+                } else if (this.getWorld().getDifficulty() == Difficulty.NORMAL) {
                     durationMultiplier = 7;
                 } else if (this.getWorld().getDifficulty() == Difficulty.HARD) {
                     durationMultiplier = 15;
