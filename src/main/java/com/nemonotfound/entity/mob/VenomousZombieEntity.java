@@ -20,14 +20,16 @@ public class VenomousZombieEntity extends ZombieEntity {
         if (super.tryAttack(target)) {
             if (target instanceof LivingEntity) {
                 int durationMultiplier = 0;
-                if (this.getWorld().getDifficulty() == Difficulty.NORMAL) {
+
+                if (this.getWorld().getDifficulty() == Difficulty.EASY) {
+                    durationMultiplier = 3;
+                } else if (this.getWorld().getDifficulty() == Difficulty.NORMAL) {
                     durationMultiplier = 7;
                 } else if (this.getWorld().getDifficulty() == Difficulty.HARD) {
                     durationMultiplier = 15;
                 }
-                if (durationMultiplier > 0) {
-                    ((LivingEntity)target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, durationMultiplier * 20, 0), this);
-                }
+
+                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, durationMultiplier * 20, 0), this);
             }
             return true;
         }
