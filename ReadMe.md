@@ -4,6 +4,11 @@ Nemo's Creatures will bring some new biome specific mobs to Minecraft!
 This mod is WIP, so feel free to give me your feedback, suggestions and wishes.
 I would appreciate it a lot!
 
+I love to create mods for Minecraft, so I hope you like what I do.
+Either way feel free to give me your feedback and suggestions, either in the comments or on my [Discord](https://discord.com/invite/yxs9dga) :)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J5UXAPK)
+
 ## Features
 
 - Jungle
@@ -20,3 +25,7 @@ I would appreciate it a lot!
   - "Crimson Skeleton". His time in the crimson forest made him learn how to work with fire. He's always equipped with a flame bow and the worst thing is, that the flame's heat increases the arrow's thermal energy and makes it shoot even faster! So get a shield, a splash potion of water or simply run!
 - Warped Forest
   - "Warped Skeleton". He definitely spent too much time with endermen. Its arrows won't just shoot, but teleport to you!
+
+<br></br>
+If you need a Minecraft Server, go check out Kinetic Hosting and save 15% for your first month with the code "Nemo"! Just click here on the banner!
+[![](https://imgur.com/lguE51t.png)](https://billing.kinetichosting.net/aff.php?aff=679)
