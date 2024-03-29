@@ -31,11 +31,15 @@ public class SandSpiderEntity extends SpiderEntity {
         if (super.tryAttack(target)) {
             if (target instanceof LivingEntity) {
                 int durationMultiplier = 0;
-                if (this.getWorld().getDifficulty() == Difficulty.NORMAL) {
+
+                if (this.getWorld().getDifficulty() == Difficulty.EASY) {
+                    durationMultiplier = 3;
+                } else if (this.getWorld().getDifficulty() == Difficulty.NORMAL) {
                     durationMultiplier = 7;
                 } else if (this.getWorld().getDifficulty() == Difficulty.HARD) {
                     durationMultiplier = 15;
                 }
+
                 if (durationMultiplier > 0) {
                     ((LivingEntity)target).addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, durationMultiplier * 20, 0), this);
                 }
