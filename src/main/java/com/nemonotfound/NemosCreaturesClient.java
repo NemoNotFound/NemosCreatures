@@ -81,6 +81,6 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_OUTER_ARMOR, () -> armorModelData);
-        EntityModelLayerRegistry.registerModelLayer(BOAR, () -> WildBoarEntityModel.getTexturedModelData(Dilation.NONE));
+        EntityModelLayerRegistry.registerModelLayer(BOAR, () -> WildBoarEntityModel.getTexturedModelData());
     }
 }
