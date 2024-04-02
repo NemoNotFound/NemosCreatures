@@ -284,8 +284,9 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
         }
 
         @Override
-        protected void attack(LivingEntity target) {
-            if (this.canAttack(target)) {
+        protected void attack(LivingEntity target, double squaredDistance) {
+            double squaredMaxAttackDistance = this.getSquaredMaxAttackDistance(target);
+            if (squaredDistance <= squaredMaxAttackDistance && this.isCooledDown()) {
                 this.resetCooldown();
                 this.mob.tryAttack(target);
                 WildBoarEntity.this.setAttack(true);
