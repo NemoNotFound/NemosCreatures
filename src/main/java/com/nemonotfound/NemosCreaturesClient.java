@@ -1,6 +1,7 @@
 package com.nemonotfound;
 
 import com.nemonotfound.client.render.entity.*;
+import com.nemonotfound.client.render.entity.model.WildBoarEntityModel;
 import com.nemonotfound.entity.Entities;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -43,6 +44,7 @@ public class NemosCreaturesClient implements ClientModInitializer {
     public static final EntityModelLayer WARPED_SKELETON = new EntityModelLayer(new Identifier(MOD_ID, "warped_skeleton"), "main");
     public static final EntityModelLayer WARPED_SKELETON_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "warped_skeleton"), "inner_armor");
     public static final EntityModelLayer WARPED_SKELETON_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "warped_skeleton"), "outer_armor");
+    public static final EntityModelLayer BOAR = new EntityModelLayer(new Identifier(MOD_ID, "boar"), "main");
 
     @Override
     public void onInitializeClient() {
@@ -56,6 +58,7 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityRendererRegistry.register(Entities.SCORCHED_CREEPER, ScorchedCreeperEntityRenderer::new);
         EntityRendererRegistry.register(Entities.CRIMSON_SKELETON, CrimsonSkeletonEntityRenderer::new);
         EntityRendererRegistry.register(Entities.WARPED_SKELETON, WarpedSkeletonEntityRenderer::new);
+        EntityRendererRegistry.register(Entities.WILD_BOAR, WildBoarEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON_INNER_ARMOR, () -> hatModelData);
@@ -78,5 +81,6 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_OUTER_ARMOR, () -> armorModelData);
+        EntityModelLayerRegistry.registerModelLayer(BOAR, () -> WildBoarEntityModel.getTexturedModelData(Dilation.NONE));
     }
 }

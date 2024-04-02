@@ -25,6 +25,14 @@ Either way feel free to give me your feedback and suggestions, either in the com
   - "Crimson Skeleton". His time in the crimson forest made him learn how to work with fire. He's always equipped with a flame bow and the worst thing is, that the flame's heat increases the arrow's thermal energy and makes it shoot even faster! So get a shield, a splash potion of water or simply run!
 - Warped Forest
   - "Warped Skeleton". He definitely spent too much time with endermen. Its arrows won't just shoot, but teleport to you!
+- Forests
+  - "Wild Boar". Don't get too close, or he might attack you!
+
+For more information check the [wiki](https://www.nemonotfound.com/minecraft-mods/nemos-creatures).
+
+## Downloads
+[CurseForge](https://curseforge.com/minecraft/mc-mods/nemos-creatures)<br>
+[Modrinth]( https://modrinth.com/mod/nemos-creatures)
 
 <br></br>
 If you need a Minecraft Server, go check out Kinetic Hosting and save 15% for your first month with the code "Nemo"! Just click here on the banner!

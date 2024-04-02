@@ -18,5 +18,7 @@
   "entity.nemos-creatures.crimson_skeleton": "Crimson Skeleton",
   "item.nemos-creatures.crimson_skeleton_spawn_egg": "Crimson Skeleton Spawn Egg",
   "entity.nemos-creatures.warped_skeleton": "Warped Skeleton",
-  "item.nemos-creatures.warped_skeleton_spawn_egg": "Warped Skeleton Spawn Egg"
+  "item.nemos-creatures.warped_skeleton_spawn_egg": "Warped Skeleton Spawn Egg",
+  "entity.nemos-creatures.wild_boar": "Wild Boar",
+  "item.nemos-creatures.wild_boar_spawn_egg": "Wild Boar Spawn Egg"
 }
