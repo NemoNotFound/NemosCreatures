@@ -27,6 +27,7 @@ public class ModItems {
     public static final Item SCORCHED_CREEPER_SPAWN_EGG = registerSpawnEggItem(Entities.SCORCHED_CREEPER, 7497817, 15000247);
     public static final Item CRIMSON_SKELETON_SPAWN_EGG = registerSpawnEggItem(Entities.CRIMSON_SKELETON, 11439758, 11280416);
     public static final Item WARPED_SKELETON_SPAWN_EGG = registerSpawnEggItem(Entities.WARPED_SKELETON, 12909551, 1474182);
+    public static final Item BOAR_SPAWN_EGG = registerSpawnEggItem(Entities.WILD_BOAR, 1971725, 4798503);
 
     private static SpawnEggItem registerSpawnEggItem(EntityType<? extends MobEntity> entityType, int primaryColor, int secondaryColor) {
         String entityName = retrieveEntityName(entityType);
