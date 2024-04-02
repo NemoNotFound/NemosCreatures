@@ -18,7 +18,7 @@ public class WildBoarEntityModel<T extends WildBoarEntity> extends SinglePartEnt
         this.head = wildBoar.getChild("head");
     }
 
-    public static TexturedModelData getTexturedModelData(Dilation dilation) {
+    public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData modelPartData = modelData.getRoot();
         ModelPartData wildBoarModelPartData = modelPartData.addChild("wild_boar", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 8.0F, -7.0F));
