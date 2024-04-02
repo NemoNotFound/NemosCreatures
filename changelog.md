@@ -1,4 +1,6 @@
-# Changelog v1.5.2
+# Changelog v1.6
 
 ## Additions
-- Attack effects now also apply on easy mode
+- Add Wild Boar to forests
+
+For more information check the [wiki](https://www.nemonotfound.com/minecraft-mods/nemos-creatures).

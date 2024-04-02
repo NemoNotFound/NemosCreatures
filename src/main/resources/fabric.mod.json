@@ -2,8 +2,8 @@
 	"schemaVersion": 1,
 	"id": "nemos-creatures",
 	"version": "${version}",
-	"name": "nemos-creatures",
-	"description": "This mod brings new biome specific mods to Minecraft!",
+	"name": "Nemo's Creatures",
+	"description": "This mod brings new biome specific mobs to Minecraft!",
 	"authors": [
 		"NemoNotFound"
 	],
