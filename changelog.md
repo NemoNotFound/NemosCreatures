@@ -1,4 +1,4 @@
-# Changelog v1.6
+# Changelog v1.6.0
 
 ## Additions
 - Add Wild Boar to forests
