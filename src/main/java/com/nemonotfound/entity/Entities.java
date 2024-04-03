@@ -138,7 +138,7 @@ public class Entities {
         BiomeModifications.addSpawn(desert, SpawnGroup.MONSTER, SCORCHED_CREEPER, 100, 4, 4);
         BiomeModifications.addSpawn(crimsonForest, SpawnGroup.MONSTER, CRIMSON_SKELETON, 40, 1, 1);
         BiomeModifications.addSpawn(warpedForest, SpawnGroup.MONSTER, WARPED_SKELETON, 60, 1, 1);
-        BiomeModifications.addSpawn(forest, SpawnGroup.CREATURE, WILD_BOAR, 150, 2, 4);
+        BiomeModifications.addSpawn(forest, SpawnGroup.CREATURE, WILD_BOAR, 12, 2, 4);
 
         removeMobFromBiome(jungle, skeletonKey);
         removeMobFromBiome(jungle, spiderKey);
