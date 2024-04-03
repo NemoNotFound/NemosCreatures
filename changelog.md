@@ -1,6 +1,6 @@
-# Changelog v1.6.0
+# Changelog v1.6.1
 
-## Additions
-- Add Wild Boar to forests
+## Changes
+- Wild Boar spawns now during day
 
 For more information check the [wiki](https://www.nemonotfound.com/minecraft-mods/nemos-creatures).

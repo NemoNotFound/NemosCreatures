@@ -32,10 +32,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.LocalDifficulty;
-import net.minecraft.world.ServerWorldAccess;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
+import net.minecraft.world.*;
 import net.minecraft.world.biome.Biome;
 import org.jetbrains.annotations.Nullable;
 
@@ -100,16 +97,16 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
                 .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 1);
     }
 
-    public static boolean isNight(WorldAccess world) {
-        return world.getLunarTime() < 22812 && world.getLunarTime() > 13188;
-    }
-
     public static boolean canSpawn(EntityType<WildBoarEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
         RegistryEntry<Biome> registryEntry = world.getBiome(pos);
         if (registryEntry.isIn(BiomeTags.IS_FOREST)) {
-            return isNight(world) && world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON);
+            return isLightLevelValidForNaturalSpawn(world, pos) && world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON);
         }
         return WildBoarEntity.isValidNaturalSpawn(type, world, spawnReason, pos, random);
+    }
+
+    protected static boolean isLightLevelValidForNaturalSpawn(BlockRenderView world, BlockPos pos) {
+        return world.getBaseLightLevel(pos, 0) > 8;
     }
 
     public boolean isPlayerTooClose(LivingEntity entity) {
