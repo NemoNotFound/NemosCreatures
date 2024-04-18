@@ -44,7 +44,7 @@ public class NemosCreaturesClient implements ClientModInitializer {
     public static final EntityModelLayer WARPED_SKELETON = new EntityModelLayer(new Identifier(MOD_ID, "warped_skeleton"), "main");
     public static final EntityModelLayer WARPED_SKELETON_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "warped_skeleton"), "inner_armor");
     public static final EntityModelLayer WARPED_SKELETON_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "warped_skeleton"), "outer_armor");
-    public static final EntityModelLayer BOAR = new EntityModelLayer(new Identifier(MOD_ID, "boar"), "main");
+    public static final EntityModelLayer BOAR = new EntityModelLayer(new Identifier(MOD_ID, "wild_boar"), "main");
 
     @Override
     public void onInitializeClient() {
@@ -81,6 +81,6 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_OUTER_ARMOR, () -> armorModelData);
-        EntityModelLayerRegistry.registerModelLayer(BOAR, () -> WildBoarEntityModel.getTexturedModelData());
+        EntityModelLayerRegistry.registerModelLayer(BOAR, WildBoarEntityModel::getTexturedModelData);
     }
 }
