@@ -1,6 +1,6 @@
 # Changelog v1.6.1
 
 ## Changes
-- Wild Boar spawns now during day
+- Slightly changed the texture of the wild boar
 
 For more information check the [wiki](https://www.nemonotfound.com/minecraft-mods/nemos-creatures).
