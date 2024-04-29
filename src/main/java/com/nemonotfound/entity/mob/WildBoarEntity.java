@@ -81,11 +81,11 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
     }
 
     @Override
-    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
         if (entityData == null) {
             entityData = new PassiveEntity.PassiveData(1.0f);
         }
-        return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
+        return super.initialize(world, difficulty, spawnReason, entityData);
     }
 
     public static DefaultAttributeContainer.Builder createBoarAttributes() {
@@ -127,9 +127,9 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
     }
 
     @Override
-    protected void initDataTracker() {
-        super.initDataTracker();
-        this.dataTracker.startTracking(ATTACK, false);
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(ATTACK, false);
     }
 
     @Override

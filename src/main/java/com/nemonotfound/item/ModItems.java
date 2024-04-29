@@ -1,7 +1,6 @@
 package com.nemonotfound.item;
 
 import com.nemonotfound.entity.Entities;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.MobEntity;
@@ -31,7 +30,7 @@ public class ModItems {
 
     private static SpawnEggItem registerSpawnEggItem(EntityType<? extends MobEntity> entityType, int primaryColor, int secondaryColor) {
         String entityName = retrieveEntityName(entityType);
-        SpawnEggItem spawnEggItem = new SpawnEggItem(entityType, primaryColor, secondaryColor, new FabricItemSettings());
+        SpawnEggItem spawnEggItem = new SpawnEggItem(entityType, primaryColor, secondaryColor, new Item.Settings());
         log.debug("Registering spawn egg: " + entityName + "_spawn_egg");
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, entityName + "_spawn_egg"), spawnEggItem);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(spawnEggItem));
