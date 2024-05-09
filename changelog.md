@@ -1,6 +1,6 @@
-# Changelog v1.6.1
+# Changelog v1.6.3
 
-## Changes
-- Slightly changed the texture of the wild boar
+## Fixes
+- Kill a mob advancement doesn't work
 
 For more information check the [wiki](https://www.nemonotfound.com/minecraft-mods/nemos-creatures).
