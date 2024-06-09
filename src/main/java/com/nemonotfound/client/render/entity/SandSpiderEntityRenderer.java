@@ -11,7 +11,7 @@ import static com.nemonotfound.NemosCreaturesClient.SAND_SPIDER;
 
 public class SandSpiderEntityRenderer extends SpiderEntityRenderer<SandSpiderEntity> {
 
-    private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/entity/spider/sand_spider.png");
+    private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/spider/sand_spider.png");
     private static final float SCALE = 0.4f;
 
     public SandSpiderEntityRenderer(EntityRendererFactory.Context context) {

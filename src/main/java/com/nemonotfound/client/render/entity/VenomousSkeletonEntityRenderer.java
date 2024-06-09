@@ -14,7 +14,7 @@ import static com.nemonotfound.NemosCreatures.MOD_ID;
 @Environment(value= EnvType.CLIENT)
 public class VenomousSkeletonEntityRenderer extends SkeletonEntityRenderer {
 
-    private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/entity/skeleton/venomous_skeleton.png");
+    private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/skeleton/venomous_skeleton.png");
 
     public VenomousSkeletonEntityRenderer(EntityRendererFactory.Context context) {
         super(context, NemosCreaturesClient.VENOMOUS_SKELETON,NemosCreaturesClient.VENOMOUS_SKELETON_INNER_ARMOR,

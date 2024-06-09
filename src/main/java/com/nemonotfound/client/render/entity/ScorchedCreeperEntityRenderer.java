@@ -9,7 +9,7 @@ import static com.nemonotfound.NemosCreatures.MOD_ID;
 
 public class ScorchedCreeperEntityRenderer extends CreeperEntityRenderer {
 
-    private static final Identifier TEXTURE = new Identifier(MOD_ID ,"textures/entity/creeper/scorched_creeper.png");
+    private static final Identifier TEXTURE = Identifier.of(MOD_ID ,"textures/entity/creeper/scorched_creeper.png");
 
     public ScorchedCreeperEntityRenderer(EntityRendererFactory.Context context) {
         super(context);

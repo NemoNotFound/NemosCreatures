@@ -264,15 +264,6 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
         this.dataTracker.set(ATTACK, attacking);
     }
 
-    @Override
-    public boolean tryAttack(Entity target) {
-        boolean bl = target.damage(this.getDamageSources().mobAttack(this), (int)this.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE));
-        if (bl) {
-            this.applyDamageEffects(this, target);
-        }
-        return bl;
-    }
-
     class AttackGoal
             extends MeleeAttackGoal {
 

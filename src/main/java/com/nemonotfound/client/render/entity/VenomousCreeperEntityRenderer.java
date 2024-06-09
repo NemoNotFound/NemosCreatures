@@ -9,7 +9,7 @@ import static com.nemonotfound.NemosCreatures.MOD_ID;
 
 public class VenomousCreeperEntityRenderer extends CreeperEntityRenderer {
 
-    private static final Identifier TEXTURE = new Identifier(MOD_ID ,"textures/entity/creeper/venomous_creeper.png");
+    private static final Identifier TEXTURE = Identifier.of(MOD_ID ,"textures/entity/creeper/venomous_creeper.png");
 
     public VenomousCreeperEntityRenderer(EntityRendererFactory.Context context) {
         super(context);

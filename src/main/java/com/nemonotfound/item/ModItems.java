@@ -32,7 +32,7 @@ public class ModItems {
         String entityName = retrieveEntityName(entityType);
         SpawnEggItem spawnEggItem = new SpawnEggItem(entityType, primaryColor, secondaryColor, new Item.Settings());
         log.debug("Registering spawn egg: " + entityName + "_spawn_egg");
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, entityName + "_spawn_egg"), spawnEggItem);
+        Registry.register(Registries.ITEM, Identifier.of(MOD_ID, entityName + "_spawn_egg"), spawnEggItem);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(spawnEggItem));
 
         return spawnEggItem;
@@ -47,6 +47,4 @@ public class ModItems {
     public static void registerItems() {
         log.info("Register items");
     }
-
-
 }

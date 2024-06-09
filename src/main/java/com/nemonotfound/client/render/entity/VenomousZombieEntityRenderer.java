@@ -13,7 +13,7 @@ import static com.nemonotfound.NemosCreatures.MOD_ID;
 
 public class VenomousZombieEntityRenderer extends BipedEntityRenderer<VenomousZombieEntity, ZombieEntityModel<VenomousZombieEntity>> {
 
-    private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/entity/zombie/venomous_zombie.png");
+    private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/zombie/venomous_zombie.png");
 
     public VenomousZombieEntityRenderer(EntityRendererFactory.Context context) {
         this(context, NemosCreaturesClient.VENOMOUS_ZOMBIE,  NemosCreaturesClient.VENOMOUS_ZOMBIE_INNER_ARMOR,  NemosCreaturesClient.VENOMOUS_ZOMBIE_OUTER_ARMOR);

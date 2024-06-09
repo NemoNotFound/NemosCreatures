@@ -23,28 +23,28 @@ public class NemosCreaturesClient implements ClientModInitializer {
     TexturedModelData armorModelData = TexturedModelData.of(ArmorEntityModel.getModelData(ARMOR_DILATION), 64, 32);
     TexturedModelData hatModelData = TexturedModelData.of(ArmorEntityModel.getModelData(HAT_DILATION), 64, 32);
 
-    public static final EntityModelLayer VENOMOUS_SKELETON = new EntityModelLayer(new Identifier(MOD_ID, "venomous_skeleton"), "main");
-    public static final EntityModelLayer VENOMOUS_SKELETON_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "venomous_skeleton"), "inner_armor");
-    public static final EntityModelLayer VENOMOUS_SKELETON_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "venomous_skeleton"), "outer_armor");
-    public static final EntityModelLayer VENOMOUS_SKELETON_OUTER = new EntityModelLayer(new Identifier(MOD_ID, "venomous_skeleton"), "outer");
-    public static final EntityModelLayer VENOMOUS_SPIDER = new EntityModelLayer(new Identifier(MOD_ID, "venomous_spider"), "main");
-    public static final EntityModelLayer VENOMOUS_ZOMBIE = new EntityModelLayer(new Identifier(MOD_ID, "venomous_zombie"), "main");
-    public static final EntityModelLayer VENOMOUS_ZOMBIE_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "venomous_zombie"), "inner_armor");
-    public static final EntityModelLayer VENOMOUS_ZOMBIE_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "venomous_zombie"), "outer_armor");
-    public static final EntityModelLayer SCORCHED_SKELETON = new EntityModelLayer(new Identifier(MOD_ID, "scorched_skeleton"), "main");
-    public static final EntityModelLayer SCORCHED_SKELETON_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "scorched_skeleton"), "inner_armor");
-    public static final EntityModelLayer SCORCHED_SKELETON_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "scorched_skeleton"), "outer_armor");
-    public static final EntityModelLayer SAND_SPIDER = new EntityModelLayer(new Identifier(MOD_ID, "sand_spider"), "main");
-    public static final EntityModelLayer MUMMY = new EntityModelLayer(new Identifier(MOD_ID, "mummy"), "main");
-    public static final EntityModelLayer MUMMY_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "mummy"), "inner_armor");
-    public static final EntityModelLayer MUMMY_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "mummy"), "outer_armor");
-    public static final EntityModelLayer CRIMSON_SKELETON = new EntityModelLayer(new Identifier(MOD_ID, "crimson_skeleton"), "main");
-    public static final EntityModelLayer CRIMSON_SKELETON_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "crimson_skeleton"), "inner_armor");
-    public static final EntityModelLayer CRIMSON_SKELETON_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "crimson_skeleton"), "outer_armor");
-    public static final EntityModelLayer WARPED_SKELETON = new EntityModelLayer(new Identifier(MOD_ID, "warped_skeleton"), "main");
-    public static final EntityModelLayer WARPED_SKELETON_INNER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "warped_skeleton"), "inner_armor");
-    public static final EntityModelLayer WARPED_SKELETON_OUTER_ARMOR = new EntityModelLayer(new Identifier(MOD_ID, "warped_skeleton"), "outer_armor");
-    public static final EntityModelLayer BOAR = new EntityModelLayer(new Identifier(MOD_ID, "wild_boar"), "main");
+    public static final EntityModelLayer VENOMOUS_SKELETON = new EntityModelLayer(Identifier.of(MOD_ID, "venomous_skeleton"), "main");
+    public static final EntityModelLayer VENOMOUS_SKELETON_INNER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "venomous_skeleton"), "inner_armor");
+    public static final EntityModelLayer VENOMOUS_SKELETON_OUTER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "venomous_skeleton"), "outer_armor");
+    public static final EntityModelLayer VENOMOUS_SKELETON_OUTER = new EntityModelLayer(Identifier.of(MOD_ID, "venomous_skeleton"), "outer");
+    public static final EntityModelLayer VENOMOUS_SPIDER = new EntityModelLayer(Identifier.of(MOD_ID, "venomous_spider"), "main");
+    public static final EntityModelLayer VENOMOUS_ZOMBIE = new EntityModelLayer(Identifier.of(MOD_ID, "venomous_zombie"), "main");
+    public static final EntityModelLayer VENOMOUS_ZOMBIE_INNER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "venomous_zombie"), "inner_armor");
+    public static final EntityModelLayer VENOMOUS_ZOMBIE_OUTER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "venomous_zombie"), "outer_armor");
+    public static final EntityModelLayer SCORCHED_SKELETON = new EntityModelLayer(Identifier.of(MOD_ID, "scorched_skeleton"), "main");
+    public static final EntityModelLayer SCORCHED_SKELETON_INNER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "scorched_skeleton"), "inner_armor");
+    public static final EntityModelLayer SCORCHED_SKELETON_OUTER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "scorched_skeleton"), "outer_armor");
+    public static final EntityModelLayer SAND_SPIDER = new EntityModelLayer(Identifier.of(MOD_ID, "sand_spider"), "main");
+    public static final EntityModelLayer MUMMY = new EntityModelLayer(Identifier.of(MOD_ID, "mummy"), "main");
+    public static final EntityModelLayer MUMMY_INNER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "mummy"), "inner_armor");
+    public static final EntityModelLayer MUMMY_OUTER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "mummy"), "outer_armor");
+    public static final EntityModelLayer CRIMSON_SKELETON = new EntityModelLayer(Identifier.of(MOD_ID, "crimson_skeleton"), "main");
+    public static final EntityModelLayer CRIMSON_SKELETON_INNER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "crimson_skeleton"), "inner_armor");
+    public static final EntityModelLayer CRIMSON_SKELETON_OUTER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "crimson_skeleton"), "outer_armor");
+    public static final EntityModelLayer WARPED_SKELETON = new EntityModelLayer(Identifier.of(MOD_ID, "warped_skeleton"), "main");
+    public static final EntityModelLayer WARPED_SKELETON_INNER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "warped_skeleton"), "inner_armor");
+    public static final EntityModelLayer WARPED_SKELETON_OUTER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "warped_skeleton"), "outer_armor");
+    public static final EntityModelLayer BOAR = new EntityModelLayer(Identifier.of(MOD_ID, "wild_boar"), "main");
 
     @Override
     public void onInitializeClient() {

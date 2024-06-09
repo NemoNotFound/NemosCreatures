@@ -10,7 +10,7 @@ import static com.nemonotfound.NemosCreatures.MOD_ID;
 
 public class CrimsonSkeletonEntityRenderer extends SkeletonEntityRenderer {
 
-    private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/entity/skeleton/crimson_skeleton.png");
+    private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/skeleton/crimson_skeleton.png");
 
     public CrimsonSkeletonEntityRenderer(EntityRendererFactory.Context context) {
         super(context, NemosCreaturesClient.CRIMSON_SKELETON,NemosCreaturesClient.CRIMSON_SKELETON_INNER_ARMOR,

@@ -10,7 +10,7 @@ import static com.nemonotfound.NemosCreatures.MOD_ID;
 
 public class WarpedSkeletonEntityRenderer extends SkeletonEntityRenderer {
 
-    private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/entity/skeleton/warped_skeleton.png");
+    private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/skeleton/warped_skeleton.png");
 
     public WarpedSkeletonEntityRenderer(EntityRendererFactory.Context context) {
         super(context, NemosCreaturesClient.WARPED_SKELETON,NemosCreaturesClient.WARPED_SKELETON_INNER_ARMOR,

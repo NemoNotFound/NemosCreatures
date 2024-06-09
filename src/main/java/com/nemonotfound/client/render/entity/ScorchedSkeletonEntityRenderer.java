@@ -10,7 +10,7 @@ import static com.nemonotfound.NemosCreatures.MOD_ID;
 
 public class ScorchedSkeletonEntityRenderer extends SkeletonEntityRenderer {
 
-    private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/entity/skeleton/scorched_skeleton.png");
+    private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/skeleton/scorched_skeleton.png");
 
     public ScorchedSkeletonEntityRenderer(EntityRendererFactory.Context context) {
         super(context, NemosCreaturesClient.SCORCHED_SKELETON,NemosCreaturesClient.SCORCHED_SKELETON_INNER_ARMOR,

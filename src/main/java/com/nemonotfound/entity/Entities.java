@@ -1,8 +1,10 @@
 package com.nemonotfound.entity;
 
 import com.nemonotfound.entity.mob.*;
+import com.nemonotfound.registry.tag.ModBiomeTags;
 import net.fabricmc.fabric.api.biome.v1.*;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.SpawnLocationTypes;
@@ -10,7 +12,6 @@ import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.Heightmap;
 
@@ -21,57 +22,57 @@ import static com.nemonotfound.NemosCreatures.MOD_ID;
 public class Entities {
 
     public static final EntityType<VenomousSkeletonEntity> VENOMOUS_SKELETON = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "venomous_skeleton"),
+            Identifier.of(MOD_ID, "venomous_skeleton"),
             EntityType.Builder.create(VenomousSkeletonEntity::new, SpawnGroup.MONSTER)
                     .dimensions(0.6f, 1.99f)
                     .build());
     public static final EntityType<VenomousSpiderEntity> VENOMOUS_SPIDER = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "venomous_spider"),
+            Identifier.of(MOD_ID, "venomous_spider"),
             EntityType.Builder.create(VenomousSpiderEntity::new, SpawnGroup.MONSTER)
                     .dimensions(0.8f, 0.6f)
                     .build());
     public static final EntityType<VenomousZombieEntity> VENOMOUS_ZOMBIE = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "venomous_zombie"),
+            Identifier.of(MOD_ID, "venomous_zombie"),
             EntityType.Builder.create(VenomousZombieEntity::new, SpawnGroup.MONSTER)
                     .dimensions(0.6f, 1.95f)
                     .build());
     public static final EntityType<VenomousCreeperEntity> VENOMOUS_CREEPER = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "venomous_creeper"),
+            Identifier.of(MOD_ID, "venomous_creeper"),
             EntityType.Builder.create(VenomousCreeperEntity::new, SpawnGroup.MONSTER)
                     .dimensions(0.6f, 1.7f)
                     .build());
     public static final EntityType<ScorchedSkeletonEntity> SCORCHED_SKELETON = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "scorched_skeleton"),
+            Identifier.of(MOD_ID, "scorched_skeleton"),
             EntityType.Builder.create(ScorchedSkeletonEntity::new, SpawnGroup.MONSTER)
                     .dimensions(0.6f, 1.99f)
                     .build());
     public static final EntityType<SandSpiderEntity> SAND_SPIDER = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "sand_spider"),
+            Identifier.of(MOD_ID, "sand_spider"),
             EntityType.Builder.create(SandSpiderEntity::new, SpawnGroup.MONSTER)
                     .dimensions(0.4f, 0.2f)
                     .build());
     public static final EntityType<MummyEntity> MUMMY = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "mummy"),
+            Identifier.of(MOD_ID, "mummy"),
             EntityType.Builder.create(MummyEntity::new, SpawnGroup.MONSTER)
                     .dimensions(0.6f, 1.95f)
                     .build());
     public static final EntityType<ScorchedCreeperEntity> SCORCHED_CREEPER = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "scorched_creeper"),
+            Identifier.of(MOD_ID, "scorched_creeper"),
             EntityType.Builder.create(ScorchedCreeperEntity::new, SpawnGroup.MONSTER)
                     .dimensions(0.6f, 1.7f)
                     .build());
     public static final EntityType<CrimsonSkeletonEntity> CRIMSON_SKELETON = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "crimson_skeleton"),
+            Identifier.of(MOD_ID, "crimson_skeleton"),
             EntityType.Builder.create(CrimsonSkeletonEntity::new, SpawnGroup.MONSTER)
                     .dimensions(0.6f, 1.99f)
                     .build());
     public static final EntityType<WarpedSkeletonEntity> WARPED_SKELETON = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "warped_skeleton"),
+            Identifier.of(MOD_ID, "warped_skeleton"),
             EntityType.Builder.create(WarpedSkeletonEntity::new, SpawnGroup.MONSTER)
                     .dimensions(0.6f, 1.99f)
                     .build());
     public static final EntityType<WildBoarEntity> WILD_BOAR = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MOD_ID, "wild_boar"),
+            Identifier.of(MOD_ID, "wild_boar"),
             EntityType.Builder.create(WildBoarEntity::new, SpawnGroup.CREATURE)
                     .dimensions(0.9f, 0.9f)
                     .build());
@@ -121,11 +122,11 @@ public class Entities {
         String zombieKey = "entity.minecraft.zombie";
         String creeperKey = "entity.minecraft.creeper";
 
-        Predicate<BiomeSelectionContext> jungle = BiomeSelectors.tag(BiomeTags.IS_JUNGLE);
-        Predicate<BiomeSelectionContext> desert = BiomeSelectors.tag(BiomeTags.of("is_desert"));
-        Predicate<BiomeSelectionContext> crimsonForest = BiomeSelectors.tag(BiomeTags.of("is_crimson_forest"));
-        Predicate<BiomeSelectionContext> warpedForest = BiomeSelectors.tag(BiomeTags.of("is_warped_forest"));
-        Predicate<BiomeSelectionContext> forest = BiomeSelectors.tag(BiomeTags.IS_FOREST);
+        Predicate<BiomeSelectionContext> jungle = BiomeSelectors.tag(ConventionalBiomeTags.IS_JUNGLE);
+        Predicate<BiomeSelectionContext> desert = BiomeSelectors.tag(ConventionalBiomeTags.IS_DESERT);
+        Predicate<BiomeSelectionContext> crimsonForest = BiomeSelectors.tag(ModBiomeTags.IS_CRIMSON_FOREST);
+        Predicate<BiomeSelectionContext> warpedForest = BiomeSelectors.tag(ModBiomeTags.IS_WARPED_FOREST);
+        Predicate<BiomeSelectionContext> forest = BiomeSelectors.tag(ConventionalBiomeTags.IS_FOREST);
 
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_SKELETON, 100, 4, 4);
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_SPIDER, 100, 4, 4);
@@ -150,7 +151,7 @@ public class Entities {
     }
 
     private static void removeMobFromBiome(Predicate<BiomeSelectionContext> biomeSelection, String entityKey) {
-        BiomeModification biomeModification = BiomeModifications.create(new Identifier(entityKey));
+        BiomeModification biomeModification = BiomeModifications.create(Identifier.of(entityKey));
 
         biomeModification.add(ModificationPhase.REMOVALS, biomeSelection, context ->
                 context.getSpawnSettings()

@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 public class VenomousSkeletonEntity extends AbstractSkeletonEntity {
 
@@ -45,8 +46,8 @@ public class VenomousSkeletonEntity extends AbstractSkeletonEntity {
     }
 
     @Override
-    protected PersistentProjectileEntity createArrowProjectile(ItemStack arrow, float damageModifier) {
-        PersistentProjectileEntity persistentProjectileEntity = super.createArrowProjectile(arrow, damageModifier);
+    protected PersistentProjectileEntity createArrowProjectile(ItemStack arrow, float damageModifier, @Nullable ItemStack shotFrom) {
+        PersistentProjectileEntity persistentProjectileEntity = super.createArrowProjectile(arrow, damageModifier, shotFrom);
         if (persistentProjectileEntity instanceof ArrowEntity) {
             ((ArrowEntity)persistentProjectileEntity).addEffect(new StatusEffectInstance(StatusEffects.POISON, 100));
         }

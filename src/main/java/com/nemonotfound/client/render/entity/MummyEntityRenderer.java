@@ -13,7 +13,7 @@ import static com.nemonotfound.NemosCreatures.MOD_ID;
 
 public class MummyEntityRenderer extends BipedEntityRenderer<MummyEntity, ZombieEntityModel<MummyEntity>> {
 
-    private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/entity/zombie/mummy.png");
+    private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/zombie/mummy.png");
 
     public MummyEntityRenderer(EntityRendererFactory.Context context) {
         this(context, NemosCreaturesClient.MUMMY,  NemosCreaturesClient.MUMMY_INNER_ARMOR,  NemosCreaturesClient.MUMMY_OUTER_ARMOR);

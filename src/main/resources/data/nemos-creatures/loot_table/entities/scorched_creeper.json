@@ -22,10 +22,11 @@
                 "max": 1.0,
                 "min": 0.0
               },
-              "function": "minecraft:looting_enchant"
+              "enchantment": "minecraft:looting",
+              "function": "minecraft:enchanted_count_increase"
             }
           ],
-          "name": "minecraft:string"
+          "name": "minecraft:gunpowder"
         }
       ],
       "rolls": 1.0
@@ -34,36 +35,22 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "condition": "minecraft:killed_by_player"
+          "condition": "minecraft:entity_properties",
+          "entity": "attacker",
+          "predicate": {
+            "type": "#minecraft:skeletons"
+          }
         }
       ],
       "entries": [
         {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": -1.0
-              },
-              "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 0.0
-              },
-              "function": "minecraft:looting_enchant"
-            }
-          ],
-          "name": "minecraft:spider_eye"
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "minecraft:creeper_drop_music_discs"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "nemos-creatures:entities/venomous_spider"
+  "random_sequence": "nemos-creatures:entities/scorched_creeper"
 }

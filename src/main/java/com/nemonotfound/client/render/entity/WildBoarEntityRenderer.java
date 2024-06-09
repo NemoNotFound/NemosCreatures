@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 import static com.nemonotfound.NemosCreatures.MOD_ID;
 
 public class WildBoarEntityRenderer extends MobEntityRenderer<WildBoarEntity, WildBoarEntityModel<WildBoarEntity>> {
-    private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/entity/pig/wild_boar.png");
+    private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/pig/wild_boar.png");
 
     public WildBoarEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new WildBoarEntityModel<>(context.getPart(NemosCreaturesClient.BOAR)), 0.7f);

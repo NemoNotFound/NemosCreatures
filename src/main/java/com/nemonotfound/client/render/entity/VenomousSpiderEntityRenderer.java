@@ -11,7 +11,7 @@ import static com.nemonotfound.NemosCreaturesClient.VENOMOUS_SPIDER;
 
 public class VenomousSpiderEntityRenderer extends SpiderEntityRenderer<VenomousSpiderEntity> {
 
-    private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/entity/spider/venomous_spider.png");
+    private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/spider/venomous_spider.png");
     private static final float SCALE = 0.8f;
 
     public VenomousSpiderEntityRenderer(EntityRendererFactory.Context context) {

@@ -16,6 +16,7 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -90,7 +91,7 @@ public class CrimsonSkeletonEntity extends AbstractSkeletonEntity {
     protected void initEquipment(Random random, LocalDifficulty localDifficulty) {
         super.initEquipment(random, localDifficulty);
         ItemStack bow = new ItemStack(Items.BOW);
-        bow.addEnchantment(Enchantments.FLAME, 1);
+        bow.addEnchantment(this.getWorld().getRegistryManager().get(RegistryKeys.ENCHANTMENT).entryOf(Enchantments.FLAME), 1);
         this.equipStack(EquipmentSlot.MAINHAND, bow);
     }
 
@@ -104,8 +105,9 @@ public class CrimsonSkeletonEntity extends AbstractSkeletonEntity {
 
     @Override
     public void shootAt(LivingEntity target, float pullProgress) {
-        ItemStack itemStack = this.getProjectileType(this.getStackInHand(ProjectileUtil.getHandPossiblyHolding(this, Items.BOW)));
-        PersistentProjectileEntity persistentProjectileEntity = this.createArrowProjectile(itemStack, pullProgress);
+        ItemStack bow = this.getStackInHand(ProjectileUtil.getHandPossiblyHolding(this, Items.BOW));
+        ItemStack projectile = this.getProjectileType(bow);
+        PersistentProjectileEntity persistentProjectileEntity = this.createArrowProjectile(projectile, pullProgress, bow);
         double d = target.getX() - this.getX();
         double e = target.getBodyY(0.3333333333333333) - persistentProjectileEntity.getY();
         double f = target.getZ() - this.getZ();

@@ -18,6 +18,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 public class ScorchedSkeletonEntity extends AbstractSkeletonEntity {
 
@@ -83,8 +84,8 @@ public class ScorchedSkeletonEntity extends AbstractSkeletonEntity {
     }
 
     @Override
-    protected PersistentProjectileEntity createArrowProjectile(ItemStack arrow, float damageModifier) {
-        PersistentProjectileEntity persistentProjectileEntity = super.createArrowProjectile(arrow, damageModifier);
+    protected PersistentProjectileEntity createArrowProjectile(ItemStack arrow, float damageModifier, @Nullable ItemStack shotFrom) {
+        PersistentProjectileEntity persistentProjectileEntity = super.createArrowProjectile(arrow, damageModifier, shotFrom);
         if (persistentProjectileEntity instanceof ArrowEntity) {
             ((ArrowEntity)persistentProjectileEntity).addEffect(new StatusEffectInstance(StatusEffects.HUNGER, 100));
         }
