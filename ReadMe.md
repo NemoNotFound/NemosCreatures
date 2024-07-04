@@ -1,39 +1,46 @@
-# Nemo's Creatures
+![Nemo's Creatures](https://github.com/NemoNotFound/NemosCreatures/blob/master/src/main/resources/assets/nemos-creatures/title.png?raw=true)
+<br><br>
 
-Nemo's Creatures will bring some new biome specific mobs to Minecraft!
-This mod is WIP, so feel free to give me your feedback, suggestions and wishes.
-I would appreciate it a lot!
+<p align="center">
+  Nemo's Creatures adds some new biome specific mobs to Minecraft! <br>
+  This mod is WIP, so feel free to give me your feedback, suggestions and wishes. <br>
+  I would appreciate it a lot!
+</p>
 
-I love to create mods for Minecraft, so I hope you like what I do.
-Either way feel free to give me your feedback and suggestions, either in the comments or on my [Discord](https://discord.com/invite/yxs9dga) :)
+<div align="center">
+  <a href="https://discord.com/invite/yxs9dga" target="_blank">
+    <img src="https://github.com/NemoNotFound/NemoNotFound/blob/master/resources/svg/join_discord_button.svg?raw=true" alt="ko-fi donation" width="200">
+  </a>
+</div>
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J5UXAPK)
+<p align="center">
+  <br>
+  I love to create mods for Minecraft and wish to live off it one day, so I hope you like what I do. <br>
+  Either way feel free to give me your feedback and suggestions, either on my Discord or <a href="https://github.com/NemoNotFound/NemosCreatures/discussions/">here</a> :)
+  <br>
+  For more information and to see the mobs check the <a href="https://www.nemonotfound.com/minecraft-mods/nemos-creatures/wiki">wiki</a>.
+</p>
 
-## Features
+<br>
 
-- Jungle
-  - "Venomous Skeleton" spawns instead of "Skeleton". It shoots poisonous arrows and sometimes also drops them when dying.
-  - "Venomous Spider" spawns instead of "Spider". It's bites are toxic, so keep distance!
-  - "Venomous Zombie" spawns instead of "Zombie". His hands are covered with poison, so don't let him touch you!
-  - "Venomous Creeper" spawns instead of "Creeper". Don't let him explode, but if you do, then make sure to not be in the middle of the explosion, because his explosion creates a poisonous cloud!
-- Desert
-  - "Scorched Skeleton" spawns instead of "Skeleton". It's arrows dries you out and lets you starve to death, so better dodge them!
-  - "Sand Spider" spawns instead of "Spider". It's a small spider, but don't let this fool you. Their bites will hurt a lot and make you starve! Oh, and he will dry you out!
-  - "Mummy" spawns instead of "Zombie". If I could choose to be punched by a "Mummy" or a "Zombie", I'd choose the zombie everytime! Due to the preservation of it's body, it has 50% more health and 100% more damage, but luckily it gets slowed down by the bandages, so run away!
-  - "Scorched Creeper" spawns instead of "Creeper". His explosion spreads particles which will dry you out and make you starve, so better don't let him explode!
-- Crimson Forest
-  - "Crimson Skeleton". His time in the crimson forest made him learn how to work with fire. He's always equipped with a flame bow and the worst thing is, that the flame's heat increases the arrow's thermal energy and makes it shoot even faster! So get a shield, a splash potion of water or simply run!
-- Warped Forest
-  - "Warped Skeleton". He definitely spent too much time with endermen. Its arrows won't just shoot, but teleport to you!
-- Forests
-  - "Wild Boar". Don't get too close, or he might attack you!
+<div align="center">
+  <a href="https://ko-fi.com/J3J5UXAPK" target="_blank">
+    <img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="ko-fi donation">
+  </a>
+</div>
 
-For more information check the [wiki](https://www.nemonotfound.com/minecraft-mods/nemos-creatures).
+<br>
 
-## Downloads
-[CurseForge](https://curseforge.com/minecraft/mc-mods/nemos-creatures)<br>
-[Modrinth]( https://modrinth.com/mod/nemos-creatures)
+<h2 align="center">Downloads</h2>
+<p align="center">
+  <a href="https://www.curseforge.com/minecraft/mc-mods/nemos-creatures">CurseForge</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="https://modrinth.com/mod/nemos-creatures">Modrinth</a>
+</p>
 
-<br></br>
-If you need a Minecraft Server, go check out Kinetic Hosting and save 15% for your first month with the code "Nemo"! Just click here on the banner!
-[![](https://imgur.com/lguE51t.png)](https://billing.kinetichosting.net/aff.php?aff=679)
+<br>
+
+<p align="center">
+  If you need a Minecraft Server, go check out Kinetic Hosting and save 15% for your first month with the code "Nemo"! Just click here on the banner! <br>
+  <a href="https://billing.kinetichosting.net/aff.php?aff=679">
+    <img src="https://imgur.com/lguE51t.png" alt="Kinetic Hosting Minecraft Server">
+  </a>
+</p>
