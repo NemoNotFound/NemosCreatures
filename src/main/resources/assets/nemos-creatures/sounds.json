@@ -1,0 +1,31 @@
+{
+  "necromancer_ambient": {
+    "sounds":[
+      "nemos-creatures:necromancer_ambient_1",
+      "nemos-creatures:necromancer_ambient_2",
+      "nemos-creatures:necromancer_ambient_3"
+    ]
+  },
+  "necromancer_hurt": {
+    "sounds":[
+      "nemos-creatures:necromancer_hurt_1",
+      "nemos-creatures:necromancer_hurt_2",
+      "nemos-creatures:necromancer_hurt_3",
+      "nemos-creatures:necromancer_hurt_24"
+    ]
+  },
+  "necromancer_step": {
+    "sounds":[
+      "nemos-creatures:necromancer_step_1",
+      "nemos-creatures:necromancer_step_2",
+      "nemos-creatures:necromancer_step_3",
+      "nemos-creatures:necromancer_step_4"
+    ]
+  },
+  "necromancer_death": {
+    "sounds":[
+      "nemos-creatures:necromancer_death_1",
+      "nemos-creatures:necromancer_death_2"
+    ]
+  }
+}

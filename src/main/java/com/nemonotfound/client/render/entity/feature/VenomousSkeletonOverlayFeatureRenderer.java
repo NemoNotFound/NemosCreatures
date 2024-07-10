@@ -25,7 +25,7 @@ public class VenomousSkeletonOverlayFeatureRenderer<T extends MobEntity & Ranged
 
     public VenomousSkeletonOverlayFeatureRenderer(FeatureRendererContext<T, M> context, EntityModelLoader loader) {
         super(context);
-        this.model = new SkeletonEntityModel(loader.getModelPart(VENOMOUS_SKELETON_OUTER));
+        this.model = new SkeletonEntityModel<>(loader.getModelPart(VENOMOUS_SKELETON_OUTER));
     }
 
     @Override

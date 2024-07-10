@@ -45,6 +45,9 @@ public class NemosCreaturesClient implements ClientModInitializer {
     public static final EntityModelLayer WARPED_SKELETON_INNER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "warped_skeleton"), "inner_armor");
     public static final EntityModelLayer WARPED_SKELETON_OUTER_ARMOR = new EntityModelLayer(Identifier.of(MOD_ID, "warped_skeleton"), "outer_armor");
     public static final EntityModelLayer BOAR = new EntityModelLayer(Identifier.of(MOD_ID, "wild_boar"), "main");
+    public static final EntityModelLayer NECROMANCER = new EntityModelLayer(Identifier.of(MOD_ID, "necromancer"), "main");
+    public static final EntityModelLayer NECROMANCER_OUTER = new EntityModelLayer(Identifier.of(MOD_ID, "necromancer"), "outer");
+    public static final EntityModelLayer NECROMANCER_CAPE = new EntityModelLayer(Identifier.of(MOD_ID, "necromancer"), "cape");
 
     @Override
     public void onInitializeClient() {
@@ -59,6 +62,7 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityRendererRegistry.register(Entities.CRIMSON_SKELETON, CrimsonSkeletonEntityRenderer::new);
         EntityRendererRegistry.register(Entities.WARPED_SKELETON, WarpedSkeletonEntityRenderer::new);
         EntityRendererRegistry.register(Entities.WILD_BOAR, WildBoarEntityRenderer::new);
+        EntityRendererRegistry.register(Entities.NECROMANCER, NecromancerEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(VENOMOUS_SKELETON_INNER_ARMOR, () -> hatModelData);
@@ -82,5 +86,8 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(WARPED_SKELETON_OUTER_ARMOR, () -> armorModelData);
         EntityModelLayerRegistry.registerModelLayer(BOAR, WildBoarEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(NECROMANCER, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(NECROMANCER_OUTER, () -> TexturedModelData.of(BipedEntityModel.getModelData(new Dilation(0.5f), 0.0f), 64, 32));
+        EntityModelLayerRegistry.registerModelLayer(NECROMANCER_CAPE, () -> TexturedModelData.of(BipedEntityModel.getModelData(new Dilation(3f, 0, 1f), 0), 64, 32));
     }
 }

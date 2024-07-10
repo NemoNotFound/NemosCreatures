@@ -1,6 +1,12 @@
-# Changelog v1.6.3
+# Changelog v1.7
+
+## Additions
+- Added Necromancer
+
+## Changes
+- Crimson & Warped Skeleton glow now
 
 ## Fixes
-- Kill a mob advancement doesn't work
+- Venomous Skeleton's "pants" are incomplete between legs
 
 For more information check the [wiki](https://www.nemonotfound.com/minecraft-mods/nemos-creatures).

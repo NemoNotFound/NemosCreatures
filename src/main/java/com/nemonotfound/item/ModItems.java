@@ -27,6 +27,8 @@ public class ModItems {
     public static final Item CRIMSON_SKELETON_SPAWN_EGG = registerSpawnEggItem(Entities.CRIMSON_SKELETON, 11439758, 11280416);
     public static final Item WARPED_SKELETON_SPAWN_EGG = registerSpawnEggItem(Entities.WARPED_SKELETON, 12909551, 1474182);
     public static final Item WILD_BOAR_SPAWN_EGG = registerSpawnEggItem(Entities.WILD_BOAR, 1971725, 4798503);
+    public static final Item NECROMANCER_SPAWN_EGG = registerSpawnEggItem(Entities.NECROMANCER, 7039851, 65535);
+    public static final Item NECROMANCERS_SCEPTER = registerItem("necromancers_scepter", new NecromancersScepterItem(new Item.Settings()));
 
     private static SpawnEggItem registerSpawnEggItem(EntityType<? extends MobEntity> entityType, int primaryColor, int secondaryColor) {
         String entityName = retrieveEntityName(entityType);
@@ -36,6 +38,10 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(spawnEggItem));
 
         return spawnEggItem;
+    }
+
+    private static Item registerItem(String path, Item item) {
+        return Registry.register(Registries.ITEM, Identifier.of(MOD_ID, path), item);
     }
 
     private static String retrieveEntityName(EntityType<? extends MobEntity> entityType) {

@@ -76,6 +76,11 @@ public class Entities {
             EntityType.Builder.create(WildBoarEntity::new, SpawnGroup.CREATURE)
                     .dimensions(0.9f, 0.9f)
                     .build());
+    public static final EntityType<NecromancerEntity> NECROMANCER = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(MOD_ID, "necromancer"),
+            EntityType.Builder.create(NecromancerEntity::new, SpawnGroup.MONSTER)
+                    .dimensions(0.84f, 2.8f)
+                    .build());
 
     public static void registerSpawnRestrictions() {
         SpawnRestriction.register(VENOMOUS_SKELETON, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
@@ -100,6 +105,8 @@ public class Entities {
                 HostileEntity::canSpawnInDark);
         SpawnRestriction.register(WILD_BOAR, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
                 WildBoarEntity::canSpawn);
+        SpawnRestriction.register(NECROMANCER, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
+                HostileEntity::canSpawnInDark);
     }
 
     public static void registerAttributes() {
@@ -114,6 +121,7 @@ public class Entities {
         FabricDefaultAttributeRegistry.register(CRIMSON_SKELETON, CrimsonSkeletonEntity.createAbstractSkeletonAttributes());
         FabricDefaultAttributeRegistry.register(WARPED_SKELETON, WarpedSkeletonEntity.createAbstractSkeletonAttributes());
         FabricDefaultAttributeRegistry.register(WILD_BOAR, WildBoarEntity.createBoarAttributes());
+        FabricDefaultAttributeRegistry.register(NECROMANCER, NecromancerEntity.createAbstractSkeletonAttributes());
     }
 
     public static void replaceMobsForBiomes() {
