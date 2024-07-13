@@ -21,6 +21,6 @@ public class ModSounds {
     }
 
     public static void initialize() {
-        log.info(MOD_ID + ": Registering Sounds");
+        log.info(MOD_ID + ": Registering sounds");
     }
 }

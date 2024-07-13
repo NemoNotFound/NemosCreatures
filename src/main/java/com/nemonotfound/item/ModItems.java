@@ -51,6 +51,6 @@ public class ModItems {
     }
 
     public static void registerItems() {
-        log.info("Register items");
+        log.info(MOD_ID + ": Registering items");
     }
 }

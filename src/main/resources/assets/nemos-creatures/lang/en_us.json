@@ -21,6 +21,8 @@
   "item.nemos-creatures.warped_skeleton_spawn_egg": "Warped Skeleton Spawn Egg",
   "entity.nemos-creatures.wild_boar": "Wild Boar",
   "item.nemos-creatures.wild_boar_spawn_egg": "Wild Boar Spawn Egg",
+  "entity.nemos-creatures.necromancer": "Necromancer",
+  "item.nemos-creatures.necromancer_spawn_egg": "Necromancer Spawn Egg",
   "tag.worldgen.biome.minecraft.is_crimson_forest": "Crimson Forest",
   "tag.worldgen.biome.minecraft.is_warped_forest": "Warped Forest"
 }

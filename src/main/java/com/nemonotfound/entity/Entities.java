@@ -121,7 +121,7 @@ public class Entities {
         FabricDefaultAttributeRegistry.register(CRIMSON_SKELETON, CrimsonSkeletonEntity.createAbstractSkeletonAttributes());
         FabricDefaultAttributeRegistry.register(WARPED_SKELETON, WarpedSkeletonEntity.createAbstractSkeletonAttributes());
         FabricDefaultAttributeRegistry.register(WILD_BOAR, WildBoarEntity.createBoarAttributes());
-        FabricDefaultAttributeRegistry.register(NECROMANCER, NecromancerEntity.createAbstractSkeletonAttributes());
+        FabricDefaultAttributeRegistry.register(NECROMANCER, NecromancerEntity.createNecromancerAttributes());
     }
 
     public static void replaceMobsForBiomes() {

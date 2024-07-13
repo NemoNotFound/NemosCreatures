@@ -2,6 +2,9 @@
 
 ## Additions
 - Added Necromancer
+  - Summons mobs around him to attack you
+  - Uses the necromancer's scepter to attack you
+    - Shoots new projectile
 
 ## Changes
 - Crimson & Warped Skeleton glow now
