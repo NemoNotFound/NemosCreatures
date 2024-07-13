@@ -78,14 +78,15 @@ public class NecromancerEntity extends AbstractSkeletonEntity {
     protected SoundEvent getStepSound() {
         return ModSounds.ENTITY_NECROMANCER_STEP;
     }
-
+    //TODO: Add necromancer sound
     public SoundEvent getSummonPrepareSound() {
         return SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON;
     }
-
+    //TODO: Add necromancer sound
     public SoundEvent getSummonSound() {
         return SoundEvents.ENTITY_EVOKER_CAST_SPELL;
     }
+    //TODO: Add Laugh sounds
 
     @Override
     public float getSoundVolume() {
