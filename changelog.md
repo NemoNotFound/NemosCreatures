@@ -1,10 +1,11 @@
-# Changelog v1.7
+# Changelog Snapshot 24w28a
 
 ## Additions
-- Added Necromancer
+- Added Necromancer (only available in creative)
   - Summons mobs around him to attack you
+    - Visuals are incomplete or not fully correct
   - Uses the necromancer's scepter to attack you
-    - Shoots new projectile
+    - Currently, he just hits you with it. Those barbarians didn't learn how to use it properly yet!
 
 ## Changes
 - Crimson & Warped Skeleton glow now
