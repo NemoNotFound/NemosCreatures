@@ -18,7 +18,6 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
@@ -78,13 +77,13 @@ public class NecromancerEntity extends AbstractSkeletonEntity {
     protected SoundEvent getStepSound() {
         return ModSounds.ENTITY_NECROMANCER_STEP;
     }
-    //TODO: Add necromancer sound
+
     public SoundEvent getSummonPrepareSound() {
-        return SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON;
+        return ModSounds.ENTITY_NECROMANCER_PREPARE_SUMMON;
     }
-    //TODO: Add necromancer sound
+
     public SoundEvent getSummonSound() {
-        return SoundEvents.ENTITY_EVOKER_CAST_SPELL;
+        return ModSounds.ENTITY_NECROMANCER_SUMMON;
     }
     //TODO: Add Laugh sounds
 

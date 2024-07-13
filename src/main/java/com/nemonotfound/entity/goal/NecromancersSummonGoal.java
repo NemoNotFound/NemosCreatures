@@ -55,15 +55,15 @@ public class NecromancersSummonGoal extends Goal {
         this.summonCooldown = this.getTickCount(this.getInitialCooldown());
         entity.setSummoningTicks(this.getSummoningTicks());
         this.startTime = entity.age + this.startTimeDelay();
-        entity.playSound(entity.getSummonPrepareSound(), 1.0f, 1.0f);
+        entity.playSound(entity.getSummonPrepareSound(), 0.8f, 1.0f);
     }
 
     @Override
     public void tick() {
         --this.summonCooldown;
         if (this.summonCooldown == 0) {
+            entity.playSound(entity.getSummonSound(), 0.8f, 1.0f);
             this.summonZombies();
-            entity.playSound(entity.getSummonSound(), 1.0f, 1.0f);
         }
     }
 
@@ -85,6 +85,7 @@ public class NecromancersSummonGoal extends Goal {
         summonZombies(serverWorld);
     }
 
+    //TODO: Fix zombies spawning on top when underground
     private void summonZombies(ServerWorld serverWorld) {
         Random random = entity.getRandom();
         int summonCount = random.nextInt(8 - 4 + 1) + 4;
@@ -110,7 +111,7 @@ public class NecromancersSummonGoal extends Goal {
             zombieEntity.setPos(x, y, z);
             zombieEntity.initialize(serverWorld, serverWorld.getLocalDifficulty(zombieEntity.getBlockPos()), SpawnReason.EVENT, null);
             zombieEntity.refreshPositionAndAngles(spawnPos, 0, 0);
-            zombieEntity.wakeUp();
+            //zombieEntity.wakeUp();
 
             serverWorld.spawnEntityAndPassengers(zombieEntity);
             serverWorld.emitGameEvent(GameEvent.ENTITY_PLACE, spawnPos, GameEvent.Emitter.of(entity));

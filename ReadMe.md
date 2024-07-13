@@ -1,4 +1,4 @@
-![Nemo's Creatures](https://github.com/NemoNotFound/NemosCreatures/blob/master/src/main/resources/assets/nemos-creatures/title.png?raw=true)
+![Nemo's Creatures](https://github.com/NemoNotFound/NemoNotFound/blob/master/resources/png/nemos-creatures.png?raw=true)
 <br><br>
 
 <p align="center">
