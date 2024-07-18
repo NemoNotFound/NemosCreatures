@@ -3,13 +3,14 @@ package com.nemonotfound.entity.goal;
 import com.nemonotfound.entity.mob.NecromancerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.Heightmap;
 import net.minecraft.world.event.GameEvent;
 
 public class NecromancersSummonGoal extends Goal {
@@ -19,6 +20,8 @@ public class NecromancersSummonGoal extends Goal {
     private final TargetPredicate closeZombiesPredicate;
     private int startTime;
     private int summonCooldown;
+    private static final int MIN_SUMMON_COUNT = 2;
+    private static final int MAX_SUMMON_COUNT = 5;
 
     public NecromancersSummonGoal(NecromancerEntity entity) {
         this.entity = entity;
@@ -85,36 +88,47 @@ public class NecromancersSummonGoal extends Goal {
         summonZombies(serverWorld);
     }
 
-    //TODO: Fix zombies spawning on top when underground
     private void summonZombies(ServerWorld serverWorld) {
         Random random = entity.getRandom();
-        int summonCount = random.nextInt(8 - 4 + 1) + 4;
+        int summonCount = MathHelper.nextInt(random, MIN_SUMMON_COUNT, MAX_SUMMON_COUNT);
+        int maxRetryCount = 0;
 
         for (int i = 0; i < summonCount; i++) {
-            int randomXOffset = random.nextInt(8 - 4 + 1) - 4;
-            int randomZOffset = random.nextInt(8 - 4 + 1) - 4;
-
-            if (random.nextBoolean()) {
-                randomXOffset = -randomXOffset;
-            }
-
-            if (random.nextBoolean()) {
-                randomZOffset = -randomZOffset;
+            if (maxRetryCount >= 50) {
+                break;
             }
 
             ZombieEntity zombieEntity = new ZombieEntity(serverWorld);
-            BlockPos spawnPos = serverWorld.getTopPosition(Heightmap.Type.MOTION_BLOCKING,
-                    entity.getBlockPos().add(randomXOffset, 0, randomZOffset));
-            int x = spawnPos.getX();
-            int y = spawnPos.getY();
-            int z = spawnPos.getZ();
-            zombieEntity.setPos(x, y, z);
-            zombieEntity.initialize(serverWorld, serverWorld.getLocalDifficulty(zombieEntity.getBlockPos()), SpawnReason.EVENT, null);
-            zombieEntity.refreshPositionAndAngles(spawnPos, 0, 0);
-            //zombieEntity.wakeUp();
+            //TODO: Make y variable
+            BlockPos spawnPos = entity.getBlockPos().add(getOffset(random), 0, getOffset(random));
 
-            serverWorld.spawnEntityAndPassengers(zombieEntity);
-            serverWorld.emitGameEvent(GameEvent.ENTITY_PLACE, spawnPos, GameEvent.Emitter.of(entity));
+            if (!SpawnRestriction.isSpawnPosAllowed(zombieEntity.getType(), serverWorld, spawnPos)) {
+                i--;
+                maxRetryCount++;
+                continue;
+            }
+
+            spawnZombie(spawnPos, zombieEntity, serverWorld);
         }
+    }
+
+    private int getOffset(Random random) {
+        int randomOffset = MathHelper.nextInt(random, 1, 6);
+
+        return random.nextBoolean() ? -randomOffset : randomOffset;
+    }
+
+    private void spawnZombie(BlockPos spawnPos, ZombieEntity zombieEntity, ServerWorld serverWorld) {
+        int x = spawnPos.getX();
+        int y = spawnPos.getY();
+        int z = spawnPos.getZ();
+
+        zombieEntity.setPos(x, y, z);
+        zombieEntity.initialize(serverWorld, serverWorld.getLocalDifficulty(zombieEntity.getBlockPos()),
+                SpawnReason.MOB_SUMMONED, null);
+        zombieEntity.refreshPositionAndAngles(spawnPos, 0, 0);
+
+        serverWorld.spawnEntityAndPassengers(zombieEntity);
+        serverWorld.emitGameEvent(GameEvent.ENTITY_PLACE, spawnPos, GameEvent.Emitter.of(entity));
     }
 }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:stronghold",
+  "biomes": "#minecraft:has_structure/stronghold",
+  "spawn_overrides": {
+    "monster": {
+      "bounding_box": "full",
+      "spawns": [
+        {
+          "type": "nemos-creatures:necromancer",
+          "maxCount": 1,
+          "minCount": 1,
+          "weight": 1
+        }
+      ]
+    }
+  },
+  "step": "surface_structures",
+  "terrain_adaptation": "bury"
+}
