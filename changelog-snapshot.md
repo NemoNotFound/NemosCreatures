@@ -1,4 +1,4 @@
-# Changelog Snapshot 24w28b
+# Changelog Snapshot 24w29a
 
 ## Changes
 - Added more sounds to the necromancer
