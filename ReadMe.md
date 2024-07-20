@@ -37,7 +37,9 @@
 </p>
 
 <br>
+<br>
 
+<h2 align="center">Get a Minecraft Server</h2>
 <div align="center">
     <p>
         Looking for a Minecraft Server? Check out <a href="https://bisecthosting.com/Nemo404">BisectHosting</a>! <br>
