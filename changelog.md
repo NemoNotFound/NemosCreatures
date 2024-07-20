@@ -2,7 +2,8 @@
 
 ## Additions
 - Added Necromancer
-  - Summons mobs around him to attack you
+  - Spawns in and around stronghold when it's generated
+   - Summons mobs around him to attack you
   - Uses the necromancer's scepter to attack you
     - Shoots Orbs
 
