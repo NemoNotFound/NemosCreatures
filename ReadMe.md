@@ -12,8 +12,8 @@ Expect more mobs to come!
 
 I love to create mods for Minecraft and wish to live off it one day, so I hope you like what I do. <br>
 Either way feel free to give me your feedback and suggestions, either on my Discord or the [discussions](https://github.com/NemoNotFound/NemosCreatures/discussions/) :)
-<br>
-For more information and the recipes check the [wiki](https://www.nemonotfound.com/minecraft-mods/nemos-creatures/wiki).
+<br><br>
+For more information check the [wiki](https://www.nemonotfound.com/minecraft-mods/nemos-creatures/wiki).
 
 [![ko-fi donation](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nemonotfound)
 <br>
