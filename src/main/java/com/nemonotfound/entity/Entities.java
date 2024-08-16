@@ -116,12 +116,7 @@ public class Entities {
         FabricDefaultAttributeRegistry.register(WILD_BOAR, WildBoarEntity.createBoarAttributes());
     }
 
-    public static void replaceMobsForBiomes() {
-        String skeletonKey = "entity.minecraft.skeleton";
-        String spiderKey = "entity.minecraft.spider";
-        String zombieKey = "entity.minecraft.zombie";
-        String creeperKey = "entity.minecraft.creeper";
-
+    public static void addMobsToBiome() {
         Predicate<BiomeSelectionContext> jungle = BiomeSelectors.tag(ConventionalBiomeTags.IS_JUNGLE);
         Predicate<BiomeSelectionContext> desert = BiomeSelectors.tag(ConventionalBiomeTags.IS_DESERT);
         Predicate<BiomeSelectionContext> crimsonForest = BiomeSelectors.tag(ModBiomeTags.IS_CRIMSON_FOREST);
@@ -139,23 +134,5 @@ public class Entities {
         BiomeModifications.addSpawn(crimsonForest, SpawnGroup.MONSTER, CRIMSON_SKELETON, 40, 1, 1);
         BiomeModifications.addSpawn(warpedForest, SpawnGroup.MONSTER, WARPED_SKELETON, 60, 1, 1);
         BiomeModifications.addSpawn(forest, SpawnGroup.CREATURE, WILD_BOAR, 12, 2, 4);
-
-        removeMobFromBiome(jungle, skeletonKey);
-        removeMobFromBiome(jungle, spiderKey);
-        removeMobFromBiome(jungle, zombieKey);
-        removeMobFromBiome(jungle, creeperKey);
-        removeMobFromBiome(desert, skeletonKey);
-        removeMobFromBiome(desert, spiderKey);
-        removeMobFromBiome(desert, zombieKey);
-        removeMobFromBiome(desert, creeperKey);
-    }
-
-    private static void removeMobFromBiome(Predicate<BiomeSelectionContext> biomeSelection, String entityKey) {
-        BiomeModification biomeModification = BiomeModifications.create(Identifier.of(entityKey));
-
-        biomeModification.add(ModificationPhase.REMOVALS, biomeSelection, context ->
-                context.getSpawnSettings()
-                        .removeSpawns(((spawnGroup, spawnEntry) -> spawnEntry.type.getTranslationKey().contains(entityKey))));
-
     }
 }
