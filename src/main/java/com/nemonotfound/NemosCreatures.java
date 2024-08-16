@@ -19,7 +19,7 @@ public class NemosCreatures implements ModInitializer {
 
 		Entities.registerSpawnRestrictions();
 		Entities.registerAttributes();
-		Entities.replaceMobsForBiomes();
+		Entities.addMobsToBiome();
 		ModItems.registerItems();
 		ModSounds.initialize();
 	}
