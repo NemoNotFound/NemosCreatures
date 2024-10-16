@@ -1,7 +1,7 @@
 package com.nemonotfound.client.render.entity;
 
-import com.nemonotfound.NemosCreaturesClient;
 import com.nemonotfound.client.render.entity.feature.VenomousSkeletonOverlayFeatureRenderer;
+import com.nemonotfound.client.render.entity.model.ModEntityModelLayers;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -17,8 +17,8 @@ public class VenomousSkeletonEntityRenderer extends SkeletonEntityRenderer {
     private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/entity/skeleton/venomous_skeleton.png");
 
     public VenomousSkeletonEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, NemosCreaturesClient.VENOMOUS_SKELETON,NemosCreaturesClient.VENOMOUS_SKELETON_INNER_ARMOR,
-                NemosCreaturesClient.VENOMOUS_SKELETON_OUTER_ARMOR);
+        super(context, ModEntityModelLayers.VENOMOUS_SKELETON, ModEntityModelLayers.VENOMOUS_SKELETON_INNER_ARMOR,
+                ModEntityModelLayers.VENOMOUS_SKELETON_OUTER_ARMOR);
         this.addFeature(new VenomousSkeletonOverlayFeatureRenderer<>(this, context.getModelLoader()));
     }
 

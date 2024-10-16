@@ -20,5 +20,21 @@
   "entity.nemos-creatures.warped_skeleton": "Warped Skeleton",
   "item.nemos-creatures.warped_skeleton_spawn_egg": "Warped Skeleton Spawn Egg",
   "entity.nemos-creatures.wild_boar": "Wild Boar",
-  "item.nemos-creatures.wild_boar_spawn_egg": "Wild Boar Spawn Egg"
+  "item.nemos-creatures.wild_boar_spawn_egg": "Wild Boar Spawn Egg",
+  "entity.nemos-creatures.snowy_skeleton": "Snowy Skeleton",
+  "item.nemos-creatures.snowy_skeleton_spawn_egg": "Snowy Skeleton Spawn Egg",
+  "entity.nemos-creatures.snowy_pig": "Snowy Pig",
+  "item.nemos-creatures.snowy_pig_spawn_egg": "Snowy Pig Spawn Egg",
+  "entity.nemos-creatures.snowy_cow": "Snowy Cow",
+  "item.nemos-creatures.snowy_cow_spawn_egg": "Snowy Cow Spawn Egg",
+  "entity.nemos-creatures.snowy_spider": "Snowy Spider",
+  "item.nemos-creatures.snowy_spider_spawn_egg": "Snowy Spider Spawn Egg",
+  "entity.nemos-creatures.snow_spider": "Snow Spider",
+  "item.nemos-creatures.snow_spider_spawn_egg": "Snow Spider Spawn Egg",
+  "entity.nemos-creatures.snowy_creeper": "Snowy Creeper",
+  "item.nemos-creatures.snowy_creeper_spawn_egg": "Snowy Creeper Spawn Egg",
+  "entity.nemos-creatures.snowy_zombie": "Snowy Zombie",
+  "item.nemos-creatures.snowy_zombie_spawn_egg": "Snowy Zombie Spawn Egg",
+  "tag.worldgen.biome.minecraft.is_crimson_forest": "Crimson Forest",
+  "tag.worldgen.biome.minecraft.is_warped_forest": "Warped Forest"
 }
