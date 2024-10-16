@@ -14,7 +14,7 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
-import static com.nemonotfound.NemosCreaturesClient.VENOMOUS_SKELETON_OUTER;
+import static com.nemonotfound.client.render.entity.model.ModEntityModelLayers.VENOMOUS_SKELETON_OUTER;
 
 @Environment(value= EnvType.CLIENT)
 public class VenomousSkeletonOverlayFeatureRenderer<T extends MobEntity & RangedAttackMob, M extends EntityModel<T>>
@@ -25,7 +25,7 @@ public class VenomousSkeletonOverlayFeatureRenderer<T extends MobEntity & Ranged
 
     public VenomousSkeletonOverlayFeatureRenderer(FeatureRendererContext<T, M> context, EntityModelLoader loader) {
         super(context);
-        this.model = new SkeletonEntityModel(loader.getModelPart(VENOMOUS_SKELETON_OUTER));
+        this.model = new SkeletonEntityModel<>(loader.getModelPart(VENOMOUS_SKELETON_OUTER));
     }
 
     @Override

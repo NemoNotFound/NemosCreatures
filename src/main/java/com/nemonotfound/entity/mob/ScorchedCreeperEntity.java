@@ -17,7 +17,7 @@ public class ScorchedCreeperEntity extends CreeperEntity {
 
     @Override
     public Collection<StatusEffectInstance> getStatusEffects() {
-        return List.of(new StatusEffectInstance(StatusEffects.HUNGER, 600, 1));
+        return List.of(new StatusEffectInstance(StatusEffects.HUNGER, 200, 0));
     }
 
     @Override

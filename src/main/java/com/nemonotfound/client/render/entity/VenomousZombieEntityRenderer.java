@@ -1,6 +1,6 @@
 package com.nemonotfound.client.render.entity;
 
-import com.nemonotfound.NemosCreaturesClient;
+import com.nemonotfound.client.render.entity.model.ModEntityModelLayers;
 import com.nemonotfound.entity.mob.VenomousZombieEntity;
 import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -16,13 +16,13 @@ public class VenomousZombieEntityRenderer extends BipedEntityRenderer<VenomousZo
     private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/zombie/venomous_zombie.png");
 
     public VenomousZombieEntityRenderer(EntityRendererFactory.Context context) {
-        this(context, NemosCreaturesClient.VENOMOUS_ZOMBIE,  NemosCreaturesClient.VENOMOUS_ZOMBIE_INNER_ARMOR,  NemosCreaturesClient.VENOMOUS_ZOMBIE_OUTER_ARMOR);
+        this(context, ModEntityModelLayers.VENOMOUS_ZOMBIE,  ModEntityModelLayers.VENOMOUS_ZOMBIE_INNER_ARMOR,  ModEntityModelLayers.VENOMOUS_ZOMBIE_OUTER_ARMOR);
     }
 
     public VenomousZombieEntityRenderer(EntityRendererFactory.Context ctx, EntityModelLayer body, EntityModelLayer legsArmorLayer, EntityModelLayer bodyArmorLayer) {
-        super(ctx, new ZombieEntityModel(ctx.getPart(body)), 0.5f);
-        this.addFeature(new ArmorFeatureRenderer(this, new ZombieEntityModel(ctx.getPart(legsArmorLayer)),
-                new ZombieEntityModel(ctx.getPart(bodyArmorLayer)), ctx.getModelManager()));
+        super(ctx, new ZombieEntityModel<>(ctx.getPart(body)), 0.5f);
+        this.addFeature(new ArmorFeatureRenderer<>(this, new ZombieEntityModel<>(ctx.getPart(legsArmorLayer)),
+                new ZombieEntityModel<>(ctx.getPart(bodyArmorLayer)), ctx.getModelManager()));
     }
 
     @Override
