@@ -1,6 +1,6 @@
 package com.nemonotfound.entity.mob;
 
-import com.nemonotfound.entity.Entities;
+import com.nemonotfound.entity.ModEntityTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
@@ -123,7 +123,7 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
     @Override
     @Nullable
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return Entities.WILD_BOAR.create(world);
+        return ModEntityTypes.WILD_BOAR.create(world);
     }
 
     @Override
