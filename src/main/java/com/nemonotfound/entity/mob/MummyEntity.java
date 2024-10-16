@@ -8,6 +8,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.ZombieEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 
@@ -18,8 +19,8 @@ public class MummyEntity extends ZombieEntity {
     }
 
     @Override
-    public boolean tryAttack(Entity target) {
-        if (super.tryAttack(target)) {
+    public boolean tryAttack(ServerWorld world, Entity target) {
+        if (super.tryAttack(world, target)) {
             if (target instanceof LivingEntity) {
                 int durationMultiplier = 0;
 
@@ -55,8 +56,8 @@ public class MummyEntity extends ZombieEntity {
 
     public static DefaultAttributeContainer.Builder createMummyAttributes() {
         return ZombieEntity.createZombieAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 30.0)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 6.0)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.19F);
+                .add(EntityAttributes.MAX_HEALTH, 30.0)
+                .add(EntityAttributes.ATTACK_DAMAGE, 6.0)
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.19F);
     }
 }

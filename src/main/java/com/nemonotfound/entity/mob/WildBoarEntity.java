@@ -77,7 +77,7 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
     @Override
     protected void updateLimbs(float posDelta) {
         float f = this.getPose() == EntityPose.STANDING ? Math.min(posDelta * 6.0f, 1.0f) : 0.0f;
-        this.limbAnimator.updateLimbs(f, 0.2f);
+        this.limbAnimator.updateLimbs(f, 0.2f, this.isBaby() ? 3.0F : 1.0F);
     }
 
     @Override
@@ -89,12 +89,12 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
     }
 
     public static DefaultAttributeContainer.Builder createBoarAttributes() {
-        return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 15.0)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
-                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 10)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0)
-                .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 1);
+        return AnimalEntity.createAnimalAttributes()
+                .add(EntityAttributes.MAX_HEALTH, 15.0)
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.25)
+                .add(EntityAttributes.FOLLOW_RANGE, 10)
+                .add(EntityAttributes.ATTACK_DAMAGE, 3.0)
+                .add(EntityAttributes.ATTACK_KNOCKBACK, 1);
     }
 
     public static boolean canSpawn(EntityType<WildBoarEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
@@ -109,8 +109,8 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
         return world.getBaseLightLevel(pos, 0) > 8;
     }
 
-    public boolean isPlayerTooClose(LivingEntity entity) {
-        List<PlayerEntity> closePlayers = WildBoarEntity.this.getWorld()
+    public boolean isPlayerTooClose(LivingEntity entity, ServerWorld world) {
+        List<PlayerEntity> closePlayers = world
                 .getNonSpectatingEntities(PlayerEntity.class, WildBoarEntity.this.getBoundingBox().expand(5.0, 4.0, 5.0));
 
         if (!closePlayers.isEmpty() && entity instanceof PlayerEntity) {
@@ -123,7 +123,7 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
     @Override
     @Nullable
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntityTypes.WILD_BOAR.create(world);
+        return ModEntityTypes.WILD_BOAR.create(world, SpawnReason.BREEDING);
     }
 
     @Override
@@ -275,7 +275,7 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
         protected void attack(LivingEntity target) {
             if (this.canAttack(target)) {
                 this.resetCooldown();
-                this.mob.tryAttack(target);
+                this.mob.tryAttack(getServerWorld(this.mob), target);
                 WildBoarEntity.this.setAttack(true);
             } else if (this.mob.squaredDistanceTo(target) < (double)((target.getWidth() + 3.0f) * (target.getWidth() + 3.0f))) {
                 if (this.isCooledDown()) {

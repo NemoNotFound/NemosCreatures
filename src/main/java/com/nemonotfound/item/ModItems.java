@@ -7,7 +7,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+
+import java.util.function.Function;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
 import static com.nemonotfound.NemosCreatures.log;
@@ -37,11 +41,15 @@ public class ModItems {
         log.info("Register items");
     }
 
-    private static Item registerItem(String path, Item item) {
-        return Registry.register(Registries.ITEM, Identifier.of(MOD_ID, path), item);
+    private static Item registerItem(String path, Function<Item.Settings, Item> factory) {
+        Identifier id = Identifier.of(MOD_ID, path);
+        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, id);
+        Item item = factory.apply(new Item.Settings().registryKey(key));
+
+        return Registry.register(Registries.ITEM, key, item);
     }
 
-    private static SpawnEggItem createSpawnEggItem(EntityType<? extends MobEntity> entityType, int primaryColor, int secondaryColor) {
-        return new SpawnEggItem(entityType, primaryColor, secondaryColor, new Item.Settings());
+    private static Function<Item.Settings, Item> createSpawnEggItem(EntityType<? extends MobEntity> entityType, int primaryColor, int secondaryColor) {
+        return settings -> new SpawnEggItem(entityType, primaryColor, secondaryColor, settings);
     }
 }

@@ -6,6 +6,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.SpiderEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.LocalDifficulty;
@@ -21,13 +22,13 @@ public class SnowSpiderEntity extends SpiderEntity {
 
     public static DefaultAttributeContainer.Builder createSnowSpiderAttributes() {
         return SpiderEntity.createSpiderAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4.0);
+                .add(EntityAttributes.MAX_HEALTH, 10.0)
+                .add(EntityAttributes.ATTACK_DAMAGE, 4.0);
     }
 
     @Override
-    public boolean tryAttack(Entity target) {
-        if (super.tryAttack(target)) {
+    public boolean tryAttack(ServerWorld world, Entity target) {
+        if (super.tryAttack(world, target)) {
             if (target instanceof LivingEntity) {
                 int durationMultiplier = 0;
 

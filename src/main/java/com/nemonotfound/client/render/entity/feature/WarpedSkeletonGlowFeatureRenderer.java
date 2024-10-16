@@ -6,19 +6,18 @@ import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.feature.EyesFeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
 import net.minecraft.client.render.entity.model.SkeletonEntityModel;
-import net.minecraft.entity.ai.RangedAttackMob;
-import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.client.render.entity.state.SkeletonEntityRenderState;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
 
-@Environment(value= EnvType.CLIENT)
-public class WarpedSkeletonGlowFeatureRenderer<T extends MobEntity & RangedAttackMob>
-        extends EyesFeatureRenderer<T, SkeletonEntityModel<T>> {
+@Environment(value = EnvType.CLIENT)
+public class WarpedSkeletonGlowFeatureRenderer<M extends SkeletonEntityModel<SkeletonEntityRenderState>>
+        extends EyesFeatureRenderer<SkeletonEntityRenderState, M> {
 
     private static final RenderLayer SKIN = RenderLayer.getEyes(Identifier.of(MOD_ID, "textures/entity/skeleton/warped_skeleton_glow.png"));
 
-    public WarpedSkeletonGlowFeatureRenderer(FeatureRendererContext<T, SkeletonEntityModel<T>> featureRendererContext) {
+    public WarpedSkeletonGlowFeatureRenderer(FeatureRendererContext<SkeletonEntityRenderState, M> featureRendererContext) {
         super(featureRendererContext);
 
     }

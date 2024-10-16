@@ -3,6 +3,7 @@ package com.nemonotfound.client.render.entity;
 import com.nemonotfound.entity.mob.VenomousSpiderEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.SpiderEntityRenderer;
+import net.minecraft.client.render.entity.state.LivingEntityRenderState;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
@@ -20,12 +21,12 @@ public class VenomousSpiderEntityRenderer extends SpiderEntityRenderer<VenomousS
     }
 
     @Override
-    protected void scale(VenomousSpiderEntity venomousSpiderEntity, MatrixStack matrixStack, float f) {
-        matrixStack.scale(SCALE, SCALE, SCALE);
+    public Identifier getTexture(LivingEntityRenderState state) {
+        return TEXTURE;
     }
 
     @Override
-    public Identifier getTexture(VenomousSpiderEntity venomousSpiderEntity) {
-        return TEXTURE;
+    protected void scale(LivingEntityRenderState state, MatrixStack matrices) {
+        matrices.scale(SCALE, SCALE, SCALE);
     }
 }

@@ -6,19 +6,18 @@ import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.feature.EyesFeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
 import net.minecraft.client.render.entity.model.SkeletonEntityModel;
-import net.minecraft.entity.ai.RangedAttackMob;
-import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.client.render.entity.state.SkeletonEntityRenderState;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
 
 @Environment(value= EnvType.CLIENT)
-public class CrimsonSkeletonGlowFeatureRenderer<T extends MobEntity & RangedAttackMob>
-        extends EyesFeatureRenderer<T, SkeletonEntityModel<T>> {
+public class CrimsonSkeletonGlowFeatureRenderer<M extends SkeletonEntityModel<SkeletonEntityRenderState>>
+        extends EyesFeatureRenderer<SkeletonEntityRenderState, M> {
 
     private static final RenderLayer SKIN = RenderLayer.getEyes(Identifier.of(MOD_ID, "textures/entity/skeleton/crimson_skeleton_glow.png"));
 
-    public CrimsonSkeletonGlowFeatureRenderer(FeatureRendererContext<T, SkeletonEntityModel<T>> featureRendererContext) {
+    public CrimsonSkeletonGlowFeatureRenderer(FeatureRendererContext<SkeletonEntityRenderState, M> featureRendererContext) {
         super(featureRendererContext);
 
     }

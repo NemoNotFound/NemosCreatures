@@ -6,6 +6,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.SpiderEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 
@@ -16,8 +17,8 @@ public class SnowySpiderEntity extends SpiderEntity {
     }
 
     @Override
-    public boolean tryAttack(Entity target) {
-        if (super.tryAttack(target)) {
+    public boolean tryAttack(ServerWorld world, Entity target) {
+        if (super.tryAttack(world, target)) {
             if (target instanceof LivingEntity) {
                 int durationMultiplier = 0;
 

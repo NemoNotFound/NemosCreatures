@@ -3,6 +3,7 @@ package com.nemonotfound.client.render.entity;
 import com.nemonotfound.entity.mob.SnowySpiderEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.SpiderEntityRenderer;
+import net.minecraft.client.render.entity.state.LivingEntityRenderState;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
@@ -17,7 +18,7 @@ public class SnowySpiderEntityRenderer extends SpiderEntityRenderer<SnowySpiderE
     }
 
     @Override
-    public Identifier getTexture(SnowySpiderEntity snowySpiderEntity) {
+    public Identifier getTexture(LivingEntityRenderState state) {
         return TEXTURE;
     }
 }

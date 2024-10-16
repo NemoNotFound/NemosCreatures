@@ -1,6 +1,7 @@
 package com.nemonotfound.entity.mob;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -16,7 +17,9 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -91,7 +94,10 @@ public class CrimsonSkeletonEntity extends AbstractSkeletonEntity {
     protected void initEquipment(Random random, LocalDifficulty localDifficulty) {
         super.initEquipment(random, localDifficulty);
         ItemStack bow = new ItemStack(Items.BOW);
-        bow.addEnchantment(this.getWorld().getRegistryManager().get(RegistryKeys.ENCHANTMENT).entryOf(Enchantments.FLAME), 1);
+        Registry<Enchantment> enchantmentRegistry = this.getWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT);
+        Enchantment enchantment = enchantmentRegistry.get(Enchantments.FLAME);
+        RegistryEntry<Enchantment> enchantmentEntry = enchantmentRegistry.getEntry(enchantment);
+        bow.addEnchantment(enchantmentEntry, 1);
         this.equipStack(EquipmentSlot.MAINHAND, bow);
     }
 

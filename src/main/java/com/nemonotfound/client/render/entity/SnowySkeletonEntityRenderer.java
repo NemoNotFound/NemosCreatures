@@ -3,13 +3,14 @@ package com.nemonotfound.client.render.entity;
 import com.nemonotfound.client.render.entity.feature.SnowySkeletonGlowFeatureRenderer;
 import com.nemonotfound.client.render.entity.model.ModEntityModelLayers;
 import com.nemonotfound.entity.mob.SnowySkeletonEntity;
+import net.minecraft.client.render.entity.AbstractSkeletonEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.client.render.entity.SkeletonEntityRenderer;
+import net.minecraft.client.render.entity.state.SkeletonEntityRenderState;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
 
-public class SnowySkeletonEntityRenderer extends SkeletonEntityRenderer<SnowySkeletonEntity> {
+public class SnowySkeletonEntityRenderer extends AbstractSkeletonEntityRenderer<SnowySkeletonEntity, SkeletonEntityRenderState> {
 
     private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/skeleton/snowy_skeleton.png");
 
@@ -20,7 +21,12 @@ public class SnowySkeletonEntityRenderer extends SkeletonEntityRenderer<SnowySke
     }
 
     @Override
-    public Identifier getTexture(SnowySkeletonEntity snowySkeletonEntity) {
+    public SkeletonEntityRenderState createRenderState() {
+        return new SkeletonEntityRenderState();
+    }
+
+    @Override
+    public Identifier getTexture(SkeletonEntityRenderState state) {
         return TEXTURE;
     }
 }

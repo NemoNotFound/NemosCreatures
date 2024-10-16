@@ -52,6 +52,9 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.VENOMOUS_ZOMBIE, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.VENOMOUS_ZOMBIE_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.VENOMOUS_ZOMBIE_OUTER_ARMOR, () -> armorModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.VENOMOUS_ZOMBIE_BABY, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64).transform(BipedEntityModel.BABY_TRANSFORMER));
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.VENOMOUS_ZOMBIE_BABY_INNER_ARMOR, () -> hatModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.VENOMOUS_ZOMBIE_BABY_OUTER_ARMOR, () -> armorModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SCORCHED_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SCORCHED_SKELETON_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SCORCHED_SKELETON_OUTER_ARMOR, () -> armorModelData);
@@ -59,22 +62,31 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.MUMMY, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.MUMMY_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.MUMMY_OUTER_ARMOR, () -> armorModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.MUMMY_BABY, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64).transform(BipedEntityModel.BABY_TRANSFORMER));
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.MUMMY_BABY_INNER_ARMOR, () -> hatModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.MUMMY_BABY_OUTER_ARMOR, () -> armorModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.CRIMSON_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.CRIMSON_SKELETON_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.CRIMSON_SKELETON_OUTER_ARMOR, () -> armorModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.WARPED_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.WARPED_SKELETON_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.WARPED_SKELETON_OUTER_ARMOR, () -> armorModelData);
-        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.BOAR, WildBoarEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.WILD_BOAR, WildBoarEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.WILD_BOAR_BABY, WildBoarEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_SKELETON_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_SKELETON_OUTER_ARMOR, () -> armorModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_PIG, () -> PigEntityModel.getTexturedModelData(Dilation.NONE));
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_PIG_BABY, () -> PigEntityModel.getTexturedModelData(Dilation.NONE));
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_COW, CowEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_COW_BABY, CowEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_SPIDER, SpiderEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOW_SPIDER, SpiderEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_ZOMBIE, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 32));
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_ZOMBIE_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_ZOMBIE_OUTER_ARMOR, () -> armorModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_ZOMBIE_BABY, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 32).transform(BipedEntityModel.BABY_TRANSFORMER));
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_ZOMBIE_BABY_INNER_ARMOR, () -> hatModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_ZOMBIE_BABY_OUTER_ARMOR, () -> armorModelData);
     }
 }
