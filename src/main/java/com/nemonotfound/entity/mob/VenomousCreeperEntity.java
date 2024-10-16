@@ -17,7 +17,7 @@ public class VenomousCreeperEntity extends CreeperEntity {
 
     @Override
     public Collection<StatusEffectInstance> getStatusEffects() {
-        return List.of(new StatusEffectInstance(StatusEffects.POISON, 600, 1));
+        return List.of(new StatusEffectInstance(StatusEffects.POISON, 200, 0));
     }
 
     @Override
