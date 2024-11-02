@@ -8,4 +8,7 @@
   - Frozen Creeper
   - Frozen Zombie
 
+## Changes
+- Adapted looks of snowy creeper
+
 For more information check the [wiki](https://www.nemonotfound.com/minecraft-mods/nemos-creatures).
