@@ -56,6 +56,9 @@ public class ModEntityModelLayers {
     public static final EntityModelLayer SNOWY_ZOMBIE_BABY = createEntityModelLayer("snowy_zombie_baby", MAIN);
     public static final EntityModelLayer SNOWY_ZOMBIE_BABY_INNER_ARMOR = createEntityModelLayer("snowy_zombie_baby", INNER_ARMOR);
     public static final EntityModelLayer SNOWY_ZOMBIE_BABY_OUTER_ARMOR = createEntityModelLayer("snowy_zombie_baby", OUTER_ARMOR);
+    public static final EntityModelLayer FROZEN_SKELETON = createEntityModelLayer("frozen_skeleton", MAIN);
+    public static final EntityModelLayer FROZEN_SKELETON_INNER_ARMOR = createEntityModelLayer("frozen_skeleton", INNER_ARMOR);
+    public static final EntityModelLayer FROZEN_SKELETON_OUTER_ARMOR = createEntityModelLayer("frozen_skeleton", OUTER_ARMOR);
 
     public static void registerEntityModelLayers() {
         log.info("Register entity model layers");

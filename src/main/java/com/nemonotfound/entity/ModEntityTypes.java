@@ -85,6 +85,9 @@ public class ModEntityTypes {
                     .eyeHeight(1.3f)
                     .passengerAttachments(1.36875f)
                     .maxTrackingRange(10));
+    public static final EntityType<FrozenSkeletonEntity> FROZEN_SKELETON = registerEntityType("frozen_skeleton",
+            EntityType.Builder.create(FrozenSkeletonEntity::new, SpawnGroup.MONSTER)
+                    .dimensions(0.6f, 1.99f));
 
     public static <T extends Entity> EntityType<T> registerEntityType(String path, EntityType.Builder<T> entityTypeBuilder) {
         Identifier id = Identifier.of(MOD_ID, path);
@@ -112,6 +115,7 @@ public class ModEntityTypes {
         SpawnRestriction.register(SNOW_SPIDER, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, HostileEntity::canSpawnInDark);
         SpawnRestriction.register(SNOWY_CREEPER, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, HostileEntity::canSpawnInDark);
         SpawnRestriction.register(SNOWY_ZOMBIE, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
+        SpawnRestriction.register(FROZEN_SKELETON, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
     }
 
     public static void registerAttributes() {
@@ -133,6 +137,7 @@ public class ModEntityTypes {
         FabricDefaultAttributeRegistry.register(SNOW_SPIDER, SnowSpiderEntity.createSnowSpiderAttributes());
         FabricDefaultAttributeRegistry.register(SNOWY_CREEPER, SnowyCreeperEntity.createCreeperAttributes());
         FabricDefaultAttributeRegistry.register(SNOWY_ZOMBIE, SnowyZombieEntity.createZombieAttributes());
+        FabricDefaultAttributeRegistry.register(FROZEN_SKELETON, FrozenSkeletonEntity.createFrozenSkeletonAttributes());
     }
 
     public static void addMobsToBiome() {
@@ -143,6 +148,7 @@ public class ModEntityTypes {
         Predicate<BiomeSelectionContext> forest = BiomeSelectors.tag(ConventionalBiomeTags.IS_FOREST);
         Predicate<BiomeSelectionContext> snowy = BiomeSelectors.tag(ConventionalBiomeTags.IS_SNOWY);
         Predicate<BiomeSelectionContext> snowyTaiga = BiomeSelectors.tag(ModBiomeTags.IS_SNOWY_TAIGA);
+        Predicate<BiomeSelectionContext> icy = BiomeSelectors.tag(ConventionalBiomeTags.IS_ICY);
 
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_SKELETON, 100, 4, 4);
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_SPIDER, 100, 4, 4);
@@ -162,5 +168,6 @@ public class ModEntityTypes {
         BiomeModifications.addSpawn(snowy, SpawnGroup.MONSTER, SNOWY_ZOMBIE, 95, 4, 4);
         BiomeModifications.addSpawn(snowyTaiga, SpawnGroup.CREATURE, SNOWY_PIG, 10, 4, 4);
         BiomeModifications.addSpawn(snowyTaiga, SpawnGroup.CREATURE, SNOWY_COW, 8, 4, 4);
+        BiomeModifications.addSpawn(icy, SpawnGroup.MONSTER, FROZEN_SKELETON, 80, 4, 4);
     }
 }

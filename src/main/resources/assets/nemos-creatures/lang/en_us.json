@@ -36,5 +36,7 @@
   "entity.nemos-creatures.snowy_zombie": "Snowy Zombie",
   "item.nemos-creatures.snowy_zombie_spawn_egg": "Snowy Zombie Spawn Egg",
   "tag.worldgen.biome.minecraft.is_crimson_forest": "Crimson Forest",
-  "tag.worldgen.biome.minecraft.is_warped_forest": "Warped Forest"
+  "tag.worldgen.biome.minecraft.is_warped_forest": "Warped Forest",
+  "entity.nemos-creatures.frozen_skeleton": "Frozen Skeleton",
+  "item.nemos-creatures.frozen_skeleton_spawn_egg": "Frozen Skeleton Spawn Egg"
 }
