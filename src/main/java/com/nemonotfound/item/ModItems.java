@@ -37,6 +37,7 @@ public class ModItems {
     public static final Item SNOWY_CREEPER_SPAWN_EGG = registerItem("snowy_creeper_spawn_egg", createSpawnEggItem(ModEntityTypes.SNOWY_CREEPER, 5856370, 16777215));
     public static final Item SNOWY_ZOMBIE_SPAWN_EGG = registerItem("snowy_zombie_spawn_egg", createSpawnEggItem(ModEntityTypes.SNOWY_ZOMBIE, 3565947, 16777215));
     public static final Item FROZEN_SKELETON_SPAWN_EGG = registerItem("frozen_skeleton_spawn_egg", createSpawnEggItem(ModEntityTypes.FROZEN_SKELETON, 6652326, 6658544));
+    public static final Item FROZEN_CREEPER_SPAWN_EGG = registerItem("frozen_creeper_spawn_egg", createSpawnEggItem(ModEntityTypes.FROZEN_CREEPER, 4475506, 6658544));
 
     public static void registerItems() {
         log.info("Register items");

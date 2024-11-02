@@ -88,6 +88,9 @@ public class ModEntityTypes {
     public static final EntityType<FrozenSkeletonEntity> FROZEN_SKELETON = registerEntityType("frozen_skeleton",
             EntityType.Builder.create(FrozenSkeletonEntity::new, SpawnGroup.MONSTER)
                     .dimensions(0.6f, 1.99f));
+    public static final EntityType<FrozenCreeperEntity> FROZEN_CREEPER = registerEntityType("frozen_creeper",
+            EntityType.Builder.create(FrozenCreeperEntity::new, SpawnGroup.MONSTER)
+                    .dimensions(0.6f, 1.7f));
 
     public static <T extends Entity> EntityType<T> registerEntityType(String path, EntityType.Builder<T> entityTypeBuilder) {
         Identifier id = Identifier.of(MOD_ID, path);
@@ -116,6 +119,7 @@ public class ModEntityTypes {
         SpawnRestriction.register(SNOWY_CREEPER, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, HostileEntity::canSpawnInDark);
         SpawnRestriction.register(SNOWY_ZOMBIE, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
         SpawnRestriction.register(FROZEN_SKELETON, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
+        SpawnRestriction.register(FROZEN_CREEPER, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, HostileEntity::canSpawnInDark);
     }
 
     public static void registerAttributes() {
@@ -138,6 +142,7 @@ public class ModEntityTypes {
         FabricDefaultAttributeRegistry.register(SNOWY_CREEPER, SnowyCreeperEntity.createCreeperAttributes());
         FabricDefaultAttributeRegistry.register(SNOWY_ZOMBIE, SnowyZombieEntity.createZombieAttributes());
         FabricDefaultAttributeRegistry.register(FROZEN_SKELETON, FrozenSkeletonEntity.createFrozenSkeletonAttributes());
+        FabricDefaultAttributeRegistry.register(FROZEN_CREEPER, FrozenCreeperEntity.createCreeperAttributes());
     }
 
     public static void addMobsToBiome() {
@@ -169,5 +174,6 @@ public class ModEntityTypes {
         BiomeModifications.addSpawn(snowyTaiga, SpawnGroup.CREATURE, SNOWY_PIG, 10, 4, 4);
         BiomeModifications.addSpawn(snowyTaiga, SpawnGroup.CREATURE, SNOWY_COW, 8, 4, 4);
         BiomeModifications.addSpawn(icy, SpawnGroup.MONSTER, FROZEN_SKELETON, 80, 4, 4);
+        BiomeModifications.addSpawn(icy, SpawnGroup.MONSTER, FROZEN_CREEPER, 100, 4, 4);
     }
 }

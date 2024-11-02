@@ -76,6 +76,6 @@ public class FrozenSkeletonEntity extends AbstractSkeletonEntity {
     }
 
     public static DefaultAttributeContainer.Builder createFrozenSkeletonAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.MOVEMENT_SPEED, 0.2);
+        return HostileEntity.createHostileAttributes().add(EntityAttributes.MOVEMENT_SPEED, 0.23);
     }
 }

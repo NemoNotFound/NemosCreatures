@@ -18,7 +18,8 @@ public class ModItemGroups {
     private static void modifySpawnEggsItemGroup() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
             entries.addAfter(CREEPER_SPAWN_EGG, CRIMSON_SKELETON_SPAWN_EGG);
-            entries.addAfter(FROG_SPAWN_EGG, FROZEN_SKELETON_SPAWN_EGG);
+            entries.addAfter(FROG_SPAWN_EGG, FROZEN_CREEPER_SPAWN_EGG);
+            entries.addAfter(FROZEN_CREEPER_SPAWN_EGG, FROZEN_SKELETON_SPAWN_EGG);
             entries.addAfter(MULE_SPAWN_EGG, MUMMY_SPAWN_EGG);
             entries.addAfter(SALMON_SPAWN_EGG, SAND_SPIDER_SPAWN_EGG);
             entries.addAfter(SAND_SPIDER_SPAWN_EGG, SCORCHED_CREEPER_SPAWN_EGG);
