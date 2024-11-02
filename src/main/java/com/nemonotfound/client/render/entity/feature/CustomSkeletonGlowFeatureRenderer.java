@@ -12,18 +12,18 @@ import net.minecraft.util.Identifier;
 import static com.nemonotfound.NemosCreatures.MOD_ID;
 
 @Environment(value= EnvType.CLIENT)
-public class FrozenSkeletonGlowFeatureRenderer<M extends SkeletonEntityModel<SkeletonEntityRenderState>>
+public class CustomSkeletonGlowFeatureRenderer<M extends SkeletonEntityModel<SkeletonEntityRenderState>>
         extends EyesFeatureRenderer<SkeletonEntityRenderState, M> {
 
-    private static final RenderLayer SKIN = RenderLayer.getEyes(Identifier.of(MOD_ID, "textures/entity/skeleton/frozen_skeleton_glow.png"));
+    private final RenderLayer eyes;
 
-    public FrozenSkeletonGlowFeatureRenderer(FeatureRendererContext<SkeletonEntityRenderState, M> featureRendererContext) {
+    public CustomSkeletonGlowFeatureRenderer(FeatureRendererContext<SkeletonEntityRenderState, M> featureRendererContext, String path) {
         super(featureRendererContext);
-
+        eyes = RenderLayer.getEyes(Identifier.of(MOD_ID, path));
     }
 
     @Override
     public RenderLayer getEyesTexture() {
-        return SKIN;
+        return eyes;
     }
 }

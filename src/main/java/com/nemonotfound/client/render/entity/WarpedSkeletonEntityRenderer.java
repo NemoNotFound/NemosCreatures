@@ -1,6 +1,6 @@
 package com.nemonotfound.client.render.entity;
 
-import com.nemonotfound.client.render.entity.feature.WarpedSkeletonGlowFeatureRenderer;
+import com.nemonotfound.client.render.entity.feature.CustomSkeletonGlowFeatureRenderer;
 import com.nemonotfound.client.render.entity.model.ModEntityModelLayers;
 import com.nemonotfound.entity.mob.WarpedSkeletonEntity;
 import net.minecraft.client.render.entity.AbstractSkeletonEntityRenderer;
@@ -13,11 +13,12 @@ import static com.nemonotfound.NemosCreatures.MOD_ID;
 public class WarpedSkeletonEntityRenderer extends AbstractSkeletonEntityRenderer<WarpedSkeletonEntity, SkeletonEntityRenderState> {
 
     private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/skeleton/warped_skeleton.png");
+    private static final String EYES_TEXTURE_PATH = "textures/entity/skeleton/warped_skeleton_glow.png";
 
     public WarpedSkeletonEntityRenderer(EntityRendererFactory.Context context) {
         super(context, ModEntityModelLayers.WARPED_SKELETON, ModEntityModelLayers.WARPED_SKELETON_INNER_ARMOR,
                 ModEntityModelLayers.WARPED_SKELETON_OUTER_ARMOR);
-        this.addFeature(new WarpedSkeletonGlowFeatureRenderer<>(this));
+        this.addFeature(new CustomSkeletonGlowFeatureRenderer<>(this, EYES_TEXTURE_PATH));
     }
 
     @Override
