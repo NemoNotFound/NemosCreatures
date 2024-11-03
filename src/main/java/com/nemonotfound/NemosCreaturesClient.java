@@ -43,6 +43,11 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntityTypes.SNOW_SPIDER, SnowSpiderEntityRenderer::new);
         EntityRendererRegistry.register(ModEntityTypes.SNOWY_CREEPER, SnowyCreeperEntityRenderer::new);
         EntityRendererRegistry.register(ModEntityTypes.SNOWY_ZOMBIE, SnowyZombieEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntityTypes.FROZEN_SKELETON, FrozenSkeletonEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntityTypes.FROZEN_CREEPER, FrozenCreeperEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntityTypes.FROZEN_SPIDER, FrozenSpiderEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntityTypes.ICE_SPIDER, IceSpiderEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntityTypes.FROZEN_ZOMBIE, FrozenZombieEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.VENOMOUS_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.VENOMOUS_SKELETON_INNER_ARMOR, () -> hatModelData);
@@ -65,7 +70,7 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.WARPED_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.WARPED_SKELETON_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.WARPED_SKELETON_OUTER_ARMOR, () -> armorModelData);
-        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.BOAR, WildBoarEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.WILD_BOAR, WildBoarEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_SKELETON_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_SKELETON_OUTER_ARMOR, () -> armorModelData);
@@ -76,5 +81,16 @@ public class NemosCreaturesClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_ZOMBIE, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 32));
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_ZOMBIE_INNER_ARMOR, () -> hatModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.SNOWY_ZOMBIE_OUTER_ARMOR, () -> armorModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.FROZEN_SKELETON, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.FROZEN_SKELETON_INNER_ARMOR, () -> hatModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.FROZEN_SKELETON_OUTER_ARMOR, () -> armorModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.FROZEN_SPIDER, SpiderEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.ICE_SPIDER, SpiderEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.FROZEN_ZOMBIE, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.FROZEN_ZOMBIE_INNER_ARMOR, () -> hatModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.FROZEN_ZOMBIE_OUTER_ARMOR, () -> armorModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.FROZEN_ZOMBIE_BABY, () -> TexturedModelData.of(ZombieEntityModel.getModelData(Dilation.NONE, 0f), 64, 64));
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.FROZEN_ZOMBIE_BABY_INNER_ARMOR, () -> hatModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.FROZEN_ZOMBIE_BABY_OUTER_ARMOR, () -> armorModelData);
     }
 }

@@ -33,7 +33,7 @@ public class ModEntityModelLayers {
     public static final EntityModelLayer WARPED_SKELETON = createEntityModelLayer("warped_skeleton", MAIN);
     public static final EntityModelLayer WARPED_SKELETON_INNER_ARMOR = createEntityModelLayer("warped_skeleton", INNER_ARMOR);
     public static final EntityModelLayer WARPED_SKELETON_OUTER_ARMOR = createEntityModelLayer("warped_skeleton", OUTER_ARMOR);
-    public static final EntityModelLayer BOAR = createEntityModelLayer("wild_boar", MAIN);
+    public static final EntityModelLayer WILD_BOAR = createEntityModelLayer("wild_boar", MAIN);
     public static final EntityModelLayer SNOWY_SKELETON = createEntityModelLayer("snowy_skeleton", MAIN);
     public static final EntityModelLayer SNOWY_SKELETON_INNER_ARMOR = createEntityModelLayer("snowy_skeleton", INNER_ARMOR);
     public static final EntityModelLayer SNOWY_SKELETON_OUTER_ARMOR = createEntityModelLayer("snowy_skeleton", OUTER_ARMOR);
@@ -44,6 +44,17 @@ public class ModEntityModelLayers {
     public static final EntityModelLayer SNOWY_ZOMBIE = createEntityModelLayer("snowy_zombie", MAIN);
     public static final EntityModelLayer SNOWY_ZOMBIE_INNER_ARMOR = createEntityModelLayer("snowy_zombie", INNER_ARMOR);
     public static final EntityModelLayer SNOWY_ZOMBIE_OUTER_ARMOR = createEntityModelLayer("snowy_zombie", OUTER_ARMOR);
+    public static final EntityModelLayer FROZEN_SKELETON = createEntityModelLayer("frozen_skeleton", MAIN);
+    public static final EntityModelLayer FROZEN_SKELETON_INNER_ARMOR = createEntityModelLayer("frozen_skeleton", INNER_ARMOR);
+    public static final EntityModelLayer FROZEN_SKELETON_OUTER_ARMOR = createEntityModelLayer("frozen_skeleton", OUTER_ARMOR);
+    public static final EntityModelLayer FROZEN_SPIDER = createEntityModelLayer("frozen_spider", MAIN);
+    public static final EntityModelLayer ICE_SPIDER = createEntityModelLayer("ice_spider", MAIN);
+    public static final EntityModelLayer FROZEN_ZOMBIE = createEntityModelLayer("frozen_zombie", MAIN);
+    public static final EntityModelLayer FROZEN_ZOMBIE_INNER_ARMOR = createEntityModelLayer("frozen_zombie", INNER_ARMOR);
+    public static final EntityModelLayer FROZEN_ZOMBIE_OUTER_ARMOR = createEntityModelLayer("frozen_zombie", OUTER_ARMOR);
+    public static final EntityModelLayer FROZEN_ZOMBIE_BABY = createEntityModelLayer("frozen_zombie_baby", MAIN);
+    public static final EntityModelLayer FROZEN_ZOMBIE_BABY_INNER_ARMOR = createEntityModelLayer("frozen_zombie_baby", INNER_ARMOR);
+    public static final EntityModelLayer FROZEN_ZOMBIE_BABY_OUTER_ARMOR = createEntityModelLayer("frozen_zombie_baby", OUTER_ARMOR);
 
     public static void registerEntityModelLayers() {
         log.info("Register entity model layers");

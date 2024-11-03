@@ -13,18 +13,18 @@ import net.minecraft.util.Identifier;
 import static com.nemonotfound.NemosCreatures.MOD_ID;
 
 @Environment(value= EnvType.CLIENT)
-public class WarpedSkeletonGlowFeatureRenderer<T extends MobEntity & RangedAttackMob>
+public class CustomSkeletonGlowFeatureRenderer<T extends MobEntity & RangedAttackMob>
         extends EyesFeatureRenderer<T, SkeletonEntityModel<T>> {
 
-    private static final RenderLayer SKIN = RenderLayer.getEyes(Identifier.of(MOD_ID, "textures/entity/skeleton/warped_skeleton_glow.png"));
+    private final RenderLayer eyes;
 
-    public WarpedSkeletonGlowFeatureRenderer(FeatureRendererContext<T, SkeletonEntityModel<T>> featureRendererContext) {
+    public CustomSkeletonGlowFeatureRenderer(FeatureRendererContext<T, SkeletonEntityModel<T>> featureRendererContext, String path) {
         super(featureRendererContext);
-
+        eyes = RenderLayer.getEyes(Identifier.of(MOD_ID, path));
     }
 
     @Override
     public RenderLayer getEyesTexture() {
-        return SKIN;
+        return eyes;
     }
 }

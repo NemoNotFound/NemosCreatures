@@ -7,10 +7,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.entity.EntityDimensions;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.entity.SpawnRestriction;
+import net.minecraft.entity.*;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.registry.Registries;
@@ -115,6 +112,25 @@ public class ModEntityTypes {
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, SnowyCowEntity::new)
                     .dimensions(EntityDimensions.fixed(0.9f, 1.4f))
                     .build());
+    public static final EntityType<FrozenSkeletonEntity> FROZEN_SKELETON = registerEntityType("frozen_skeleton",
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, FrozenSkeletonEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.6f, 1.99f)));
+    public static final EntityType<FrozenCreeperEntity> FROZEN_CREEPER = registerEntityType("frozen_creeper",
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, FrozenCreeperEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.6f, 1.7f)));
+    public static final EntityType<FrozenSpiderEntity> FROZEN_SPIDER = registerEntityType("frozen_spider",
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, FrozenSpiderEntity::new)
+                    .dimensions(EntityDimensions.fixed(1.4F, 0.9F)));
+    public static final EntityType<IceSpiderEntity> ICE_SPIDER = registerEntityType("ice_spider",
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, IceSpiderEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.4f, 0.2f)));
+    public static final EntityType<FrozenZombieEntity> FROZEN_ZOMBIE = registerEntityType("frozen_zombie",
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, FrozenZombieEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.6f, 1.95f)));
+
+    public static <T extends Entity> EntityType<T> registerEntityType(String path, FabricEntityTypeBuilder<T> entityTypeBuilder) {
+        return Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, path), entityTypeBuilder.build());
+    }
 
     public static void registerSpawnRestrictions() {
         SpawnRestriction.register(VENOMOUS_SKELETON, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
@@ -135,6 +151,11 @@ public class ModEntityTypes {
         SpawnRestriction.register(SNOW_SPIDER, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, HostileEntity::canSpawnInDark);
         SpawnRestriction.register(SNOWY_CREEPER, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, HostileEntity::canSpawnInDark);
         SpawnRestriction.register(SNOWY_ZOMBIE, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
+        SpawnRestriction.register(FROZEN_SKELETON, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
+        SpawnRestriction.register(FROZEN_CREEPER, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, HostileEntity::canSpawnInDark);
+        SpawnRestriction.register(FROZEN_SPIDER, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, HostileEntity::canSpawnInDark);
+        SpawnRestriction.register(ICE_SPIDER, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, HostileEntity::canSpawnInDark);
+        SpawnRestriction.register(FROZEN_ZOMBIE, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
     }
 
     public static void registerAttributes() {
@@ -156,6 +177,11 @@ public class ModEntityTypes {
         FabricDefaultAttributeRegistry.register(SNOW_SPIDER, SnowSpiderEntity.createSnowSpiderAttributes());
         FabricDefaultAttributeRegistry.register(SNOWY_CREEPER, SnowyCreeperEntity.createCreeperAttributes());
         FabricDefaultAttributeRegistry.register(SNOWY_ZOMBIE, SnowyZombieEntity.createZombieAttributes());
+        FabricDefaultAttributeRegistry.register(FROZEN_SKELETON, FrozenSkeletonEntity.createFrozenSkeletonAttributes());
+        FabricDefaultAttributeRegistry.register(FROZEN_CREEPER, FrozenCreeperEntity.createCreeperAttributes());
+        FabricDefaultAttributeRegistry.register(FROZEN_SPIDER, FrozenSpiderEntity.createSpiderAttributes());
+        FabricDefaultAttributeRegistry.register(ICE_SPIDER, IceSpiderEntity.createIceSpiderAttributes());
+        FabricDefaultAttributeRegistry.register(FROZEN_ZOMBIE, FrozenZombieEntity.createZombieAttributes());
     }
 
     public static void addMobsToBiome() {
@@ -166,6 +192,7 @@ public class ModEntityTypes {
         Predicate<BiomeSelectionContext> forest = BiomeSelectors.tag(BiomeTags.IS_FOREST);
         Predicate<BiomeSelectionContext> snowy = BiomeSelectors.tag(BiomeTags.of("is_snowy"));
         Predicate<BiomeSelectionContext> snowyTaiga = BiomeSelectors.tag(ModBiomeTags.IS_SNOWY_TAIGA);
+        Predicate<BiomeSelectionContext> icy = BiomeSelectors.tag(BiomeTags.of("is_icy"));
 
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_SKELETON, 100, 4, 4);
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_SPIDER, 100, 4, 4);
@@ -185,5 +212,10 @@ public class ModEntityTypes {
         BiomeModifications.addSpawn(snowy, SpawnGroup.MONSTER, SNOWY_ZOMBIE, 95, 4, 4);
         BiomeModifications.addSpawn(snowyTaiga, SpawnGroup.CREATURE, SNOWY_PIG, 10, 4, 4);
         BiomeModifications.addSpawn(snowyTaiga, SpawnGroup.CREATURE, SNOWY_COW, 8, 4, 4);
+        BiomeModifications.addSpawn(icy, SpawnGroup.MONSTER, FROZEN_SKELETON, 80, 4, 4);
+        BiomeModifications.addSpawn(icy, SpawnGroup.MONSTER, FROZEN_CREEPER, 100, 4, 4);
+        BiomeModifications.addSpawn(icy, SpawnGroup.MONSTER, FROZEN_SPIDER, 100, 4, 4);
+        BiomeModifications.addSpawn(icy, SpawnGroup.MONSTER, ICE_SPIDER, 80, 4, 4);
+        BiomeModifications.addSpawn(icy, SpawnGroup.MONSTER, FROZEN_ZOMBIE, 95, 4, 4);
     }
 }

@@ -15,7 +15,7 @@ public class WildBoarEntityRenderer extends MobEntityRenderer<WildBoarEntity, Wi
     private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/entity/pig/wild_boar.png");
 
     public WildBoarEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, new WildBoarEntityModel<>(context.getPart(ModEntityModelLayers.BOAR)), 0.7f);
+        super(context, new WildBoarEntityModel<>(context.getPart(ModEntityModelLayers.WILD_BOAR)), 0.7f);
     }
 
     @Override

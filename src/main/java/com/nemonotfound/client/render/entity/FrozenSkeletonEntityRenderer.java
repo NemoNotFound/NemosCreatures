@@ -9,19 +9,19 @@ import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
 
-public class SnowySkeletonEntityRenderer extends SkeletonEntityRenderer {
+public class FrozenSkeletonEntityRenderer extends SkeletonEntityRenderer {
 
-    private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/skeleton/snowy_skeleton.png");
-    private static final String EYES_TEXTURE_PATH = "textures/entity/skeleton/snowy_skeleton_glow.png";
+    private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/skeleton/frozen_skeleton.png");
+    private static final String EYES_TEXTURE_PATH = "textures/entity/skeleton/frozen_skeleton_glow.png";
 
-    public SnowySkeletonEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, ModEntityModelLayers.SNOWY_SKELETON, ModEntityModelLayers.SNOWY_SKELETON_INNER_ARMOR,
-                ModEntityModelLayers.SNOWY_SKELETON_OUTER_ARMOR);
+    public FrozenSkeletonEntityRenderer(EntityRendererFactory.Context context) {
+        super(context, ModEntityModelLayers.FROZEN_SKELETON, ModEntityModelLayers.FROZEN_SKELETON_INNER_ARMOR,
+                ModEntityModelLayers.FROZEN_SKELETON_OUTER_ARMOR);
         this.addFeature(new CustomSkeletonGlowFeatureRenderer<>(this, EYES_TEXTURE_PATH));
     }
 
     @Override
-    public Identifier getTexture(AbstractSkeletonEntity snowySkeletonEntity) {
+    public Identifier getTexture(AbstractSkeletonEntity entity) {
         return TEXTURE;
     }
 }
