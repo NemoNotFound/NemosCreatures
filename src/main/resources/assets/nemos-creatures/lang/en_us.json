@@ -39,6 +39,8 @@
   "item.nemos-creatures.frozen_skeleton_spawn_egg": "Frozen Skeleton Spawn Egg",
   "entity.nemos-creatures.frozen_creeper": "Frozen Creeper",
   "item.nemos-creatures.frozen_creeper_spawn_egg": "Frozen Creeper Spawn Egg",
+  "entity.nemos-creatures.frozen_spider": "Frozen Spider",
+  "item.nemos-creatures.frozen_spider_spawn_egg": "Frozen Spider Spawn Egg",
   "tag.worldgen.biome.minecraft.is_crimson_forest": "Crimson Forest",
   "tag.worldgen.biome.minecraft.is_warped_forest": "Warped Forest"
 }
