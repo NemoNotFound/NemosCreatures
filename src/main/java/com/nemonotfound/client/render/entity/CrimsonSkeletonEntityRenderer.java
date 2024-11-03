@@ -3,14 +3,13 @@ package com.nemonotfound.client.render.entity;
 import com.nemonotfound.client.render.entity.feature.CustomSkeletonGlowFeatureRenderer;
 import com.nemonotfound.client.render.entity.model.ModEntityModelLayers;
 import com.nemonotfound.entity.mob.CrimsonSkeletonEntity;
-import net.minecraft.client.render.entity.AbstractSkeletonEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.client.render.entity.state.SkeletonEntityRenderState;
+import net.minecraft.client.render.entity.SkeletonEntityRenderer;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
 
-public class CrimsonSkeletonEntityRenderer extends AbstractSkeletonEntityRenderer<CrimsonSkeletonEntity, SkeletonEntityRenderState> {
+public class CrimsonSkeletonEntityRenderer extends SkeletonEntityRenderer<CrimsonSkeletonEntity> {
 
     private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/skeleton/crimson_skeleton.png");
     private static final String EYES_TEXTURE_PATH = "textures/entity/skeleton/crimson_skeleton_glow.png";
@@ -22,12 +21,7 @@ public class CrimsonSkeletonEntityRenderer extends AbstractSkeletonEntityRendere
     }
 
     @Override
-    public SkeletonEntityRenderState createRenderState() {
-        return new SkeletonEntityRenderState();
-    }
-
-    @Override
-    public Identifier getTexture(SkeletonEntityRenderState state) {
+    public Identifier getTexture(CrimsonSkeletonEntity abstractSkeletonEntity) {
         return TEXTURE;
     }
 }

@@ -2,40 +2,31 @@ package com.nemonotfound.client.render.entity;
 
 import com.nemonotfound.client.render.entity.model.ModEntityModelLayers;
 import com.nemonotfound.entity.mob.SnowyZombieEntity;
+import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.client.render.entity.ZombieBaseEntityRenderer;
+import net.minecraft.client.render.entity.feature.ArmorFeatureRenderer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.ZombieEntityModel;
-import net.minecraft.client.render.entity.state.ZombieEntityRenderState;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
 
-public class SnowyZombieEntityRenderer extends ZombieBaseEntityRenderer<SnowyZombieEntity, ZombieEntityRenderState, ZombieEntityModel<ZombieEntityRenderState>> {
+public class SnowyZombieEntityRenderer extends BipedEntityRenderer<SnowyZombieEntity, ZombieEntityModel<SnowyZombieEntity>> {
 
     private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/zombie/snowy_zombie.png");
 
     public SnowyZombieEntityRenderer(EntityRendererFactory.Context context) {
-        this(context, ModEntityModelLayers.SNOWY_ZOMBIE, ModEntityModelLayers.SNOWY_ZOMBIE_BABY, ModEntityModelLayers.SNOWY_ZOMBIE_INNER_ARMOR, ModEntityModelLayers.SNOWY_ZOMBIE_OUTER_ARMOR, ModEntityModelLayers.SNOWY_ZOMBIE_BABY_INNER_ARMOR, ModEntityModelLayers.SNOWY_ZOMBIE_BABY_OUTER_ARMOR);
+        this(context, ModEntityModelLayers.SNOWY_ZOMBIE,  ModEntityModelLayers.SNOWY_ZOMBIE_INNER_ARMOR,  ModEntityModelLayers.SNOWY_ZOMBIE_OUTER_ARMOR);
     }
 
-    public SnowyZombieEntityRenderer(EntityRendererFactory.Context context, EntityModelLayer body, EntityModelLayer baby, EntityModelLayer innerArmor, EntityModelLayer outerArmor, EntityModelLayer babyInnerArmor, EntityModelLayer babyOuterArmor) {
-        super(context,
-                new ZombieEntityModel<>(context.getPart(body)),
-                new ZombieEntityModel<>(context.getPart(baby)),
-                new ZombieEntityModel<>(context.getPart(innerArmor)),
-                new ZombieEntityModel<>(context.getPart(outerArmor)),
-                new ZombieEntityModel<>(context.getPart(babyInnerArmor)),
-                new ZombieEntityModel<>(context.getPart(babyOuterArmor)));
+    public SnowyZombieEntityRenderer(EntityRendererFactory.Context ctx, EntityModelLayer body, EntityModelLayer legsArmorLayer, EntityModelLayer bodyArmorLayer) {
+        super(ctx, new ZombieEntityModel<>(ctx.getPart(body)), 0.5f);
+        this.addFeature(new ArmorFeatureRenderer<>(this, new ZombieEntityModel<>(ctx.getPart(legsArmorLayer)),
+                new ZombieEntityModel<>(ctx.getPart(bodyArmorLayer)), ctx.getModelManager()));
     }
 
     @Override
-    public ZombieEntityRenderState createRenderState() {
-        return new ZombieEntityRenderState();
-    }
-
-    @Override
-    public Identifier getTexture(ZombieEntityRenderState state) {
+    public Identifier getTexture(SnowyZombieEntity entity) {
         return TEXTURE;
     }
 }

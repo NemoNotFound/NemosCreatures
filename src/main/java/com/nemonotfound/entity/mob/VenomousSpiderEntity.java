@@ -6,7 +6,6 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.SpiderEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.LocalDifficulty;
@@ -21,12 +20,12 @@ public class VenomousSpiderEntity extends SpiderEntity {
     }
 
     public static DefaultAttributeContainer.Builder createJungleSpiderAttributes() {
-        return SpiderEntity.createSpiderAttributes().add(EntityAttributes.MAX_HEALTH, 14.0);
+        return SpiderEntity.createSpiderAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 14.0);
     }
 
     @Override
-    public boolean tryAttack(ServerWorld world, Entity target) {
-        if (super.tryAttack(world, target)) {
+    public boolean tryAttack(Entity target) {
+        if (super.tryAttack(target)) {
             if (target instanceof LivingEntity) {
                 int durationMultiplier = 0;
 

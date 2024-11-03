@@ -6,7 +6,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.ZombieEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 
@@ -17,8 +16,8 @@ public class FrozenZombieEntity extends ZombieEntity {
     }
 
     @Override
-    public boolean tryAttack(ServerWorld world, Entity target) {
-        if (super.tryAttack(world, target)) {
+    public boolean tryAttack(Entity target) {
+        if (super.tryAttack(target)) {
             if (target instanceof LivingEntity) {
                 int durationMultiplier = 0;
 

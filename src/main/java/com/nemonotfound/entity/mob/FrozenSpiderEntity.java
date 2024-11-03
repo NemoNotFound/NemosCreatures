@@ -9,7 +9,6 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.SpiderEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 
@@ -20,8 +19,8 @@ public class FrozenSpiderEntity extends SpiderEntity {
     }
 
     @Override
-    public boolean tryAttack(ServerWorld world, Entity target) {
-        if (super.tryAttack(world, target)) {
+    public boolean tryAttack(Entity target) {
+        if (super.tryAttack(target)) {
             if (target instanceof LivingEntity) {
                 int durationMultiplier = 0;
 
@@ -43,7 +42,7 @@ public class FrozenSpiderEntity extends SpiderEntity {
     }
 
     public static DefaultAttributeContainer.Builder createSpiderAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.MAX_HEALTH, 18.0).
-                add(EntityAttributes.MOVEMENT_SPEED, 0.28);
+        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 18.0).
+                add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.28);
     }
 }

@@ -12,8 +12,6 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.Heightmap;
 
@@ -105,10 +103,7 @@ public class ModEntityTypes {
                     .dimensions(0.6f, 1.95f));
 
     public static <T extends Entity> EntityType<T> registerEntityType(String path, EntityType.Builder<T> entityTypeBuilder) {
-        Identifier id = Identifier.of(MOD_ID, path);
-        RegistryKey<EntityType<?>> key = RegistryKey.of(RegistryKeys.ENTITY_TYPE, id);
-
-        return Registry.register(Registries.ENTITY_TYPE, key, entityTypeBuilder.build(key));
+        return Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, path), entityTypeBuilder.build());
     }
 
     public static void registerSpawnRestrictions() {

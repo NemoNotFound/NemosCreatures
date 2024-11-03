@@ -32,6 +32,6 @@ public class FrozenCreeperEntity extends CreeperEntity {
     }
 
     public static DefaultAttributeContainer.Builder createCreeperAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.MOVEMENT_SPEED, 0.23);
+        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.23);
     }
 }

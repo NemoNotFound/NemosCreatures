@@ -2,7 +2,7 @@ package com.nemonotfound.client.render.entity;
 
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.PigEntityRenderer;
-import net.minecraft.client.render.entity.state.PigEntityRenderState;
+import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
@@ -16,7 +16,7 @@ public class SnowyPigEntityRenderer extends PigEntityRenderer {
     }
 
     @Override
-    public Identifier getTexture(PigEntityRenderState pigEntityRenderState) {
+    public Identifier getTexture(PigEntity entity) {
         return TEXTURE;
     }
 }

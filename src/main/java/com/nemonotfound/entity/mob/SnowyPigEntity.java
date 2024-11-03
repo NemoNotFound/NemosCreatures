@@ -2,7 +2,6 @@ package com.nemonotfound.entity.mob;
 
 import com.nemonotfound.entity.ModEntityTypes;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -18,6 +17,6 @@ public class SnowyPigEntity extends PigEntity {
     @Override
     @Nullable
     public PigEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntityTypes.SNOWY_PIG.create(world, SpawnReason.BREEDING);
+        return ModEntityTypes.SNOWY_PIG.create(world);
     }
 }

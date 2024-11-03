@@ -4,7 +4,6 @@ import com.nemonotfound.client.render.entity.model.ModEntityModelLayers;
 import com.nemonotfound.entity.mob.SandSpiderEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.SpiderEntityRenderer;
-import net.minecraft.client.render.entity.state.LivingEntityRenderState;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
@@ -21,12 +20,12 @@ public class SandSpiderEntityRenderer extends SpiderEntityRenderer<SandSpiderEnt
     }
 
     @Override
-    public Identifier getTexture(LivingEntityRenderState state) {
-        return TEXTURE;
+    protected void scale(SandSpiderEntity sandSpiderEntity, MatrixStack matrixStack, float f) {
+        matrixStack.scale(SCALE, SCALE, SCALE);
     }
 
     @Override
-    protected void scale(LivingEntityRenderState state, MatrixStack matrices) {
-        matrices.scale(SCALE, SCALE, SCALE);
+    public Identifier getTexture(SandSpiderEntity sandSpiderEntity) {
+        return TEXTURE;
     }
 }

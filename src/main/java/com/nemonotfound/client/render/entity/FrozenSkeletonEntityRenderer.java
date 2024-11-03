@@ -3,14 +3,13 @@ package com.nemonotfound.client.render.entity;
 import com.nemonotfound.client.render.entity.feature.CustomSkeletonGlowFeatureRenderer;
 import com.nemonotfound.client.render.entity.model.ModEntityModelLayers;
 import com.nemonotfound.entity.mob.FrozenSkeletonEntity;
-import net.minecraft.client.render.entity.AbstractSkeletonEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.client.render.entity.state.SkeletonEntityRenderState;
+import net.minecraft.client.render.entity.SkeletonEntityRenderer;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
 
-public class FrozenSkeletonEntityRenderer extends AbstractSkeletonEntityRenderer<FrozenSkeletonEntity, SkeletonEntityRenderState> {
+public class FrozenSkeletonEntityRenderer extends SkeletonEntityRenderer<FrozenSkeletonEntity> {
 
     private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/skeleton/frozen_skeleton.png");
     private static final String EYES_TEXTURE_PATH = "textures/entity/skeleton/frozen_skeleton_glow.png";
@@ -22,12 +21,7 @@ public class FrozenSkeletonEntityRenderer extends AbstractSkeletonEntityRenderer
     }
 
     @Override
-    public SkeletonEntityRenderState createRenderState() {
-        return new SkeletonEntityRenderState();
-    }
-
-    @Override
-    public Identifier getTexture(SkeletonEntityRenderState state) {
+    public Identifier getTexture(FrozenSkeletonEntity entity) {
         return TEXTURE;
     }
 }
