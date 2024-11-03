@@ -190,9 +190,9 @@ public class ModEntityTypes {
         Predicate<BiomeSelectionContext> crimsonForest = BiomeSelectors.tag(ModBiomeTags.IS_CRIMSON_FOREST);
         Predicate<BiomeSelectionContext> warpedForest = BiomeSelectors.tag(ModBiomeTags.IS_WARPED_FOREST);
         Predicate<BiomeSelectionContext> forest = BiomeSelectors.tag(BiomeTags.IS_FOREST);
-        Predicate<BiomeSelectionContext> snowy = BiomeSelectors.tag(BiomeTags.of("is_snowy"));
+        Predicate<BiomeSelectionContext> snowy = BiomeSelectors.tag(ModBiomeTags.IS_SNOWY);
         Predicate<BiomeSelectionContext> snowyTaiga = BiomeSelectors.tag(ModBiomeTags.IS_SNOWY_TAIGA);
-        Predicate<BiomeSelectionContext> icy = BiomeSelectors.tag(BiomeTags.of("is_icy"));
+        Predicate<BiomeSelectionContext> icy = BiomeSelectors.tag(ModBiomeTags.IS_ICY);
 
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_SKELETON, 100, 4, 4);
         BiomeModifications.addSpawn(jungle, SpawnGroup.MONSTER, VENOMOUS_SPIDER, 100, 4, 4);
