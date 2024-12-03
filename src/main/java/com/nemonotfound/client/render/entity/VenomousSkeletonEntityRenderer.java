@@ -22,7 +22,7 @@ public class VenomousSkeletonEntityRenderer extends AbstractSkeletonEntityRender
     public VenomousSkeletonEntityRenderer(EntityRendererFactory.Context context) {
         super(context, ModEntityModelLayers.VENOMOUS_SKELETON, ModEntityModelLayers.VENOMOUS_SKELETON_INNER_ARMOR,
                 ModEntityModelLayers.VENOMOUS_SKELETON_OUTER_ARMOR);
-        this.addFeature(new SkeletonOverlayFeatureRenderer<>(this, context.getModelLoader(), EntityModelLayers.STRAY_OUTER, OVERLAY_TEXTURE));
+        this.addFeature(new SkeletonOverlayFeatureRenderer<>(this, context.getEntityModels(), EntityModelLayers.STRAY_OUTER, OVERLAY_TEXTURE));
     }
 
     @Override

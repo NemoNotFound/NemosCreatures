@@ -19,6 +19,9 @@
 		],
 		"client": [
 			"com.nemonotfound.NemosCreaturesClient"
+		],
+		"fabric-datagen": [
+			"com.nemonotfound.NemosCreaturesDataGenerator"
 		]
 	},
 	"mixins": [

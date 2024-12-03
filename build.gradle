@@ -1,9 +1,9 @@
 plugins {
-	id 'fabric-loom' version '1.8.9'
+	id 'fabric-loom' version '1.8-SNAPSHOT'
 	id 'maven-publish'
 }
 
-version = project.mod_version + "-" + project.minecraft_version
+version = project.minecraft_version + "-" + project.mod_version
 group = project.maven_group
 
 base {
@@ -18,8 +18,24 @@ repositories {
 	// for more information about repositories.
 }
 
+fabricApi {
+	configureDataGeneration()
+}
+
 loom {
 	accessWidenerPath = file("src/main/resources/nemos-creatures.accesswidener")
+
+	runs {
+		datagen {
+			inherit client
+			name "Data Generation"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+			vmArg "-Dfabric-api.datagen.modid=${mod_id}"
+
+			runDir "build/datagen"
+		}
+	}
 }
 
 dependencies {
