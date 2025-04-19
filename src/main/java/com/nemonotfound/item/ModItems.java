@@ -41,6 +41,7 @@ public class ModItems {
     public static final Item FROZEN_SPIDER_SPAWN_EGG = registerItem("frozen_spider_spawn_egg", createSpawnEggItem(ModEntityTypes.FROZEN_SPIDER));
     public static final Item ICE_SPIDER_SPAWN_EGG = registerItem("ice_spider_spawn_egg", createSpawnEggItem(ModEntityTypes.ICE_SPIDER));
     public static final Item FROZEN_ZOMBIE_SPAWN_EGG = registerItem("frozen_zombie_spawn_egg", createSpawnEggItem(ModEntityTypes.FROZEN_ZOMBIE));
+    public static final Item SAND_DUST = registerItem("sand_dust", Item::new);
 
     public static void registerItems() {
         log.info("Register items");

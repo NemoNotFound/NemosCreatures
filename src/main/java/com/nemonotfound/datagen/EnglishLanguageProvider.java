@@ -68,5 +68,6 @@ public class EnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBiomeTags.IS_WARPED_FOREST, "Warped Forest");
         translationBuilder.add(ModBiomeTags.IS_SNOWY_TAIGA, "Snowy Taiga");
         translationBuilder.add(ModItemGroups.NEMOS_CREATURES_KEY, "Nemo's Creatures");
+        translationBuilder.add(ModItems.SAND_DUST, "Sand Dust");
     }
 }

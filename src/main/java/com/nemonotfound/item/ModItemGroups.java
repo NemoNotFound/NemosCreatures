@@ -56,6 +56,7 @@ public class ModItemGroups {
                     entries.add(VENOMOUS_ZOMBIE_SPAWN_EGG);
                     entries.add(WARPED_SKELETON_SPAWN_EGG);
                     entries.add(WILD_BOAR_SPAWN_EGG);
+                    entries.add(SAND_DUST);
                 });
     }
 }

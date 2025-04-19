@@ -3,6 +3,7 @@ package com.nemonotfound;
 import com.nemonotfound.datagen.EnglishLanguageProvider;
 import com.nemonotfound.datagen.EntityLootTableProvider;
 import com.nemonotfound.datagen.ModModelProvider;
+import com.nemonotfound.datagen.RecipeProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -15,5 +16,6 @@ public class NemosCreaturesDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(EnglishLanguageProvider::new);
 		pack.addProvider(EntityLootTableProvider::new);
 		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(RecipeProvider::new);
 	}
 }

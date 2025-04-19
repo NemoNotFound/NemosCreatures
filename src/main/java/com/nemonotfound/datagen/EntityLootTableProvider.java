@@ -1,9 +1,11 @@
 package com.nemonotfound.datagen;
 
 import com.nemonotfound.entity.ModEntityTypes;
+import com.nemonotfound.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricEntityLootTableProvider;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
@@ -12,6 +14,7 @@ import net.minecraft.loot.condition.KilledByPlayerLootCondition;
 import net.minecraft.loot.condition.RandomChanceWithEnchantedBonusLootCondition;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.entry.TagEntry;
 import net.minecraft.loot.function.EnchantedCountIncreaseLootFunction;
 import net.minecraft.loot.function.FurnaceSmeltLootFunction;
@@ -81,7 +84,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
         this.register(
                 ModEntityTypes.SNOWY_SKELETON,
                 defaultSkeletonLootTableBuilder()
-                        .pool(snowballLootPoolBuilder())
+                        .pool(lootPoolBuilder(Items.SNOWBALL))
                         .pool(tippedArrowLootPoolBuilder(Potions.SLOWNESS))
         );
 
@@ -97,11 +100,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                         .pool(
                                 LootPool.builder()
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(
-                                                ItemEntry.builder(Items.ROTTEN_FLESH)
-                                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
-                                                        .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
-                                        )
+                                        .with(itemEntryBuilder(Items.ROTTEN_FLESH))
                         )
                         .pool(
                                 LootPool.builder()
@@ -120,11 +119,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                         .pool(
                                 LootPool.builder()
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(
-                                                ItemEntry.builder(Items.ROTTEN_FLESH)
-                                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
-                                                        .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
-                                        )
+                                        .with(itemEntryBuilder(Items.ROTTEN_FLESH))
                         )
                         .pool(
                                 LootPool.builder()
@@ -138,11 +133,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                         .pool(
                                 LootPool.builder()
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(
-                                                ItemEntry.builder(Items.STRING)
-                                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
-                                                        .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
-                                        )
+                                        .with(itemEntryBuilder(Items.STRING))
                         )
         );
 
@@ -152,11 +143,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                         .pool(
                                 LootPool.builder()
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(
-                                                ItemEntry.builder(Items.ROTTEN_FLESH)
-                                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
-                                                        .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
-                                        )
+                                        .with(itemEntryBuilder(Items.ROTTEN_FLESH))
                         )
                         .pool(
                                 LootPool.builder()
@@ -174,11 +161,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                         .pool(
                                 LootPool.builder()
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(
-                                                ItemEntry.builder(Items.ROTTEN_FLESH)
-                                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
-                                                        .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
-                                        )
+                                        .with(itemEntryBuilder(Items.ROTTEN_FLESH))
                         )
                         .pool(
                                 LootPool.builder()
@@ -189,34 +172,58 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                                         .conditionally(KilledByPlayerLootCondition.builder())
                                         .conditionally(RandomChanceWithEnchantedBonusLootCondition.builder(this.registries, 0.025F, 0.01F))
                         )
-                        .pool(snowballLootPoolBuilder())
+                        .pool(lootPoolBuilder(Items.SNOWBALL))
         );
 
         this.register(ModEntityTypes.FROZEN_CREEPER, defaultCreeperLootTableBuilder(entityTypeRegistryEntryLookup));
 
-        this.register(ModEntityTypes.SCORCHED_CREEPER, defaultCreeperLootTableBuilder(entityTypeRegistryEntryLookup));
+        this.register(
+                ModEntityTypes.SCORCHED_CREEPER,
+                LootTable.builder()
+                        .pool(
+                                LootPool.builder()
+                                        .rolls(ConstantLootNumberProvider.create(1.0F))
+                                        .with(itemEntryBuilder(Items.GUNPOWDER))
+                                        .with(itemEntryBuilder(ModItems.SAND_DUST))
+                        )
+                        .pool(
+                                LootPool.builder()
+                                        .with(TagEntry.expandBuilder(ItemTags.CREEPER_DROP_MUSIC_DISCS))
+                                        .conditionally(
+                                                EntityPropertiesLootCondition.builder(
+                                                        LootContext.EntityTarget.ATTACKER,
+                                                        EntityPredicate.Builder.create()
+                                                                .type(entityTypeRegistryEntryLookup, EntityTypeTags.SKELETONS)
+                                                )
+                                        )
+                        )
+        );
 
         this.register(
                 ModEntityTypes.SNOWY_CREEPER,
                 defaultCreeperLootTableBuilder(entityTypeRegistryEntryLookup)
-                        .pool(snowballLootPoolBuilder())
+                        .pool(lootPoolBuilder(Items.SNOWBALL))
         );
 
         this.register(ModEntityTypes.VENOMOUS_CREEPER, defaultCreeperLootTableBuilder(entityTypeRegistryEntryLookup));
 
         this.register(ModEntityTypes.FROZEN_SPIDER, defaultSpiderLootTableBuilder());
         this.register(ModEntityTypes.ICE_SPIDER, defaultSpiderLootTableBuilder());
-        this.register(ModEntityTypes.SAND_SPIDER, defaultSpiderLootTableBuilder());
+        this.register(
+                ModEntityTypes.SAND_SPIDER,
+                defaultSpiderLootTableBuilder()
+                        .pool(lootPoolBuilder(ModItems.SAND_DUST))
+        );
         this.register(
                 ModEntityTypes.SNOW_SPIDER,
                 defaultSpiderLootTableBuilder()
-                        .pool(snowballLootPoolBuilder())
+                        .pool(lootPoolBuilder(Items.SNOWBALL))
         );
         this.register(ModEntityTypes.VENOMOUS_SPIDER, defaultSpiderLootTableBuilder());
         this.register(
                 ModEntityTypes.SNOWY_SPIDER,
                 defaultSpiderLootTableBuilder()
-                        .pool(snowballLootPoolBuilder())
+                        .pool(lootPoolBuilder(Items.SNOWBALL))
         );
 
         this.register(
@@ -225,11 +232,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                         .pool(
                                 LootPool.builder()
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(
-                                                ItemEntry.builder(Items.LEATHER)
-                                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
-                                                        .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
-                                        )
+                                        .with(itemEntryBuilder(Items.LEATHER))
                         )
                         .pool(
                                 LootPool.builder()
@@ -241,7 +244,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                                                         .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
                                         )
                         )
-                        .pool(snowballLootPoolBuilder())
+                        .pool(lootPoolBuilder(Items.SNOWBALL))
         );
 
         this.register(
@@ -257,7 +260,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                                                         .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
                                         )
                         )
-                        .pool(snowballLootPoolBuilder())
+                        .pool(lootPoolBuilder(Items.SNOWBALL))
         );
 
         this.register(
@@ -276,14 +279,20 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
         );
     }
 
-    private LootPool.Builder snowballLootPoolBuilder() {
+    private LootPool.Builder lootPoolBuilder(Item item) {
         return LootPool.builder()
                 .rolls(ConstantLootNumberProvider.create(1.0F))
                 .with(
-                        ItemEntry.builder(Items.SNOWBALL)
-                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 1.0F)))
+                        ItemEntry.builder(item)
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
                                 .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
                 );
+    }
+
+    private LootPoolEntry.Builder<?> itemEntryBuilder(Item item) {
+        return ItemEntry.builder(item)
+                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
+                .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)));
     }
 
     private LootTable.Builder defaultSkeletonLootTableBuilder() {
@@ -291,20 +300,12 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                 .pool(
                         LootPool.builder()
                                 .rolls(ConstantLootNumberProvider.create(1.0F))
-                                .with(
-                                        ItemEntry.builder(Items.ARROW)
-                                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
-                                                .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
-                                )
+                                .with(itemEntryBuilder(Items.ARROW))
                 )
                 .pool(
                         LootPool.builder()
                                 .rolls(ConstantLootNumberProvider.create(1.0F))
-                                .with(
-                                        ItemEntry.builder(Items.BONE)
-                                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
-                                                .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
-                                )
+                                .with(itemEntryBuilder(Items.BONE))
                 );
     }
 
@@ -325,11 +326,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                 .pool(
                         LootPool.builder()
                                 .rolls(ConstantLootNumberProvider.create(1.0F))
-                                .with(
-                                        ItemEntry.builder(Items.GUNPOWDER)
-                                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
-                                                .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
-                                )
+                                .with(itemEntryBuilder(Items.GUNPOWDER))
                 )
                 .pool(
                         LootPool.builder()
@@ -347,11 +344,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                 .pool(
                         LootPool.builder()
                                 .rolls(ConstantLootNumberProvider.create(1.0F))
-                                .with(
-                                        ItemEntry.builder(Items.STRING)
-                                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
-                                                .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
-                                )
+                                .with(itemEntryBuilder(Items.STRING))
                 )
                 .pool(
                         LootPool.builder()

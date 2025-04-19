@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:sand"
+  ],
+  "result": {
+    "count": 9,
+    "id": "nemos-creatures:sand_dust"
+  }
+}

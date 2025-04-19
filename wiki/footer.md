@@ -1,17 +1,3 @@
-![Nemo's Creatures](https://github.com/NemoNotFound/NemoNotFound/blob/master/resources/minecraft_projects/titles/png/nemos_creatures.png?raw=true)
-<br><br>
-
-# Description
-**Nemo’s Creatures** adds new mobs to Minecraft — both biome-specific variants and entirely new ones!
-
-For more information check the [wiki](https://github.com/NemoNotFound/NemosCreatures/wiki).
-<br><br>
-
-# Downloads
-- [CurseForge](https://curseforge.com/minecraft/mc-mods/nemos-creatures)
-- [Modrinth](https://modrinth.com/mod/nemos-creatures)
-<br><br>
-
 # Join my Discord!
 [![Join my Discord](https://github.com/NemoNotFound/NemoNotFound/blob/master/resources/svg/join_discord_button.svg?raw=true)](https://discord.com/invite/yxs9dga)
 <br><br>

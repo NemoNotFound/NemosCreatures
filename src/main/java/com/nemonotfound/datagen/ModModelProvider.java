@@ -42,5 +42,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.FROZEN_SPIDER_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(ModItems.ICE_SPIDER_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(ModItems.FROZEN_ZOMBIE_SPAWN_EGG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SAND_DUST, Models.GENERATED);
     }
 }
