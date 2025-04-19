@@ -2,26 +2,31 @@
 <br><br>
 
 # Description
-Nemo's Creatures adds some new mobs to Minecraft! <br>
-Some of them are new biome specific variants of existing mobs.
-Expect more mobs to come!
+**Nemo's Creatures** adds some new mobs to Minecraft! <br>
+Some of them are biome-specific variants of existing mobs.
+Expect even more creatures to be added in the future!
 
-[![Join my Discord](https://github.com/NemoNotFound/NemoNotFound/blob/master/resources/svg/join_discord_button.svg?raw=true)](https://discord.com/invite/yxs9dga)
-<br>
-<br>
-
-I love to create mods for Minecraft and wish to live off it one day, so I hope you like what I do. <br>
-Either way feel free to give me your feedback and suggestions, either on my Discord or the [discussions](https://github.com/NemoNotFound/NemosCreatures/discussions/) :)
-<br><br>
-For more information check the [wiki](https://www.nemonotfound.com/minecraft-mods/nemos-creatures/wiki).
-
-[![ko-fi donation](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nemonotfound)
+For more information check the [wiki](https://github.com/NemoNotFound/NemosCreatures/wiki).
 <br>
 <br>
 
 # Downloads
 - [CurseForge](https://curseforge.com/minecraft/mc-mods/nemos-creatures)
 - [Modrinth](https://modrinth.com/mod/nemos-creatures)
+<br>
+<br>
+
+# Join my Discord!
+[![Join my Discord](https://github.com/NemoNotFound/NemoNotFound/blob/master/resources/svg/join_discord_button.svg?raw=true)](https://discord.com/invite/yxs9dga)
+<br>
+<br>
+
+# Support Me
+I love to create mods for Minecraft and wish to live off it one day, so I hope you like what I do. <br>
+Either way feel free to give me your feedback and suggestions, either on my Discord or the [discussions](https://github.com/NemoNotFound/NemosCreatures/discussions/) :)
+<br><br>
+
+[![ko-fi donation](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nemonotfound)
 <br>
 <br>
 

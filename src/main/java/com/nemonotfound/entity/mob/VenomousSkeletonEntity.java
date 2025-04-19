@@ -53,4 +53,12 @@ public class VenomousSkeletonEntity extends AbstractSkeletonEntity {
         }
         return persistentProjectileEntity;
     }
+
+    @Override
+    public boolean canHaveStatusEffect(StatusEffectInstance effect) {
+        if (effect.getEffectType() == StatusEffects.POISON) {
+            return false;
+        }
+        return super.canHaveStatusEffect(effect);
+    }
 }

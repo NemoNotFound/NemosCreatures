@@ -1,5 +1,6 @@
 package com.nemonotfound.client.render.entity;
 
+import com.nemonotfound.client.render.entity.feature.ZombieOverlayFeatureRenderer;
 import com.nemonotfound.client.render.entity.model.ModEntityModelLayers;
 import com.nemonotfound.entity.mob.MummyEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -14,6 +15,7 @@ import static com.nemonotfound.NemosCreatures.MOD_ID;
 public class MummyEntityRenderer extends ZombieBaseEntityRenderer<MummyEntity, ZombieEntityRenderState, ZombieEntityModel<ZombieEntityRenderState>> {
 
     private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/zombie/mummy.png");
+    private static final Identifier OVERLAY_TEXTURE = Identifier.of(MOD_ID, "textures/entity/zombie/mummy_overlay.png");
 
     public MummyEntityRenderer(EntityRendererFactory.Context context) {
         this(context, ModEntityModelLayers.MUMMY, ModEntityModelLayers.MUMMY_BABY,  ModEntityModelLayers.MUMMY_INNER_ARMOR,  ModEntityModelLayers.MUMMY_OUTER_ARMOR,  ModEntityModelLayers.MUMMY_BABY_INNER_ARMOR,  ModEntityModelLayers.MUMMY_BABY_OUTER_ARMOR);
@@ -27,6 +29,7 @@ public class MummyEntityRenderer extends ZombieBaseEntityRenderer<MummyEntity, Z
                 new ZombieEntityModel<>(context.getPart(outerArmor)),
                 new ZombieEntityModel<>(context.getPart(babyInnerArmor)),
                 new ZombieEntityModel<>(context.getPart(babyOuterArmor)));
+        this.addFeature(new ZombieOverlayFeatureRenderer<>(this, context.getEntityModels(), ModEntityModelLayers.MUMMY_OUTER, ModEntityModelLayers.MUMMY_BABY_OUTER, OVERLAY_TEXTURE));
     }
 
     @Override

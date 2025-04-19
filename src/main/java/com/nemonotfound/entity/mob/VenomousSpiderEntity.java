@@ -59,4 +59,12 @@ public class VenomousSpiderEntity extends SpiderEntity {
         }
         return super.getVehicleAttachmentPos(vehicle);
     }
+
+    @Override
+    public boolean canHaveStatusEffect(StatusEffectInstance effect) {
+        if (effect.getEffectType() == StatusEffects.POISON) {
+            return false;
+        }
+        return super.canHaveStatusEffect(effect);
+    }
 }

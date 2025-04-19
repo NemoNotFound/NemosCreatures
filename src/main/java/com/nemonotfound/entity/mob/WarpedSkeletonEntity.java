@@ -69,11 +69,6 @@ public class WarpedSkeletonEntity extends AbstractSkeletonEntity {
     }
 
     @Override
-    protected boolean isAffectedByDaylight() {
-        return false;
-    }
-
-    @Override
     protected void initGoals() {
         this.goalSelector.add(3, new FleeEntityGoal<>(this, WolfEntity.class, 6.0f, 1.0, 1.2));
         this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0));

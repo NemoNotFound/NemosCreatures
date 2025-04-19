@@ -2,7 +2,7 @@ package com.nemonotfound.client.render.entity;
 
 import net.minecraft.client.render.entity.CowEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.client.render.entity.state.LivingEntityRenderState;
+import net.minecraft.client.render.entity.state.CowEntityRenderState;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.NemosCreatures.MOD_ID;
@@ -16,7 +16,7 @@ public class SnowyCowEntityRenderer extends CowEntityRenderer {
     }
 
     @Override
-    public Identifier getTexture(LivingEntityRenderState livingEntityRenderState) {
+    public Identifier getTexture(CowEntityRenderState livingEntityRenderState) {
         return TEXTURE;
     }
 }

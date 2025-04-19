@@ -36,4 +36,12 @@ public class VenomousZombieEntity extends ZombieEntity {
         }
         return false;
     }
+
+    @Override
+    public boolean canHaveStatusEffect(StatusEffectInstance effect) {
+        if (effect.getEffectType() == StatusEffects.POISON) {
+            return false;
+        }
+        return super.canHaveStatusEffect(effect);
+    }
 }

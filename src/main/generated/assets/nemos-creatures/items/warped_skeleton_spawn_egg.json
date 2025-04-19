@@ -1,16 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "minecraft:item/template_spawn_egg",
-    "tints": [
-      {
-        "type": "minecraft:constant",
-        "value": -3867665
-      },
-      {
-        "type": "minecraft:constant",
-        "value": -15303034
-      }
-    ]
+    "model": "nemos-creatures:item/warped_skeleton_spawn_egg"
   }
 }

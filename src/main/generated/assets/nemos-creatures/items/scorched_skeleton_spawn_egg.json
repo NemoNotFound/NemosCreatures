@@ -1,16 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "minecraft:item/template_spawn_egg",
-    "tints": [
-      {
-        "type": "minecraft:constant",
-        "value": -9279399
-      },
-      {
-        "type": "minecraft:constant",
-        "value": -11515071
-      }
-    ]
+    "model": "nemos-creatures:item/scorched_skeleton_spawn_egg"
   }
 }

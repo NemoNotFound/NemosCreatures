@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "nemos-creatures:item/snowy_creeper_spawn_egg"
+  }
+}

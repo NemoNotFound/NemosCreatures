@@ -1,45 +1,61 @@
 package com.nemonotfound.item;
 
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 
+import static com.nemonotfound.NemosCreatures.MOD_ID;
 import static com.nemonotfound.NemosCreatures.log;
 import static com.nemonotfound.item.ModItems.*;
-import static net.minecraft.item.Items.*;
 
 public class ModItemGroups {
 
+    public static final RegistryKey<ItemGroup> NEMOS_CREATURES_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(MOD_ID, "nemos_creatures"));
+    public static final ItemGroup NEMOS_CREATURES = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(SCORCHED_CREEPER_SPAWN_EGG))
+            .displayName(Text.translatable("itemGroup.nemos_creatures"))
+            .build();
+
     public static void registerItemGroups() {
-        log.info("Registering/modifying item groups");
-        
+        log.info("Registering item groups");
+
+        Registry.register(Registries.ITEM_GROUP, NEMOS_CREATURES_KEY, NEMOS_CREATURES);
+
         modifySpawnEggsItemGroup();
     }
 
     private static void modifySpawnEggsItemGroup() {
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
-            entries.addAfter(CREEPER_SPAWN_EGG, CRIMSON_SKELETON_SPAWN_EGG);
-            entries.addAfter(FROG_SPAWN_EGG, FROZEN_CREEPER_SPAWN_EGG);
-            entries.addAfter(FROZEN_CREEPER_SPAWN_EGG, FROZEN_SKELETON_SPAWN_EGG);
-            entries.addAfter(FROZEN_SKELETON_SPAWN_EGG, FROZEN_SPIDER_SPAWN_EGG);
-            entries.addAfter(FROZEN_SPIDER_SPAWN_EGG, FROZEN_ZOMBIE_SPAWN_EGG);
-            entries.addBefore(IRON_GOLEM_SPAWN_EGG, ICE_SPIDER_SPAWN_EGG);
-            entries.addAfter(MULE_SPAWN_EGG, MUMMY_SPAWN_EGG);
-            entries.addAfter(SALMON_SPAWN_EGG, SAND_SPIDER_SPAWN_EGG);
-            entries.addAfter(SAND_SPIDER_SPAWN_EGG, SCORCHED_CREEPER_SPAWN_EGG);
-            entries.addAfter(SCORCHED_CREEPER_SPAWN_EGG, SCORCHED_SKELETON_SPAWN_EGG);
-            entries.addAfter(SNOW_GOLEM_SPAWN_EGG, SNOW_SPIDER_SPAWN_EGG);
-            entries.addAfter(SNOW_SPIDER_SPAWN_EGG, SNOWY_COW_SPAWN_EGG);
-            entries.addAfter(SNOWY_COW_SPAWN_EGG, SNOWY_CREEPER_SPAWN_EGG);
-            entries.addAfter(SNOWY_CREEPER_SPAWN_EGG, SNOWY_PIG_SPAWN_EGG);
-            entries.addAfter(SNOWY_PIG_SPAWN_EGG, SNOWY_SKELETON_SPAWN_EGG);
-            entries.addAfter(SNOWY_SKELETON_SPAWN_EGG, SNOWY_SPIDER_SPAWN_EGG);
-            entries.addAfter(SNOWY_SPIDER_SPAWN_EGG, SNOWY_ZOMBIE_SPAWN_EGG);
-            entries.addAfter(TURTLE_SPAWN_EGG, VENOMOUS_CREEPER_SPAWN_EGG);
-            entries.addAfter(VENOMOUS_CREEPER_SPAWN_EGG, VENOMOUS_SKELETON_SPAWN_EGG);
-            entries.addAfter(VENOMOUS_SKELETON_SPAWN_EGG, VENOMOUS_SPIDER_SPAWN_EGG);
-            entries.addAfter(VENOMOUS_SPIDER_SPAWN_EGG, VENOMOUS_ZOMBIE_SPAWN_EGG);
-            entries.addAfter(WARDEN_SPAWN_EGG, WARPED_SKELETON_SPAWN_EGG);
-            entries.addAfter(WARPED_SKELETON_SPAWN_EGG, WILD_BOAR_SPAWN_EGG);
-        });
+        ItemGroupEvents.modifyEntriesEvent(NEMOS_CREATURES_KEY)
+                .register(entries -> {
+                    entries.add(CRIMSON_SKELETON_SPAWN_EGG);
+                    entries.add(FROZEN_CREEPER_SPAWN_EGG);
+                    entries.add(FROZEN_SKELETON_SPAWN_EGG);
+                    entries.add(FROZEN_SPIDER_SPAWN_EGG);
+                    entries.add(FROZEN_ZOMBIE_SPAWN_EGG);
+                    entries.add(ICE_SPIDER_SPAWN_EGG);
+                    entries.add(MUMMY_SPAWN_EGG);
+                    entries.add(SAND_SPIDER_SPAWN_EGG);
+                    entries.add(SCORCHED_CREEPER_SPAWN_EGG);
+                    entries.add(SCORCHED_SKELETON_SPAWN_EGG);
+                    entries.add(SNOW_SPIDER_SPAWN_EGG);
+                    entries.add(SNOWY_COW_SPAWN_EGG);
+                    entries.add(SNOWY_CREEPER_SPAWN_EGG);
+                    entries.add(SNOWY_PIG_SPAWN_EGG);
+                    entries.add(SNOWY_SKELETON_SPAWN_EGG);
+                    entries.add(SNOWY_SPIDER_SPAWN_EGG);
+                    entries.add(SNOWY_ZOMBIE_SPAWN_EGG);
+                    entries.add(VENOMOUS_CREEPER_SPAWN_EGG);
+                    entries.add(VENOMOUS_SKELETON_SPAWN_EGG);
+                    entries.add(VENOMOUS_SPIDER_SPAWN_EGG);
+                    entries.add(VENOMOUS_ZOMBIE_SPAWN_EGG);
+                    entries.add(WARPED_SKELETON_SPAWN_EGG);
+                    entries.add(WILD_BOAR_SPAWN_EGG);
+                });
     }
 }

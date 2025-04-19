@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "nemos-creatures:item/frozen_skeleton_spawn_egg"
+  }
+}
