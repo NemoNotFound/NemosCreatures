@@ -1,16 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "minecraft:item/template_spawn_egg",
-    "tints": [
-      {
-        "type": "minecraft:constant",
-        "value": -5337458
-      },
-      {
-        "type": "minecraft:constant",
-        "value": -5496800
-      }
-    ]
+    "model": "nemos-creatures:item/crimson_skeleton_spawn_egg"
   }
 }
