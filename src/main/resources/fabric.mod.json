@@ -15,13 +15,13 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.nemonotfound.NemosCreatures"
+			"com.nemonotfound.nemos.creatures.NemosCreatures"
 		],
 		"client": [
-			"com.nemonotfound.NemosCreaturesClient"
+			"com.nemonotfound.nemos.creatures.NemosCreaturesClient"
 		],
 		"fabric-datagen": [
-			"com.nemonotfound.NemosCreaturesDataGenerator"
+			"com.nemonotfound.nemos.creatures.NemosCreaturesDataGenerator"
 		]
 	},
 	"mixins": [

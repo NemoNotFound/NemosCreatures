@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bone_meal_block",
+  "key": {
+    "#": "nemos-creatures:scorched_bone_meal"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nemos-creatures:scorched_bone_block"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "bonemeal",
+  "ingredients": [
+    "nemos-creatures:warped_bone"
+  ],
+  "result": {
+    "count": 3,
+    "id": "nemos-creatures:warped_bone_meal"
+  }
+}

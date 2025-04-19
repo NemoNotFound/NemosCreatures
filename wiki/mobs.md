@@ -1,7 +1,3 @@
-# Mob Overview
-![Mob Overview](https://github.com/NemoNotFound/NemoNotFound/blob/master/resources/minecraft_projects/galleries/nemos_creatures/mob_overview.png?raw=true)
-<br>
-
 # Cows
 ## Snowy Cow
 <br>

@@ -56,7 +56,7 @@
               "function": "minecraft:enchanted_count_increase"
             }
           ],
-          "name": "minecraft:bone"
+          "name": "nemos-creatures:scorched_bone"
         }
       ],
       "rolls": 1.0

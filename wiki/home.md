@@ -3,6 +3,7 @@
 
 # Description
 **Nemo’s Creatures** adds new mobs to Minecraft — both biome-specific variants and entirely new ones!
+![Overview](https://github.com/NemoNotFound/NemoNotFound/blob/master/resources/minecraft_projects/galleries/nemos_creatures/overview.png?raw=true)
 <br><br>
 
 # Downloads

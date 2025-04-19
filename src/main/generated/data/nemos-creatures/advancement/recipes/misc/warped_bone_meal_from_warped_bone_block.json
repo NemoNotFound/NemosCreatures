@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:warped_bone_meal_from_warped_bone_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_warped_bone_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "nemos-creatures:warped_bone_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_warped_bone_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:warped_bone_meal_from_warped_bone_block"
+    ]
+  }
+}

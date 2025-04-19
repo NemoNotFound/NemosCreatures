@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "nemos-creatures:block/warped_bone_block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "nemos-creatures:block/warped_bone_block"
+    },
+    "axis=z": {
+      "model": "nemos-creatures:block/warped_bone_block",
+      "x": 90
+    }
+  }
+}
