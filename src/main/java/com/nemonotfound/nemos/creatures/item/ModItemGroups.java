@@ -11,7 +11,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.nemos.creatures.NemosCreatures.MOD_ID;
-import static com.nemonotfound.nemos.creatures.NemosCreatures.log;
 import static com.nemonotfound.nemos.creatures.item.ModItems.*;
 
 public class ModItemGroups {
@@ -22,9 +21,7 @@ public class ModItemGroups {
             .displayName(Text.translatable("itemGroup.nemos_creatures"))
             .build();
 
-    public static void registerItemGroups() {
-        log.info("Registering item groups");
-
+    public static void bootstrap() {
         Registry.register(Registries.ITEM_GROUP, NEMOS_CREATURES_KEY, NEMOS_CREATURES);
 
         modifySpawnEggsItemGroup();

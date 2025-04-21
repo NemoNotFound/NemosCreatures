@@ -10,6 +10,9 @@
 - Added "Warped Bone Meal"
   - Functions like regular bone meal, but transforms grass into "Warped Nylium" when used on it.
 - Added "Warped Bone Block"
+- Added new nether fossils
+  - Crimson nether fossils
+  - Warped nether fossils
 
 ## Changes
 - "Scorched Creeper" & "Sand Spider" now drop "Sand Dust"

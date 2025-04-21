@@ -3,7 +3,8 @@
   "package": "com.nemonotfound.nemos.creatures.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "BlocksMixin"
+    "BlocksMixin",
+    "NetherFossilGeneratorMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -17,7 +17,6 @@ import net.minecraft.util.Identifier;
 import java.util.function.Function;
 
 import static com.nemonotfound.nemos.creatures.NemosCreatures.MOD_ID;
-import static com.nemonotfound.nemos.creatures.NemosCreatures.log;
 
 public class ModItems {
 
@@ -56,9 +55,7 @@ public class ModItems {
     public static final Item WARPED_BONE_BLOCK = Items.register(ModBlocks.WARPED_BONE_BLOCK);
     //TODO: Custom bone meal item
 
-    public static void registerItems() {
-        log.info("Register items");
-    }
+    public static void bootstrap() {}
 
     private static Item registerItem(String path, Function<Item.Settings, Item> factory) {
         Identifier id = Identifier.of(MOD_ID, path);

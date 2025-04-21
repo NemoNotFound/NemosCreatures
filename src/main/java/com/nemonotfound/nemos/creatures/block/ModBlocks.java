@@ -43,7 +43,8 @@ public class ModBlocks {
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.BONE)
     );
-    //TODO: Add custom bone meal structures to biome
+
+    public static void bootstrap() {}
 
     private static Block register(String id, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
         return Blocks.register(keyOf(id), factory, settings);

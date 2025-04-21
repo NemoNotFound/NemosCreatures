@@ -1,5 +1,6 @@
 package com.nemonotfound.nemos.creatures;
 
+import com.nemonotfound.nemos.creatures.block.ModBlocks;
 import com.nemonotfound.nemos.creatures.entity.ModEntityTypes;
 import com.nemonotfound.nemos.creatures.item.ModItemGroups;
 import com.nemonotfound.nemos.creatures.item.ModItems;
@@ -20,8 +21,9 @@ public class NemosCreatures implements ModInitializer {
 		ModEntityTypes.registerSpawnRestrictions();
 		ModEntityTypes.registerAttributes();
 		ModEntityTypes.addMobsToBiome();
-		ModItems.registerItems();
-		ModItemGroups.registerItemGroups();
+		ModBlocks.bootstrap();
+		ModItems.bootstrap();
+		ModItemGroups.bootstrap();
 	}
 
 
