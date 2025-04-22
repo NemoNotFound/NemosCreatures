@@ -54,15 +54,15 @@ public class ModItemGroups {
                     entries.add(WARPED_SKELETON_SPAWN_EGG);
                     entries.add(WILD_BOAR_SPAWN_EGG);
                     entries.add(SAND_DUST);
-                    entries.add(SCORCHED_BONE);
-                    entries.add(SCORCHED_BONE_MEAL);
                     entries.add(SCORCHED_BONE_BLOCK);
-                    entries.add(CRIMSON_BONE);
-                    entries.add(CRIMSON_BONE_MEAL);
+                    entries.add(SCORCHED_BONE_MEAL);
+                    entries.add(SCORCHED_BONE);
                     entries.add(CRIMSON_BONE_BLOCK);
-                    entries.add(WARPED_BONE);
-                    entries.add(WARPED_BONE_MEAL);
+                    entries.add(CRIMSON_BONE_MEAL);
+                    entries.add(CRIMSON_BONE);
                     entries.add(WARPED_BONE_BLOCK);
+                    entries.add(WARPED_BONE_MEAL);
+                    entries.add(WARPED_BONE);
                 });
     }
 }

@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class ScorchedBoneMealItem extends Item {
 
-    private static final Map<Block, Block> BLOCK_REPLACEMENT_MAP = Map.of(
+    public static final Map<Block, Block> BLOCK_REPLACEMENT_MAP = Map.of(
             Blocks.GRASS_BLOCK, Blocks.SAND,
             Blocks.DIRT, Blocks.SAND,
             Blocks.SHORT_GRASS, Blocks.SHORT_DRY_GRASS,
@@ -41,7 +41,7 @@ public class ScorchedBoneMealItem extends Item {
         var blockState = world.getBlockState(blockPos);
         var itemStack = context.getStack();
 
-        if (useOnDirtOrGrassBlock(world, blockState, blockPos, itemStack)) {
+        if (useOnDryableBlock(world, blockState, blockPos, itemStack)) {
             if (!world.isClient) {
                 //TODO: Should not cause Nullpointer
                 context.getPlayer().emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
@@ -55,7 +55,7 @@ public class ScorchedBoneMealItem extends Item {
         return ActionResult.PASS;
     }
 
-    private boolean useOnDirtOrGrassBlock(World world, BlockState blockState, BlockPos blockPos, ItemStack itemStack) {
+    public static boolean useOnDryableBlock(World world, BlockState blockState, BlockPos blockPos, ItemStack itemStack) {
         var oldBlock = blockState.getBlock();
         var blockReplacement = BLOCK_REPLACEMENT_MAP.get(oldBlock);
 
