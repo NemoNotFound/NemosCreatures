@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class ScorchedBoneMealItem extends Item {
 
-    public static final Map<Block, Block> BLOCK_REPLACEMENT_MAP = Map.of(
+    private static final Map<Block, Block> BLOCK_REPLACEMENT_MAP = Map.of(
             Blocks.GRASS_BLOCK, Blocks.SAND,
             Blocks.DIRT, Blocks.SAND,
             Blocks.SHORT_GRASS, Blocks.SHORT_DRY_GRASS,
