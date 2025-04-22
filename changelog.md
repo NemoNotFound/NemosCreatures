@@ -27,7 +27,7 @@
 - **New Fossils**
   - Added **Crimson Nether Fossils**
   - Added **Warped Nether Fossils**
-  - 
+  
 ## Changes
 - **Mob Drops**
   - **Scorched Creeper** and **Sand Spider** now drop **Sand Dust**
