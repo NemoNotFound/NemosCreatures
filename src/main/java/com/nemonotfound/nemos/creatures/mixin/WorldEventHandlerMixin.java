@@ -1,6 +1,8 @@
 package com.nemonotfound.nemos.creatures.mixin;
 
+import com.nemonotfound.nemos.creatures.item.CrimsonBoneMealItem;
 import com.nemonotfound.nemos.creatures.item.ScorchedBoneMealItem;
+import com.nemonotfound.nemos.creatures.item.WarpedBoneMealItem;
 import com.nemonotfound.nemos.creatures.world.ModWorldEvents;
 import net.minecraft.client.world.WorldEventHandler;
 import net.minecraft.sound.SoundCategory;
@@ -23,6 +25,12 @@ public class WorldEventHandlerMixin {
     private void processWorldEvent(int eventId, BlockPos pos, int data, CallbackInfo ci) {
         if (eventId == ModWorldEvents.SCORCHED_BONE_MEAL_USED) {
             ScorchedBoneMealItem.createParticles(this.world, pos, data);
+            this.world.playSoundAtBlockCenterClient(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+        } else  if (eventId == ModWorldEvents.CRIMSON_BONE_MEAL_USED) {
+            CrimsonBoneMealItem.createParticles(this.world, pos, data);
+            this.world.playSoundAtBlockCenterClient(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+        } else  if (eventId == ModWorldEvents.WARPED_BONE_MEAL_USED) {
+            WarpedBoneMealItem.createParticles(this.world, pos, data);
             this.world.playSoundAtBlockCenterClient(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
         }
     }

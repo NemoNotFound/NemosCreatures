@@ -1,27 +1,36 @@
 # Changelog v1.9
 
 ## Additions
-- Added "Sand Dust"
-- Added "Crimson Bone"
-- Added "Crimson Bone Meal"
-  - Functions like regular bone meal, but transforms grass/dirt/netherrack/warped nylium into crimson nylium when used on it.
-- Added "Crimson Bone Block"
-- Added "Warped Bone"
-- Added "Warped Bone Meal"
-  - Functions like regular bone meal, but transforms grass/dirt/netherrack/crimson nylium into warped nylium when used on it.
-- Added "Warped Bone Block"
-- Added "Scorched Bone"
-- Added "Scorched Bone Meal"
-  - Turns grass/dirt into sand
-  - Turns short grass into dry short grass
-  - Turns tall grass into dry tall grass
-  - Turns bush into dead bush
-- Added "Scorched Bone Block"
-- Added new nether fossils
-  - Crimson nether fossils
-  - Warped nether fossils
-
+- **New Items**
+  - Added **Sand Dust**
+  - Added **Crimson Bone**
+  - Added **Crimson Bone Meal**
+    - Transforms Grass, Dirt, Stone, Cobblestone, Netherrack, and Warped Nylium into **Crimson Nylium**
+    - Transforms Short Grass, Tall Grass, and Warped Roots into **Crimson roots**
+    - Transforms Brown/Red Mushrooms and Warped Fungus into **Crimson Fungus**
+    - Right-clicking **Crimson Nylium** spreads it like Moss
+  - Added **Crimson Bone Block**
+  - Added **Warped Bone**
+  - Added **Warped Bone Meal**
+    - Transforms Grass, Dirt, Stone, Cobblestone, Netherrack, and Crimson Nylium into **Warped Nylium**
+    - Transforms Short Grass, Tall Grass, and Crimson Roots into **Warped Roots**
+    - Transforms Brown/Red Mushrooms and Crimson Fungus into **Warped Fungus**
+    - Right-clicking **Warped Nylium** spreads it like Moss
+  - Added **Warped Bone Block**
+  - Added **Scorched Bone**
+  - Added **Scorched Bone Meal**
+    - Transforms Grass and Dirt into **Sand**
+    - Transforms Short Grass into **Dry Short Grass**
+    - Transforms Tall Grass into **Dry Tall Grass**
+    - Transforms Bush into **Dead Bush**
+  - Added **Scorched Bone Block**
+- **New Fossils**
+  - Added **Crimson Nether Fossils**
+  - Added **Warped Nether Fossils**
+  - 
 ## Changes
-- "Scorched Creeper" & "Sand Spider" now drop "Sand Dust"
-- "Crimson Skeleton" now drops "Crimson Bone" instead of "Bone"
-- "Warped Skeleton" now drops "Warped Bone" instead of "Bone"
+
+- **Mob Drops**
+  - **Scorched Creeper** and **Sand Spider** now drop **Sand Dust**
+  - **Crimson Skeleton** now drops **Crimson Bone** instead of Bone
+  - **Warped Skeleton** now drops **Warped Bone** instead of Bone

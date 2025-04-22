@@ -4,7 +4,6 @@ import com.nemonotfound.nemos.creatures.block.ModBlocks;
 import com.nemonotfound.nemos.creatures.entity.ModEntityTypes;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.SpawnEggItem;
@@ -48,13 +47,11 @@ public class ModItems {
     public static final Item SCORCHED_BONE_MEAL = registerItem("scorched_bone_meal", ScorchedBoneMealItem::new);
     public static final Item SCORCHED_BONE_BLOCK = Items.register(ModBlocks.SCORCHED_BONE_BLOCK);
     public static final Item CRIMSON_BONE = registerItem("crimson_bone", Item::new);
-    public static final Item CRIMSON_BONE_MEAL = registerItem("crimson_bone_meal", BoneMealItem::new);
+    public static final Item CRIMSON_BONE_MEAL = registerItem("crimson_bone_meal", CrimsonBoneMealItem::new);
     public static final Item CRIMSON_BONE_BLOCK = Items.register(ModBlocks.CRIMSON_BONE_BLOCK);
     public static final Item WARPED_BONE = registerItem("warped_bone", Item::new);
-    public static final Item WARPED_BONE_MEAL = registerItem("warped_bone_meal", BoneMealItem::new);
+    public static final Item WARPED_BONE_MEAL = registerItem("warped_bone_meal", WarpedBoneMealItem::new);
     public static final Item WARPED_BONE_BLOCK = Items.register(ModBlocks.WARPED_BONE_BLOCK);
-    //TODO: Custom bone meal item
-    //TODO: Register dispenser behaviour
 
     public static void bootstrap() {}
 

@@ -87,7 +87,7 @@ public class ScorchedBoneMealItem extends Item {
         var blockReplacement = BLOCK_REPLACEMENT_MAP.get(oldBlock);
 
         if (blockReplacement != null) {
-            ParticleUtil.spawnParticlesAround(world, calculateNewBlockPos(blockState, pos.up()), count, ParticleTypes.DUST_PLUME);
+            ParticleUtil.spawnParticlesAround(world, calculateNewBlockPos(blockState, pos), count, ParticleTypes.DUST_PLUME);
         }
     }
 }
