@@ -4,12 +4,16 @@
 - Added "Sand Dust"
 - Added "Crimson Bone"
 - Added "Crimson Bone Meal"
-  - Functions like regular bone meal, but transforms grass into "Crimson Nylium" when used on it.
+  - Functions like regular bone meal, but transforms grass/dirt/netherrack/warped nylium into crimson nylium when used on it.
 - Added "Crimson Bone Block"
 - Added "Warped Bone"
 - Added "Warped Bone Meal"
-  - Functions like regular bone meal, but transforms grass into "Warped Nylium" when used on it.
+  - Functions like regular bone meal, but transforms grass/dirt/netherrack/crimson nylium into warped nylium when used on it.
 - Added "Warped Bone Block"
+- Added "Scorched Bone"
+- Added "Scorched Bone Meal"
+  - Turns grass/dirt into sand
+- Added "Scorched Bone Block"
 - Added new nether fossils
   - Crimson nether fossils
   - Warped nether fossils

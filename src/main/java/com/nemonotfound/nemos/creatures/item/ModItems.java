@@ -45,7 +45,7 @@ public class ModItems {
     public static final Item FROZEN_ZOMBIE_SPAWN_EGG = registerItem("frozen_zombie_spawn_egg", createSpawnEggItem(ModEntityTypes.FROZEN_ZOMBIE));
     public static final Item SAND_DUST = registerItem("sand_dust", Item::new);
     public static final Item SCORCHED_BONE = registerItem("scorched_bone", Item::new);
-    public static final Item SCORCHED_BONE_MEAL = registerItem("scorched_bone_meal", BoneMealItem::new);
+    public static final Item SCORCHED_BONE_MEAL = registerItem("scorched_bone_meal", ScorchedBoneMealItem::new);
     public static final Item SCORCHED_BONE_BLOCK = Items.register(ModBlocks.SCORCHED_BONE_BLOCK);
     public static final Item CRIMSON_BONE = registerItem("crimson_bone", Item::new);
     public static final Item CRIMSON_BONE_MEAL = registerItem("crimson_bone_meal", BoneMealItem::new);
@@ -54,6 +54,7 @@ public class ModItems {
     public static final Item WARPED_BONE_MEAL = registerItem("warped_bone_meal", BoneMealItem::new);
     public static final Item WARPED_BONE_BLOCK = Items.register(ModBlocks.WARPED_BONE_BLOCK);
     //TODO: Custom bone meal item
+    //TODO: Register dispenser behaviour
 
     public static void bootstrap() {}
 
