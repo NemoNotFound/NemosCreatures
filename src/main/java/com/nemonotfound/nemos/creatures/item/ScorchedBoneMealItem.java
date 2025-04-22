@@ -43,7 +43,6 @@ public class ScorchedBoneMealItem extends Item {
 
         if (useOnDryableBlock(world, blockState, blockPos, itemStack)) {
             if (!world.isClient) {
-                //TODO: Should not cause Nullpointer
                 context.getPlayer().emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
                 world.syncWorldEvent(ModWorldEvents.SCORCHED_BONE_MEAL_USED, blockPos, 15);
 
