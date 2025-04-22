@@ -13,6 +13,9 @@
 - Added "Scorched Bone"
 - Added "Scorched Bone Meal"
   - Turns grass/dirt into sand
+  - Turns short grass into dry short grass
+  - Turns tall grass into dry tall grass
+  - Turns bush into dead bush
 - Added "Scorched Bone Block"
 - Added new nether fossils
   - Crimson nether fossils
