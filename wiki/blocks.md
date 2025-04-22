@@ -1,3 +1,3 @@
-# Scorched Bone Block
-# Crimson Bone Block
-# Warped Bone Block
+- **Scorched Bone Block**
+- **Crimson Bone Block**
+- **Warped Bone Block**
