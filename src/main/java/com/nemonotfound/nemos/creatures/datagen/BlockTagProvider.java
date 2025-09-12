@@ -17,14 +17,14 @@ public class BlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ModBlockTags.CRIMSON_BONE_MEAL_REPLACEABLE)
+        valueLookupBuilder(ModBlockTags.CRIMSON_BONE_MEAL_REPLACEABLE)
                 .forceAddTag(BlockTags.BASE_STONE_OVERWORLD)
                 .forceAddTag(BlockTags.CAVE_VINES)
                 .forceAddTag(BlockTags.DIRT)
                 .add(Blocks.NETHERRACK)
                 .add(Blocks.WARPED_NYLIUM);
 
-        getOrCreateTagBuilder(ModBlockTags.WARPED_BONE_MEAL_REPLACEABLE)
+        valueLookupBuilder(ModBlockTags.WARPED_BONE_MEAL_REPLACEABLE)
                 .forceAddTag(BlockTags.BASE_STONE_OVERWORLD)
                 .forceAddTag(BlockTags.CAVE_VINES)
                 .forceAddTag(BlockTags.DIRT)

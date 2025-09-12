@@ -28,9 +28,9 @@
 		"nemos-creatures.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.9",
+		"fabricloader": ">=0.17.2",
 		"minecraft": [
-			"~1.21.4"
+			">=1.21.8"
 		],
 		"java": ">=21",
 		"fabric-api": "*"

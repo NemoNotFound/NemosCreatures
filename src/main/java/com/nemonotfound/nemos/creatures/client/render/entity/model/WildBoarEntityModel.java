@@ -3,12 +3,19 @@ package com.nemonotfound.nemos.creatures.client.render.entity.model;
 import com.nemonotfound.nemos.creatures.client.render.entity.animation.Animations;
 import com.nemonotfound.nemos.creatures.client.render.entity.state.WildBoarEntityRenderState;
 import net.minecraft.client.model.*;
+import net.minecraft.client.render.entity.animation.Animation;
 import net.minecraft.client.render.entity.model.QuadrupedEntityModel;
 
 public class WildBoarEntityModel extends QuadrupedEntityModel<WildBoarEntityRenderState> {
 
+    private final Animation idleAnimation;
+    private final Animation attackAnimation;
+
     public WildBoarEntityModel(ModelPart root) {
         super(root);
+
+        this.idleAnimation = Animations.WILD_BOAR_IDLE.createAnimation(root);
+        this.attackAnimation = Animations.WILD_BOAR_ATTACK.createAnimation(root);
     }
 
     public static TexturedModelData getTexturedModelData() {
@@ -41,7 +48,7 @@ public class WildBoarEntityModel extends QuadrupedEntityModel<WildBoarEntityRend
     public void setAngles(WildBoarEntityRenderState wildBoarEntityRenderState) {
         super.setAngles(wildBoarEntityRenderState);
 
-        this.animate(wildBoarEntityRenderState.idleAnimationState, Animations.WILD_BOAR_IDLE, wildBoarEntityRenderState.age, 1f);
-        this.animate(wildBoarEntityRenderState.attackAnimationState, Animations.WILD_BOAR_ATTACK, wildBoarEntityRenderState.age, 1f);
+        this.idleAnimation.apply(wildBoarEntityRenderState.idleAnimationState, wildBoarEntityRenderState.age);
+        this.attackAnimation.apply(wildBoarEntityRenderState.attackAnimationState, wildBoarEntityRenderState.age);
     }
 }

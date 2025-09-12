@@ -1,14 +1,11 @@
 package com.nemonotfound.nemos.creatures.client.render.entity.animation;
 
-import net.minecraft.client.render.entity.animation.Animation;
-import net.minecraft.client.render.entity.animation.AnimationHelper;
-import net.minecraft.client.render.entity.animation.Keyframe;
-import net.minecraft.client.render.entity.animation.Transformation;
+import net.minecraft.client.render.entity.animation.*;
 
 public class Animations {
 
-    public static final Animation WILD_BOAR_IDLE = Animation.Builder.create(1f)
-            .addBoneAnimation("face",
+    public static final AnimationDefinition WILD_BOAR_IDLE = AnimationDefinition.Builder.create(1f)
+            .addBoneAnimation("head",
                     new Transformation(Transformation.Targets.ROTATE,
                             new Keyframe(0f, AnimationHelper.createRotationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
@@ -16,7 +13,7 @@ public class Animations {
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(1f, AnimationHelper.createRotationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR))).build();
-    public static final Animation WILD_BOAR_ATTACK = Animation.Builder.create(0.4167667f)
+    public static final AnimationDefinition WILD_BOAR_ATTACK = AnimationDefinition.Builder.create(0.4167667f)
             .addBoneAnimation("body",
                     new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 0f, 0f),
@@ -55,7 +52,7 @@ public class Animations {
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.4167667f, AnimationHelper.createRotationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR)))
-            .addBoneAnimation("back_right",
+            .addBoneAnimation("right_hind_leg",
                     new Transformation(Transformation.Targets.ROTATE,
                             new Keyframe(0f, AnimationHelper.createRotationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
@@ -65,7 +62,7 @@ public class Animations {
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.4167667f, AnimationHelper.createRotationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR)))
-            .addBoneAnimation("front_right",
+            .addBoneAnimation("right_front_leg",
                     new Transformation(Transformation.Targets.ROTATE,
                             new Keyframe(0f, AnimationHelper.createRotationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
@@ -75,7 +72,7 @@ public class Animations {
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.4167667f, AnimationHelper.createRotationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR)))
-            .addBoneAnimation("back_left",
+            .addBoneAnimation("left_hind_leg",
                     new Transformation(Transformation.Targets.ROTATE,
                             new Keyframe(0f, AnimationHelper.createRotationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
@@ -85,7 +82,7 @@ public class Animations {
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.4167667f, AnimationHelper.createRotationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR)))
-            .addBoneAnimation("front_left",
+            .addBoneAnimation("left_front_leg",
                     new Transformation(Transformation.Targets.ROTATE,
                             new Keyframe(0f, AnimationHelper.createRotationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),

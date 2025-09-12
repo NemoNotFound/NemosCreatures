@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:scorched_bone_meal_from_scorched_bone_block"
+        "recipe": "nemos-creatures:scorched_bone_meal_from_scorched_bone_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:scorched_bone_meal_from_scorched_bone_block"
+      "nemos-creatures:scorched_bone_meal_from_scorched_bone_block"
     ]
   }
 }
