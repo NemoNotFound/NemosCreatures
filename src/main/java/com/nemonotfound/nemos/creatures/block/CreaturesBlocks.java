@@ -11,8 +11,18 @@ import java.util.function.Function;
 
 import static com.nemonotfound.nemos.creatures.NemosCreatures.MOD_ID;
 
-public class ModBlocks {
+public class CreaturesBlocks {
 
+    public static final Block FROZEN_BONE_BLOCK = register(
+            "frozen_bone_block",
+            PillarBlock::new,
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.PALE_PURPLE)
+                    .instrument(NoteBlockInstrument.XYLOPHONE)
+                    .requiresTool()
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.BONE)
+    );
     public static final Block SCORCHED_BONE_BLOCK = register(
             "scorched_bone_block",
             PillarBlock::new,

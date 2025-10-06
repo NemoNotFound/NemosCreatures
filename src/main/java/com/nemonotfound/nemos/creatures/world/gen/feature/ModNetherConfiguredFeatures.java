@@ -1,6 +1,6 @@
 package com.nemonotfound.nemos.creatures.world.gen.feature;
 
-import com.nemonotfound.nemos.creatures.registry.tag.ModBlockTags;
+import com.nemonotfound.nemos.creatures.registry.tag.CreatureBlockTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
@@ -46,7 +46,7 @@ public class ModNetherConfiguredFeatures {
                 CRIMSON_FOREST_VEGETATION_PATCH_BONEMEAL,
                 Feature.VEGETATION_PATCH,
                 new VegetationPatchFeatureConfig(
-                        ModBlockTags.CRIMSON_BONE_MEAL_REPLACEABLE,
+                        CreatureBlockTags.CRIMSON_BONE_MEAL_REPLACEABLE,
                         BlockStateProvider.of(Blocks.CRIMSON_NYLIUM),
                         PlacedFeatures.createEntry(registryEntryLookup.getOrThrow(CRIMSON_FOREST_VEGETATION_PATCH)),
                         VerticalSurfaceType.FLOOR,
@@ -77,7 +77,7 @@ public class ModNetherConfiguredFeatures {
                 WARPED_FOREST_VEGETATION_PATCH_BONEMEAL,
                 Feature.VEGETATION_PATCH,
                 new VegetationPatchFeatureConfig(
-                        ModBlockTags.WARPED_BONE_MEAL_REPLACEABLE,
+                        CreatureBlockTags.WARPED_BONE_MEAL_REPLACEABLE,
                         BlockStateProvider.of(Blocks.WARPED_NYLIUM),
                         PlacedFeatures.createEntry(registryEntryLookup.getOrThrow(WARPED_FOREST_VEGETATION_PATCH)),
                         VerticalSurfaceType.FLOOR,

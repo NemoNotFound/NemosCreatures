@@ -1,6 +1,6 @@
 package com.nemonotfound.nemos.creatures.item;
 
-import com.nemonotfound.nemos.creatures.world.ModWorldEvents;
+import com.nemonotfound.nemos.creatures.world.CreatureWorldEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -44,7 +44,7 @@ public class ScorchedBoneMealItem extends Item {
         if (useOnDryableBlock(world, blockState, blockPos, itemStack)) {
             if (!world.isClient) {
                 context.getPlayer().emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
-                world.syncWorldEvent(ModWorldEvents.SCORCHED_BONE_MEAL_USED, blockPos, 15);
+                world.syncWorldEvent(CreatureWorldEvents.SCORCHED_BONE_MEAL_USED, blockPos, 15);
 
             }
 

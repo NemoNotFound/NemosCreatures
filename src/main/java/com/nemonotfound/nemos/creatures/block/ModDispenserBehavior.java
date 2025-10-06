@@ -1,10 +1,7 @@
 package com.nemonotfound.nemos.creatures.block;
 
-import com.nemonotfound.nemos.creatures.item.CrimsonBoneMealItem;
-import com.nemonotfound.nemos.creatures.item.ModItems;
-import com.nemonotfound.nemos.creatures.item.ScorchedBoneMealItem;
-import com.nemonotfound.nemos.creatures.item.WarpedBoneMealItem;
-import com.nemonotfound.nemos.creatures.world.ModWorldEvents;
+import com.nemonotfound.nemos.creatures.item.*;
+import com.nemonotfound.nemos.creatures.world.CreatureWorldEvents;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.FallibleItemDispenserBehavior;
 import net.minecraft.item.ItemStack;
@@ -13,7 +10,25 @@ import net.minecraft.util.math.BlockPointer;
 public interface ModDispenserBehavior {
 
     static void registerDefaults() {
-        DispenserBlock.registerBehavior(ModItems.SCORCHED_BONE_MEAL, new FallibleItemDispenserBehavior() {
+        DispenserBlock.registerBehavior(CreaturesItems.FROZEN_BONE_MEAL, new FallibleItemDispenserBehavior() {
+            @Override
+            protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
+                this.setSuccess(true);
+                var world = pointer.world();
+                var blockPos = pointer.pos().offset(pointer.state().get(DispenserBlock.FACING));
+                var fluidState = world.getFluidState(blockPos);
+
+                if (!FrozenBoneMealItem.useOnFluidBlock(world, fluidState, blockPos, stack)) {
+                    this.setSuccess(false);
+                } else if (!world.isClient) {
+                    world.syncWorldEvent(CreatureWorldEvents.FROZEN_BONE_MEAL_USED, blockPos, 15);
+                }
+
+                return stack;
+            }
+        });
+
+        DispenserBlock.registerBehavior(CreaturesItems.SCORCHED_BONE_MEAL, new FallibleItemDispenserBehavior() {
             @Override
             protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
                 this.setSuccess(true);
@@ -24,14 +39,14 @@ public interface ModDispenserBehavior {
                 if (!ScorchedBoneMealItem.useOnDryableBlock(world, blockState, blockPos, stack)) {
                     this.setSuccess(false);
                 } else if (!world.isClient) {
-                    world.syncWorldEvent(ModWorldEvents.SCORCHED_BONE_MEAL_USED, blockPos, 15);
+                    world.syncWorldEvent(CreatureWorldEvents.SCORCHED_BONE_MEAL_USED, blockPos, 15);
                 }
 
                 return stack;
             }
         });
 
-        DispenserBlock.registerBehavior(ModItems.CRIMSON_BONE_MEAL, new FallibleItemDispenserBehavior() {
+        DispenserBlock.registerBehavior(CreaturesItems.CRIMSON_BONE_MEAL, new FallibleItemDispenserBehavior() {
             @Override
             protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
                 this.setSuccess(true);
@@ -42,14 +57,14 @@ public interface ModDispenserBehavior {
                 if (!CrimsonBoneMealItem.useOnReplaceable(world, blockState, blockPos, stack) && !CrimsonBoneMealItem.useOnCrimsonNylium(stack, world, blockState, blockPos)) {
                     this.setSuccess(false);
                 } else if (!world.isClient) {
-                    world.syncWorldEvent(ModWorldEvents.CRIMSON_BONE_MEAL_USED, blockPos, 15);
+                    world.syncWorldEvent(CreatureWorldEvents.CRIMSON_BONE_MEAL_USED, blockPos, 15);
                 }
 
                 return stack;
             }
         });
 
-        DispenserBlock.registerBehavior(ModItems.WARPED_BONE_MEAL, new FallibleItemDispenserBehavior() {
+        DispenserBlock.registerBehavior(CreaturesItems.WARPED_BONE_MEAL, new FallibleItemDispenserBehavior() {
             @Override
             protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
                 this.setSuccess(true);
@@ -60,7 +75,7 @@ public interface ModDispenserBehavior {
                 if (!WarpedBoneMealItem.useOnReplaceable(world, blockState, blockPos, stack) && !WarpedBoneMealItem.useOnWarpedNylium(stack, world, blockState, blockPos)) {
                     this.setSuccess(false);
                 } else if (!world.isClient) {
-                    world.syncWorldEvent(ModWorldEvents.WARPED_BONE_MEAL_USED, blockPos, 15);
+                    world.syncWorldEvent(CreatureWorldEvents.WARPED_BONE_MEAL_USED, blockPos, 15);
                 }
 
                 return stack;

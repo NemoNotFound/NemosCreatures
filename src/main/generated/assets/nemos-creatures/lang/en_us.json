@@ -1,5 +1,6 @@
 {
   "block.nemos-creatures.crimson_bone_block": "Crimson Bone Block",
+  "block.nemos-creatures.frozen_bone_block": "Frozen Bone Block",
   "block.nemos-creatures.scorched_bone_block": "Scorched Bone Block",
   "block.nemos-creatures.warped_bone_block": "Warped Bone Block",
   "entity.nemos-creatures.crimson_skeleton": "Crimson Skeleton",
@@ -28,6 +29,8 @@
   "item.nemos-creatures.crimson_bone": "Crimson Bone",
   "item.nemos-creatures.crimson_bone_meal": "Crimson Bone Meal",
   "item.nemos-creatures.crimson_skeleton_spawn_egg": "Crimson Skeleton Spawn Egg",
+  "item.nemos-creatures.frozen_bone": "Frozen Bone",
+  "item.nemos-creatures.frozen_bone_meal": "Frozen Bone Meal",
   "item.nemos-creatures.frozen_creeper_spawn_egg": "Frozen Creeper Spawn Egg",
   "item.nemos-creatures.frozen_skeleton_spawn_egg": "Frozen Skeleton Spawn Egg",
   "item.nemos-creatures.frozen_spider_spawn_egg": "Frozen Spider Spawn Egg",

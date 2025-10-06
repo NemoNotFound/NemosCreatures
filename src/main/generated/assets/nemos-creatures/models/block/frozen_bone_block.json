@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "nemos-creatures:block/frozen_bone_block_top",
+    "side": "nemos-creatures:block/frozen_bone_block_side"
+  }
+}

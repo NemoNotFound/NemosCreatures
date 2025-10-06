@@ -11,9 +11,9 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.nemos.creatures.NemosCreatures.MOD_ID;
-import static com.nemonotfound.nemos.creatures.item.ModItems.*;
+import static com.nemonotfound.nemos.creatures.item.CreaturesItems.*;
 
-public class ModItemGroups {
+public class CreaturesItemGroups {
 
     public static final RegistryKey<ItemGroup> NEMOS_CREATURES_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(MOD_ID, "nemos_creatures"));
     public static final ItemGroup NEMOS_CREATURES = FabricItemGroup.builder()
@@ -54,6 +54,9 @@ public class ModItemGroups {
                     entries.add(WARPED_SKELETON_SPAWN_EGG);
                     entries.add(WILD_BOAR_SPAWN_EGG);
                     entries.add(SAND_DUST);
+                    entries.add(FROZEN_BONE_BLOCK);
+                    entries.add(FROZEN_BONE_MEAL);
+                    entries.add(FROZEN_BONE);
                     entries.add(SCORCHED_BONE_BLOCK);
                     entries.add(SCORCHED_BONE_MEAL);
                     entries.add(SCORCHED_BONE);

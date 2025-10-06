@@ -58,6 +58,6 @@ public class MummyEntity extends ZombieEntity {
         return ZombieEntity.createZombieAttributes()
                 .add(EntityAttributes.MAX_HEALTH, 30.0)
                 .add(EntityAttributes.ATTACK_DAMAGE, 6.0)
-                .add(EntityAttributes.MOVEMENT_SPEED, 0.19F);
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.21F);
     }
 }

@@ -114,6 +114,7 @@ public class CrimsonSkeletonEntity extends AbstractSkeletonEntity {
         double f = target.getZ() - this.getZ();
         double g = Math.sqrt(d * d + f * f);
         persistentProjectileEntity.setVelocity(d, e + g * (double)0.1f, f, 2.5f, 7 - this.getWorld().getDifficulty().getId() * 4);
+        persistentProjectileEntity.igniteByLava();
         this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0f, 1.0f / (this.getRandom().nextFloat() * 0.4f + 0.8f));
         this.getWorld().spawnEntity(persistentProjectileEntity);
     }

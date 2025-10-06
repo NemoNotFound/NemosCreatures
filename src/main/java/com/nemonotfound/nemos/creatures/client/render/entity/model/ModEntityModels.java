@@ -1,7 +1,7 @@
 package com.nemonotfound.nemos.creatures.client.render.entity.model;
 
 import com.nemonotfound.nemos.creatures.client.render.entity.*;
-import com.nemonotfound.nemos.creatures.entity.ModEntityTypes;
+import com.nemonotfound.nemos.creatures.entity.CreaturesEntityTypes;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.model.Dilation;
@@ -17,29 +17,29 @@ public class ModEntityModels {
     private static final TexturedModelData hatModelData = TexturedModelData.of(ArmorEntityModel.getModelData(HAT_DILATION), 64, 32);
 
     public static void bootstrap() {
-        EntityRendererRegistry.register(ModEntityTypes.VENOMOUS_SKELETON, VenomousSkeletonEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.VENOMOUS_SPIDER, VenomousSpiderEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.VENOMOUS_ZOMBIE, VenomousZombieEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.VENOMOUS_CREEPER, VenomousCreeperEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.SCORCHED_SKELETON, ScorchedSkeletonEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.SAND_SPIDER, SandSpiderEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.MUMMY, MummyEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.SCORCHED_CREEPER, ScorchedCreeperEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.CRIMSON_SKELETON, CrimsonSkeletonEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.WARPED_SKELETON, WarpedSkeletonEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.WILD_BOAR, WildBoarEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.SNOWY_SKELETON, SnowySkeletonEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.SNOWY_PIG, SnowyPigEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.SNOWY_COW, SnowyCowEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.SNOWY_SPIDER, SnowySpiderEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.SNOW_SPIDER, SnowSpiderEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.SNOWY_CREEPER, SnowyCreeperEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.SNOWY_ZOMBIE, SnowyZombieEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.FROZEN_SKELETON, FrozenSkeletonEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.FROZEN_CREEPER, FrozenCreeperEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.FROZEN_SPIDER, FrozenSpiderEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.ICE_SPIDER, IceSpiderEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntityTypes.FROZEN_ZOMBIE, FrozenZombieEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.VENOMOUS_SKELETON, VenomousSkeletonEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.VENOMOUS_SPIDER, VenomousSpiderEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.VENOMOUS_ZOMBIE, VenomousZombieEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.VENOMOUS_CREEPER, VenomousCreeperEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.SCORCHED_SKELETON, ScorchedSkeletonEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.SAND_SPIDER, SandSpiderEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.MUMMY, MummyEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.SCORCHED_CREEPER, ScorchedCreeperEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.CRIMSON_SKELETON, CrimsonSkeletonEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.WARPED_SKELETON, WarpedSkeletonEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.WILD_BOAR, WildBoarEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.SNOWY_SKELETON, SnowySkeletonEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.SNOWY_PIG, SnowyPigEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.SNOWY_COW, SnowyCowEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.SNOWY_SPIDER, SnowySpiderEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.SNOW_SPIDER, SnowSpiderEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.SNOWY_CREEPER, SnowyCreeperEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.SNOWY_ZOMBIE, SnowyZombieEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.FROZEN_SKELETON, FrozenSkeletonEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.FROZEN_CREEPER, FrozenCreeperEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.FROZEN_SPIDER, FrozenSpiderEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.ICE_SPIDER, IceSpiderEntityRenderer::new);
+        EntityRendererRegistry.register(CreaturesEntityTypes.FROZEN_ZOMBIE, FrozenZombieEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.VENOMOUS_SKELETON, SkeletonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.VENOMOUS_SKELETON_INNER_ARMOR, () -> hatModelData);

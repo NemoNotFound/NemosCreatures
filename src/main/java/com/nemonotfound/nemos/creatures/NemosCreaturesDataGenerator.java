@@ -15,10 +15,11 @@ public class NemosCreaturesDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(EnglishLanguageProvider::new);
 		pack.addProvider(EntityLootTableProvider::new);
-		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(CreaturesModelProvider::new);
 		pack.addProvider(RecipeProvider::new);
 		pack.addProvider(BlockTagProvider::new);
 		pack.addProvider(WorldGenProvider::new);
+		pack.addProvider(EntityTypeTagsProvider::new);
 	}
 
 	@Override

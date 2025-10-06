@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "bonemeal",
+  "ingredients": [
+    "nemos-creatures:frozen_bone_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "nemos-creatures:frozen_bone_meal"
+  }
+}

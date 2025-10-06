@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "nemos-creatures:block/frozen_bone_block"
+  }
+}

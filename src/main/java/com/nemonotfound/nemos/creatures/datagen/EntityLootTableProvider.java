@@ -1,7 +1,7 @@
 package com.nemonotfound.nemos.creatures.datagen;
 
-import com.nemonotfound.nemos.creatures.entity.ModEntityTypes;
-import com.nemonotfound.nemos.creatures.item.ModItems;
+import com.nemonotfound.nemos.creatures.entity.CreaturesEntityTypes;
+import com.nemonotfound.nemos.creatures.item.CreaturesItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricEntityLootTableProvider;
 import net.minecraft.entity.EntityType;
@@ -46,7 +46,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
         RegistryEntryLookup<EntityType<?>> entityTypeRegistryEntryLookup = this.registries.getOrThrow(RegistryKeys.ENTITY_TYPE);
 
         this.register(
-                ModEntityTypes.SCORCHED_SKELETON,
+                CreaturesEntityTypes.SCORCHED_SKELETON,
                 LootTable.builder()
                         .pool(
                                 LootPool.builder()
@@ -56,12 +56,12 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                         .pool(
                                 LootPool.builder()
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(itemEntryBuilder(ModItems.SCORCHED_BONE))
+                                        .with(itemEntryBuilder(CreaturesItems.SCORCHED_BONE))
                         )
         );
 
         this.register(
-                ModEntityTypes.CRIMSON_SKELETON,
+                CreaturesEntityTypes.CRIMSON_SKELETON,
                 LootTable.builder()
                         .pool(
                                 LootPool.builder()
@@ -71,7 +71,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                         .pool(
                                 LootPool.builder()
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(itemEntryBuilder(ModItems.CRIMSON_BONE))
+                                        .with(itemEntryBuilder(CreaturesItems.CRIMSON_BONE))
                         )
                         .pool(
                                 LootPool.builder()
@@ -85,7 +85,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
         );
 
         this.register(
-                ModEntityTypes.WARPED_SKELETON,
+                CreaturesEntityTypes.WARPED_SKELETON,
                 LootTable.builder()
                         .pool(
                                 LootPool.builder()
@@ -95,7 +95,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                         .pool(
                                 LootPool.builder()
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(itemEntryBuilder(ModItems.WARPED_BONE))
+                                        .with(itemEntryBuilder(CreaturesItems.WARPED_BONE))
                         )
                         .pool(
                                 LootPool.builder()
@@ -109,26 +109,36 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
         );
 
         this.register(
-                ModEntityTypes.VENOMOUS_SKELETON,
+                CreaturesEntityTypes.VENOMOUS_SKELETON,
                 defaultSkeletonLootTableBuilder()
                         .pool(tippedArrowLootPoolBuilder(Potions.POISON))
         );
 
         this.register(
-                ModEntityTypes.SNOWY_SKELETON,
+                CreaturesEntityTypes.SNOWY_SKELETON,
                 defaultSkeletonLootTableBuilder()
                         .pool(lootPoolBuilder(Items.SNOWBALL))
                         .pool(tippedArrowLootPoolBuilder(Potions.SLOWNESS))
         );
 
         this.register(
-                ModEntityTypes.FROZEN_SKELETON,
-                defaultSkeletonLootTableBuilder()
+                CreaturesEntityTypes.FROZEN_SKELETON,
+                LootTable.builder()
+                        .pool(
+                                LootPool.builder()
+                                        .rolls(ConstantLootNumberProvider.create(1.0F))
+                                        .with(itemEntryBuilder(Items.ARROW))
+                        )
+                        .pool(
+                                LootPool.builder()
+                                        .rolls(ConstantLootNumberProvider.create(1.0F))
+                                        .with(itemEntryBuilder(CreaturesItems.FROZEN_BONE))
+                        )
                         .pool(tippedArrowLootPoolBuilder(Potions.SLOWNESS))
         );
 
         this.register(
-                ModEntityTypes.FROZEN_ZOMBIE,
+                CreaturesEntityTypes.FROZEN_ZOMBIE,
                 LootTable.builder()
                         .pool(
                                 LootPool.builder()
@@ -147,7 +157,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
         );
 
         this.register(
-                ModEntityTypes.MUMMY,
+                CreaturesEntityTypes.MUMMY,
                 LootTable.builder()
                         .pool(
                                 LootPool.builder()
@@ -171,7 +181,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
         );
 
         this.register(
-                ModEntityTypes.VENOMOUS_ZOMBIE,
+                CreaturesEntityTypes.VENOMOUS_ZOMBIE,
                 LootTable.builder()
                         .pool(
                                 LootPool.builder()
@@ -189,7 +199,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
         );
 
         this.register(
-                ModEntityTypes.SNOWY_ZOMBIE,
+                CreaturesEntityTypes.SNOWY_ZOMBIE,
                 LootTable.builder()
                         .pool(
                                 LootPool.builder()
@@ -208,16 +218,16 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                         .pool(lootPoolBuilder(Items.SNOWBALL))
         );
 
-        this.register(ModEntityTypes.FROZEN_CREEPER, defaultCreeperLootTableBuilder(entityTypeRegistryEntryLookup));
+        this.register(CreaturesEntityTypes.FROZEN_CREEPER, defaultCreeperLootTableBuilder(entityTypeRegistryEntryLookup));
 
         this.register(
-                ModEntityTypes.SCORCHED_CREEPER,
+                CreaturesEntityTypes.SCORCHED_CREEPER,
                 LootTable.builder()
                         .pool(
                                 LootPool.builder()
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
                                         .with(itemEntryBuilder(Items.GUNPOWDER))
-                                        .with(itemEntryBuilder(ModItems.SAND_DUST))
+                                        .with(itemEntryBuilder(CreaturesItems.SAND_DUST))
                         )
                         .pool(
                                 LootPool.builder()
@@ -233,34 +243,34 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
         );
 
         this.register(
-                ModEntityTypes.SNOWY_CREEPER,
+                CreaturesEntityTypes.SNOWY_CREEPER,
                 defaultCreeperLootTableBuilder(entityTypeRegistryEntryLookup)
                         .pool(lootPoolBuilder(Items.SNOWBALL))
         );
 
-        this.register(ModEntityTypes.VENOMOUS_CREEPER, defaultCreeperLootTableBuilder(entityTypeRegistryEntryLookup));
+        this.register(CreaturesEntityTypes.VENOMOUS_CREEPER, defaultCreeperLootTableBuilder(entityTypeRegistryEntryLookup));
 
-        this.register(ModEntityTypes.FROZEN_SPIDER, defaultSpiderLootTableBuilder());
-        this.register(ModEntityTypes.ICE_SPIDER, defaultSpiderLootTableBuilder());
+        this.register(CreaturesEntityTypes.FROZEN_SPIDER, defaultSpiderLootTableBuilder());
+        this.register(CreaturesEntityTypes.ICE_SPIDER, defaultSpiderLootTableBuilder());
         this.register(
-                ModEntityTypes.SAND_SPIDER,
+                CreaturesEntityTypes.SAND_SPIDER,
                 defaultSpiderLootTableBuilder()
-                        .pool(lootPoolBuilder(ModItems.SAND_DUST))
+                        .pool(lootPoolBuilder(CreaturesItems.SAND_DUST))
         );
         this.register(
-                ModEntityTypes.SNOW_SPIDER,
+                CreaturesEntityTypes.SNOW_SPIDER,
                 defaultSpiderLootTableBuilder()
                         .pool(lootPoolBuilder(Items.SNOWBALL))
         );
-        this.register(ModEntityTypes.VENOMOUS_SPIDER, defaultSpiderLootTableBuilder());
+        this.register(CreaturesEntityTypes.VENOMOUS_SPIDER, defaultSpiderLootTableBuilder());
         this.register(
-                ModEntityTypes.SNOWY_SPIDER,
+                CreaturesEntityTypes.SNOWY_SPIDER,
                 defaultSpiderLootTableBuilder()
                         .pool(lootPoolBuilder(Items.SNOWBALL))
         );
 
         this.register(
-                ModEntityTypes.SNOWY_COW,
+                CreaturesEntityTypes.SNOWY_COW,
                 LootTable.builder()
                         .pool(
                                 LootPool.builder()
@@ -281,7 +291,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
         );
 
         this.register(
-                ModEntityTypes.SNOWY_PIG,
+                CreaturesEntityTypes.SNOWY_PIG,
                 LootTable.builder()
                         .pool(
                                 LootPool.builder()
@@ -297,7 +307,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
         );
 
         this.register(
-                ModEntityTypes.WILD_BOAR,
+                CreaturesEntityTypes.WILD_BOAR,
                 LootTable.builder()
                         .pool(
                                 LootPool.builder()

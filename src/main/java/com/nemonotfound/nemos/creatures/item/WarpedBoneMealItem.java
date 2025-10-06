@@ -1,6 +1,6 @@
 package com.nemonotfound.nemos.creatures.item;
 
-import com.nemonotfound.nemos.creatures.world.ModWorldEvents;
+import com.nemonotfound.nemos.creatures.world.CreatureWorldEvents;
 import com.nemonotfound.nemos.creatures.world.gen.feature.ModNetherConfiguredFeatures;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -56,7 +56,7 @@ public class WarpedBoneMealItem extends Item {
 
         if (!world.isClient) {
             context.getPlayer().emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
-            world.syncWorldEvent(ModWorldEvents.WARPED_BONE_MEAL_USED, blockPos, 15);
+            world.syncWorldEvent(CreatureWorldEvents.WARPED_BONE_MEAL_USED, blockPos, 15);
         }
 
         return ActionResult.SUCCESS;

@@ -21,7 +21,7 @@ import java.util.function.Predicate;
 
 import static com.nemonotfound.nemos.creatures.NemosCreatures.MOD_ID;
 
-public class ModEntityTypes {
+public class CreaturesEntityTypes {
 
     public static final EntityType<VenomousSkeletonEntity> VENOMOUS_SKELETON = registerEntityType("venomous_skeleton",
             EntityType.Builder.create(VenomousSkeletonEntity::new, SpawnGroup.MONSTER)

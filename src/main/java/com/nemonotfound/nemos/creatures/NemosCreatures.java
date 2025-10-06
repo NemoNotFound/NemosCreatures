@@ -1,10 +1,10 @@
 package com.nemonotfound.nemos.creatures;
 
-import com.nemonotfound.nemos.creatures.block.ModBlocks;
+import com.nemonotfound.nemos.creatures.block.CreaturesBlocks;
 import com.nemonotfound.nemos.creatures.block.ModDispenserBehavior;
-import com.nemonotfound.nemos.creatures.entity.ModEntityTypes;
-import com.nemonotfound.nemos.creatures.item.ModItemGroups;
-import com.nemonotfound.nemos.creatures.item.ModItems;
+import com.nemonotfound.nemos.creatures.entity.CreaturesEntityTypes;
+import com.nemonotfound.nemos.creatures.item.CreaturesItemGroups;
+import com.nemonotfound.nemos.creatures.item.CreaturesItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,12 +19,12 @@ public class NemosCreatures implements ModInitializer {
 	public void onInitialize() {
 		log.info("Thanks for using Nemo's Creatures!!");
 
-		ModEntityTypes.registerSpawnRestrictions();
-		ModEntityTypes.registerAttributes();
-		ModEntityTypes.addMobsToBiome();
-		ModBlocks.bootstrap();
-		ModItems.bootstrap();
-		ModItemGroups.bootstrap();
+		CreaturesEntityTypes.registerSpawnRestrictions();
+		CreaturesEntityTypes.registerAttributes();
+		CreaturesEntityTypes.addMobsToBiome();
+		CreaturesBlocks.bootstrap();
+		CreaturesItems.bootstrap();
+		CreaturesItemGroups.bootstrap();
 		ModDispenserBehavior.registerDefaults();
 	}
 

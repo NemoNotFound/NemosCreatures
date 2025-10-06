@@ -1,6 +1,6 @@
 package com.nemonotfound.nemos.creatures.mixin;
 
-import com.nemonotfound.nemos.creatures.entity.ModEntityTypes;
+import com.nemonotfound.nemos.creatures.entity.CreaturesEntityTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
@@ -16,7 +16,7 @@ public class BlocksMixin {
 
     @Inject(at = @At("HEAD"), method = "canSpawnOnLeaves", cancellable = true)
     private static void canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type, CallbackInfoReturnable<Boolean> cir) {
-        if (type == ModEntityTypes.VENOMOUS_SPIDER) {
+        if (type == CreaturesEntityTypes.VENOMOUS_SPIDER) {
             cir.setReturnValue(true);
         }
     }
