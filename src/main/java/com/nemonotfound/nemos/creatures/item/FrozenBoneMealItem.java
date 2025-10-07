@@ -58,7 +58,7 @@ public class FrozenBoneMealItem extends Item {
         var blockPos = blockHitResult.getBlockPos();
         var fluidState = world.getFluidState(blockPos);
 
-        if (useOnFluidBlock(world, fluidState, blockPos, user.getActiveItem())) {
+        if (useOnFluidBlock(world, fluidState, blockPos, user.getStackInHand(hand))) {
             if (!world.isClient) {
                 user.emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
                 world.syncWorldEvent(CreatureWorldEvents.FROZEN_BONE_MEAL_USED, blockPos, 15);
