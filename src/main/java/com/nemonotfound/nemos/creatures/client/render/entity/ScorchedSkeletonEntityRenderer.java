@@ -1,6 +1,6 @@
 package com.nemonotfound.nemos.creatures.client.render.entity;
 
-import com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers;
+import com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers;
 import com.nemonotfound.nemos.creatures.entity.mob.ScorchedSkeletonEntity;
 import net.minecraft.client.render.entity.AbstractSkeletonEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -14,8 +14,7 @@ public class ScorchedSkeletonEntityRenderer extends AbstractSkeletonEntityRender
     private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/skeleton/scorched_skeleton.png");
 
     public ScorchedSkeletonEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, ModEntityModelLayers.SCORCHED_SKELETON,ModEntityModelLayers.SCORCHED_SKELETON_INNER_ARMOR,
-                ModEntityModelLayers.SCORCHED_SKELETON_OUTER_ARMOR);
+        super(context, CreaturesEntityModelLayers.SCORCHED_SKELETON, CreaturesEntityModelLayers.SCORCHED_SKELETON_EQUIPMENT);
     }
 
     @Override

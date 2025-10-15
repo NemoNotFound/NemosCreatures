@@ -7,7 +7,7 @@ import net.minecraft.client.render.entity.state.LivingEntityRenderState;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.nemos.creatures.NemosCreatures.MOD_ID;
-import static com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers.SNOWY_SPIDER;
+import static com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers.SNOWY_SPIDER;
 
 public class SnowySpiderEntityRenderer extends SpiderEntityRenderer<SnowySpiderEntity> {
 

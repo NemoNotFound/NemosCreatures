@@ -67,6 +67,6 @@ public class CreaturesItems {
     }
 
     private static Function<Item.Settings, Item> createSpawnEggItem(EntityType<? extends MobEntity> entityType) {
-        return settings -> new SpawnEggItem(entityType, settings);
+        return settings -> new SpawnEggItem(settings.spawnEgg(entityType));
     }
 }

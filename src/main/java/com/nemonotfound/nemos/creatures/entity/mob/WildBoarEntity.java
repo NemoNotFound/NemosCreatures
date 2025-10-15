@@ -191,7 +191,7 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
     @Override
     protected void readCustomData(ReadView view) {
         super.readCustomData(view);
-        this.readAngerFromData(this.getWorld(), view);
+        this.readAngerFromData(this.getEntityWorld(), view);
     }
 
     @Override
@@ -228,11 +228,13 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
     @Override
     public void tick() {
         super.tick();
-        if (!this.getWorld().isClient) {
-            this.tickAngerLogic((ServerWorld)this.getWorld(), true);
+        var world = getEntityWorld();
+
+        if (!world.isClient()) {
+            this.tickAngerLogic((ServerWorld) world, true);
         }
 
-        if(this.getWorld().isClient()) {
+        if(world.isClient()) {
             setupAnimationStates();
         }
     }
@@ -342,9 +344,9 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
                 return false;
             }
             if (super.canStart()) {
-                List<WildBoarEntity> list = WildBoarEntity.this.getWorld()
+                List<WildBoarEntity> wildBoars = WildBoarEntity.this.getEntityWorld()
                         .getNonSpectatingEntities(WildBoarEntity.class, WildBoarEntity.this.getBoundingBox().expand(8.0, 4.0, 8.0));
-                for (WildBoarEntity wildBoarEntity : list) {
+                for (WildBoarEntity wildBoarEntity : wildBoars) {
                     if (!wildBoarEntity.isBaby()) continue;
                     return true;
                 }

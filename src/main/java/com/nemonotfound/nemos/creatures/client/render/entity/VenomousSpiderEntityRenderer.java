@@ -8,7 +8,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.nemos.creatures.NemosCreatures.MOD_ID;
-import static com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers.VENOMOUS_SPIDER;
+import static com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers.VENOMOUS_SPIDER;
 
 public class VenomousSpiderEntityRenderer extends SpiderEntityRenderer<VenomousSpiderEntity> {
 

@@ -234,7 +234,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                                         .with(TagEntry.expandBuilder(ItemTags.CREEPER_DROP_MUSIC_DISCS))
                                         .conditionally(
                                                 EntityPropertiesLootCondition.builder(
-                                                        LootContext.EntityTarget.ATTACKER,
+                                                        LootContext.EntityReference.ATTACKER,
                                                         EntityPredicate.Builder.create()
                                                                 .type(entityTypeRegistryEntryLookup, EntityTypeTags.SKELETONS)
                                                 )
@@ -376,7 +376,7 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                                 .with(TagEntry.expandBuilder(ItemTags.CREEPER_DROP_MUSIC_DISCS))
                                 .conditionally(
                                         EntityPropertiesLootCondition.builder(
-                                                LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().type(registryEntryLookup, EntityTypeTags.SKELETONS)
+                                                LootContext.EntityReference.ATTACKER, EntityPredicate.Builder.create().type(registryEntryLookup, EntityTypeTags.SKELETONS)
                                         )
                                 )
                 );

@@ -1,6 +1,6 @@
 package com.nemonotfound.nemos.creatures.client.render.entity.feature;
 
-import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.command.OrderedRenderCommandQueue;
 import net.minecraft.client.render.entity.feature.FeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
 import net.minecraft.client.render.entity.model.CreeperEntityModel;
@@ -21,8 +21,10 @@ public class CreeperOverlayFeatureRenderer<S extends CreeperEntityRenderState, M
         this.outerModel = new CreeperEntityModel(loader.getModelPart(layer));
     }
 
+
+
     @Override
-    public void render(MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int light, S zombieEntityRenderState, float limbAngle, float limbDistance) {
-        render(outerModel, this.texture, matrixStack, vertexConsumerProvider, light, zombieEntityRenderState, -1);
+    public void render(MatrixStack matrixStack, OrderedRenderCommandQueue queue, int light, S zombieEntityRenderState, float limbAngle, float limbDistance) {
+        render(outerModel, this.texture, matrixStack, queue, light, zombieEntityRenderState, -1, 1);
     }
 }

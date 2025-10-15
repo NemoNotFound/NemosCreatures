@@ -1,7 +1,7 @@
 package com.nemonotfound.nemos.creatures.client.render.entity;
 
 import com.nemonotfound.nemos.creatures.client.render.entity.feature.CreeperOverlayFeatureRenderer;
-import com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers;
+import com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers;
 import net.minecraft.client.render.entity.CreeperEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.state.CreeperEntityRenderState;
@@ -16,7 +16,7 @@ public class ScorchedCreeperEntityRenderer extends CreeperEntityRenderer {
 
     public ScorchedCreeperEntityRenderer(EntityRendererFactory.Context context) {
         super(context);
-        this.addFeature(new CreeperOverlayFeatureRenderer<>(this, context.getEntityModels(), ModEntityModelLayers.SCORCHED_CREEPER_OUTER, OVERLAY_TEXTURE));
+        this.addFeature(new CreeperOverlayFeatureRenderer<>(this, context.getEntityModels(), CreaturesEntityModelLayers.SCORCHED_CREEPER_OUTER, OVERLAY_TEXTURE));
     }
 
     @Override

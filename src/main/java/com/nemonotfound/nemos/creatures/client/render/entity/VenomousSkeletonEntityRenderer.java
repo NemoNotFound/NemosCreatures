@@ -1,6 +1,6 @@
 package com.nemonotfound.nemos.creatures.client.render.entity;
 
-import com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers;
+import com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers;
 import com.nemonotfound.nemos.creatures.entity.mob.VenomousSkeletonEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -20,10 +20,9 @@ public class VenomousSkeletonEntityRenderer extends AbstractSkeletonEntityRender
     private static final Identifier OVERLAY_PANTS_TEXTURE = Identifier.of(MOD_ID, "textures/entity/skeleton/venomous_skeleton_overlay_pants.png");
 
     public VenomousSkeletonEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, ModEntityModelLayers.VENOMOUS_SKELETON, ModEntityModelLayers.VENOMOUS_SKELETON_INNER_ARMOR,
-                ModEntityModelLayers.VENOMOUS_SKELETON_OUTER_ARMOR);
-        this.addFeature(new SkeletonOverlayFeatureRenderer<>(this, context.getEntityModels(), ModEntityModelLayers.VENOMOUS_SKELETON_OUTER, OVERLAY_TEXTURE));
-        this.addFeature(new SkeletonOverlayFeatureRenderer<>(this, context.getEntityModels(), ModEntityModelLayers.VENOMOUS_SKELETON_OUTER_PANTS, OVERLAY_PANTS_TEXTURE));
+        super(context, CreaturesEntityModelLayers.VENOMOUS_SKELETON, CreaturesEntityModelLayers.VENOMOUS_SKELETON_EQUIPMENT);
+        this.addFeature(new SkeletonOverlayFeatureRenderer<>(this, context.getEntityModels(), CreaturesEntityModelLayers.VENOMOUS_SKELETON_OUTER, OVERLAY_TEXTURE));
+        this.addFeature(new SkeletonOverlayFeatureRenderer<>(this, context.getEntityModels(), CreaturesEntityModelLayers.VENOMOUS_SKELETON_OUTER_PANTS, OVERLAY_PANTS_TEXTURE));
     }
 
     @Override

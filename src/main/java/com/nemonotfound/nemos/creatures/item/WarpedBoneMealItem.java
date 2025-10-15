@@ -54,7 +54,7 @@ public class WarpedBoneMealItem extends Item {
             return ActionResult.PASS;
         }
 
-        if (!world.isClient) {
+        if (!world.isClient()) {
             context.getPlayer().emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
             world.syncWorldEvent(CreatureWorldEvents.WARPED_BONE_MEAL_USED, blockPos, 15);
         }

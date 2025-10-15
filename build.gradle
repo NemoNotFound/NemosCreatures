@@ -1,6 +1,10 @@
+import net.darkhax.curseforgegradle.TaskPublishCurseForge
+
 plugins {
-	id 'fabric-loom' version '1.10-SNAPSHOT'
+	id 'fabric-loom' version '1.11-SNAPSHOT'
 	id 'maven-publish'
+	id 'net.darkhax.curseforgegradle' version '1.1.27'
+	id "com.modrinth.minotaur" version "2.+"
 }
 
 version = project.minecraft_version + "-" + project.mod_version
@@ -97,3 +101,30 @@ publishing {
 		// retrieving dependencies.
 	}
 }
+
+tasks.register('publishCurseForge', TaskPublishCurseForge) {
+	dependsOn(tasks.remapJar)
+	apiToken = System.getenv("CURSEFORGE_TOKEN")
+
+	def projectId = findProperty('curseforge_project_id')
+
+	def mainFile = upload(projectId, tasks.remapJar.archiveFile)
+	mainFile.changelog = file('changelog.md')
+	mainFile.displayName = findProperty('mod_name') + ' ' + findProperty('version')
+	mainFile.releaseType = 'release'
+	mainFile.addEnvironment('Client', 'Server')
+	mainFile.addJavaVersion('21')
+}
+
+modrinth {
+	token.set(System.getenv("MODRINTH_TOKEN"))
+	projectId.set(findProperty('modrinth_project_id'))
+	changelog.set(file('changelog.md').text)
+	versionName.set(findProperty('mod_name') + ' ' + findProperty('version'))
+	versionType.set("release")
+	uploadFile.set(tasks.remapJar)
+	dependencies {
+		required.project("fabric-api")
+	}
+}
+tasks.modrinth.dependsOn(tasks.remapJar)

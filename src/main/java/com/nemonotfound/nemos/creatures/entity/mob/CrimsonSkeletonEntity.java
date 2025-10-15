@@ -13,13 +13,14 @@ import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.passive.TurtleEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -89,7 +90,7 @@ public class CrimsonSkeletonEntity extends AbstractSkeletonEntity {
     protected void initEquipment(Random random, LocalDifficulty localDifficulty) {
         super.initEquipment(random, localDifficulty);
         ItemStack bow = new ItemStack(Items.BOW);
-        Registry<Enchantment> enchantmentRegistry = this.getWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT);
+        Registry<Enchantment> enchantmentRegistry = this.getEntityWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT);
         Enchantment enchantment = enchantmentRegistry.get(Enchantments.FLAME);
         RegistryEntry<Enchantment> enchantmentEntry = enchantmentRegistry.getEntry(enchantment);
         bow.addEnchantment(enchantmentEntry, 1);
@@ -99,23 +100,27 @@ public class CrimsonSkeletonEntity extends AbstractSkeletonEntity {
     @Override
     public void equipStack(EquipmentSlot slot, ItemStack stack) {
         super.equipStack(slot, stack);
-        if (!this.getWorld().isClient) {
+        if (!this.getEntityWorld().isClient()) {
             this.updateAttackType();
         }
     }
 
     @Override
     public void shootAt(LivingEntity target, float pullProgress) {
-        ItemStack bow = this.getStackInHand(ProjectileUtil.getHandPossiblyHolding(this, Items.BOW));
-        ItemStack projectile = this.getProjectileType(bow);
-        PersistentProjectileEntity persistentProjectileEntity = this.createArrowProjectile(projectile, pullProgress, bow);
-        double d = target.getX() - this.getX();
-        double e = target.getBodyY(0.3333333333333333) - persistentProjectileEntity.getY();
-        double f = target.getZ() - this.getZ();
-        double g = Math.sqrt(d * d + f * f);
-        persistentProjectileEntity.setVelocity(d, e + g * (double)0.1f, f, 2.5f, 7 - this.getWorld().getDifficulty().getId() * 4);
+        var bow = this.getStackInHand(ProjectileUtil.getHandPossiblyHolding(this, Items.BOW));
+        var projectile = this.getProjectileType(bow);
+        var persistentProjectileEntity = this.createArrowProjectile(projectile, pullProgress, bow);
         persistentProjectileEntity.igniteByLava();
+        var d = target.getX() - this.getX();
+        var e = target.getBodyY(0.3333333333333333) - persistentProjectileEntity.getY();
+        var f = target.getZ() - this.getZ();
+        var g = Math.sqrt(d * d + f * f);
+        var world = getEntityWorld();
+
+        if (world instanceof ServerWorld serverWorld) {
+            ProjectileEntity.spawnWithVelocity(persistentProjectileEntity, serverWorld, projectile, d, e + g * (double)0.1f, f, 2.5f, 7 - world.getDifficulty().getId() * 4);
+        }
+
         this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0f, 1.0f / (this.getRandom().nextFloat() * 0.4f + 0.8f));
-        this.getWorld().spawnEntity(persistentProjectileEntity);
     }
 }

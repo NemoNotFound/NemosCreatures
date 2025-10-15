@@ -9,7 +9,7 @@ import net.minecraft.entity.mob.SpiderEntity;
 import net.minecraft.util.Identifier;
 
 import static com.nemonotfound.nemos.creatures.NemosCreatures.MOD_ID;
-import static com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers.FROZEN_SPIDER;
+import static com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers.FROZEN_SPIDER;
 
 public class FrozenSpiderEntityRenderer<T extends SpiderEntity> extends MobEntityRenderer<T, LivingEntityRenderState, SpiderEntityModel> {
 

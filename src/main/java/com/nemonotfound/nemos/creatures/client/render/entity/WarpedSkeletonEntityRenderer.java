@@ -1,7 +1,7 @@
 package com.nemonotfound.nemos.creatures.client.render.entity;
 
 import com.nemonotfound.nemos.creatures.client.render.entity.feature.CustomSkeletonGlowFeatureRenderer;
-import com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers;
+import com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers;
 import com.nemonotfound.nemos.creatures.entity.mob.WarpedSkeletonEntity;
 import net.minecraft.client.render.entity.AbstractSkeletonEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -16,8 +16,7 @@ public class WarpedSkeletonEntityRenderer extends AbstractSkeletonEntityRenderer
     private static final String EYES_TEXTURE_PATH = "textures/entity/skeleton/warped_skeleton_glow.png";
 
     public WarpedSkeletonEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, ModEntityModelLayers.WARPED_SKELETON, ModEntityModelLayers.WARPED_SKELETON_INNER_ARMOR,
-                ModEntityModelLayers.WARPED_SKELETON_OUTER_ARMOR);
+        super(context, CreaturesEntityModelLayers.WARPED_SKELETON, CreaturesEntityModelLayers.WARPED_SKELETON_EQUIPMENT);
         this.addFeature(new CustomSkeletonGlowFeatureRenderer<>(this, EYES_TEXTURE_PATH));
     }
 

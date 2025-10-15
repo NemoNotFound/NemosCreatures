@@ -1,7 +1,7 @@
 package com.nemonotfound.nemos.creatures.client.render.entity;
 
 import com.nemonotfound.nemos.creatures.client.render.entity.feature.CustomSkeletonGlowFeatureRenderer;
-import com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers;
+import com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers;
 import com.nemonotfound.nemos.creatures.entity.mob.CrimsonSkeletonEntity;
 import net.minecraft.client.render.entity.AbstractSkeletonEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -16,8 +16,7 @@ public class CrimsonSkeletonEntityRenderer extends AbstractSkeletonEntityRendere
     private static final String EYES_TEXTURE_PATH = "textures/entity/skeleton/crimson_skeleton_glow.png";
 
     public CrimsonSkeletonEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, ModEntityModelLayers.CRIMSON_SKELETON, ModEntityModelLayers.CRIMSON_SKELETON_INNER_ARMOR,
-                ModEntityModelLayers.CRIMSON_SKELETON_OUTER_ARMOR);
+        super(context, CreaturesEntityModelLayers.CRIMSON_SKELETON, CreaturesEntityModelLayers.CRIMSON_SKELETON_EQUIPMENT);
         this.addFeature(new CustomSkeletonGlowFeatureRenderer<>(this, EYES_TEXTURE_PATH));
     }
 

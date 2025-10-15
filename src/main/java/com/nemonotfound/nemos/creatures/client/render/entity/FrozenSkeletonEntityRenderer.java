@@ -1,7 +1,7 @@
 package com.nemonotfound.nemos.creatures.client.render.entity;
 
 import com.nemonotfound.nemos.creatures.client.render.entity.feature.CustomSkeletonGlowFeatureRenderer;
-import com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers;
+import com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers;
 import com.nemonotfound.nemos.creatures.entity.mob.FrozenSkeletonEntity;
 import net.minecraft.client.render.entity.AbstractSkeletonEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -16,8 +16,7 @@ public class FrozenSkeletonEntityRenderer extends AbstractSkeletonEntityRenderer
     private static final String EYES_TEXTURE_PATH = "textures/entity/skeleton/frozen_skeleton_glow.png";
 
     public FrozenSkeletonEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, ModEntityModelLayers.FROZEN_SKELETON, ModEntityModelLayers.FROZEN_SKELETON_INNER_ARMOR,
-                ModEntityModelLayers.FROZEN_SKELETON_OUTER_ARMOR);
+        super(context, CreaturesEntityModelLayers.FROZEN_SKELETON, CreaturesEntityModelLayers.FROZEN_SKELETON_EQUIPMENT);
         this.addFeature(new CustomSkeletonGlowFeatureRenderer<>(this, EYES_TEXTURE_PATH));
     }
 

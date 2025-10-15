@@ -1,11 +1,12 @@
 package com.nemonotfound.nemos.creatures.client.render.entity;
 
 import com.nemonotfound.nemos.creatures.client.render.entity.feature.ZombieOverlayFeatureRenderer;
-import com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers;
+import com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers;
 import com.nemonotfound.nemos.creatures.entity.mob.SnowyZombieEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.ZombieBaseEntityRenderer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.minecraft.client.render.entity.model.EquipmentModelData;
 import net.minecraft.client.render.entity.model.ZombieEntityModel;
 import net.minecraft.client.render.entity.state.ZombieEntityRenderState;
 import net.minecraft.util.Identifier;
@@ -18,18 +19,18 @@ public class SnowyZombieEntityRenderer extends ZombieBaseEntityRenderer<SnowyZom
     private static final Identifier OVERLAY_TEXTURE = Identifier.of(MOD_ID, "textures/entity/zombie/snowy_zombie_overlay.png");
 
     public SnowyZombieEntityRenderer(EntityRendererFactory.Context context) {
-        this(context, ModEntityModelLayers.SNOWY_ZOMBIE, ModEntityModelLayers.SNOWY_ZOMBIE_BABY, ModEntityModelLayers.SNOWY_ZOMBIE_INNER_ARMOR, ModEntityModelLayers.SNOWY_ZOMBIE_OUTER_ARMOR, ModEntityModelLayers.SNOWY_ZOMBIE_BABY_INNER_ARMOR, ModEntityModelLayers.SNOWY_ZOMBIE_BABY_OUTER_ARMOR);
+        this(context, CreaturesEntityModelLayers.SNOWY_ZOMBIE, CreaturesEntityModelLayers.SNOWY_ZOMBIE_BABY, CreaturesEntityModelLayers.SNOWY_ZOMBIE_EQUIPMENT, CreaturesEntityModelLayers.SNOWY_ZOMBIE_BABY_EQUIPMENT);
     }
 
-    public SnowyZombieEntityRenderer(EntityRendererFactory.Context context, EntityModelLayer body, EntityModelLayer baby, EntityModelLayer innerArmor, EntityModelLayer outerArmor, EntityModelLayer babyInnerArmor, EntityModelLayer babyOuterArmor) {
-        super(context,
+    public SnowyZombieEntityRenderer(EntityRendererFactory.Context context, EntityModelLayer body, EntityModelLayer baby, EquipmentModelData<EntityModelLayer> equipmentModelData, EquipmentModelData<EntityModelLayer> babyEquipmentModelData) {
+        super(
+                context,
                 new ZombieEntityModel<>(context.getPart(body)),
                 new ZombieEntityModel<>(context.getPart(baby)),
-                new ZombieEntityModel<>(context.getPart(innerArmor)),
-                new ZombieEntityModel<>(context.getPart(outerArmor)),
-                new ZombieEntityModel<>(context.getPart(babyInnerArmor)),
-                new ZombieEntityModel<>(context.getPart(babyOuterArmor)));
-        this.addFeature(new ZombieOverlayFeatureRenderer<>(this, context.getEntityModels(), ModEntityModelLayers.SNOWY_ZOMBIE_OUTER, ModEntityModelLayers.SNOWY_ZOMBIE_BABY_OUTER, OVERLAY_TEXTURE));
+                EquipmentModelData.mapToEntityModel(equipmentModelData, context.getEntityModels(), ZombieEntityModel::new),
+                EquipmentModelData.mapToEntityModel(babyEquipmentModelData, context.getEntityModels(), ZombieEntityModel::new)
+        );
+        this.addFeature(new ZombieOverlayFeatureRenderer<>(this, context.getEntityModels(), CreaturesEntityModelLayers.SNOWY_ZOMBIE_OUTER, CreaturesEntityModelLayers.SNOWY_ZOMBIE_BABY_OUTER, OVERLAY_TEXTURE));
     }
 
     @Override

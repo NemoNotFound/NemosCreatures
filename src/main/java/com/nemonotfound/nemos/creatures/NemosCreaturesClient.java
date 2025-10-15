@@ -1,7 +1,7 @@
 package com.nemonotfound.nemos.creatures;
 
-import com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers;
-import com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModels;
+import com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers;
+import com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModels;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -11,7 +11,7 @@ public class NemosCreaturesClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        ModEntityModelLayers.registerEntityModelLayers();
-        ModEntityModels.bootstrap();
+        CreaturesEntityModelLayers.registerEntityModelLayers();
+        CreaturesEntityModels.bootstrap();
     }
 }

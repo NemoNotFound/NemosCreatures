@@ -1,4 +1,4 @@
-# Changelog v1.10.1
+# Changelog v1.10.2
 
-## Fixes
-- **Frozen Bone Meal** is now consumed upon use.
+## Changes
+- Warped Skeleton shoots invisible arrows now

@@ -20,13 +20,13 @@ public class VenomousZombieEntity extends ZombieEntity {
     public boolean tryAttack(ServerWorld world, Entity target) {
         if (super.tryAttack(world, target)) {
             if (target instanceof LivingEntity) {
-                int durationMultiplier = 0;
+                var durationMultiplier = 0;
 
-                if (this.getWorld().getDifficulty() == Difficulty.EASY) {
+                if (world.getDifficulty() == Difficulty.EASY) {
                     durationMultiplier = 3;
-                } else if (this.getWorld().getDifficulty() == Difficulty.NORMAL) {
+                } else if (world.getDifficulty() == Difficulty.NORMAL) {
                     durationMultiplier = 7;
-                } else if (this.getWorld().getDifficulty() == Difficulty.HARD) {
+                } else if (world.getDifficulty() == Difficulty.HARD) {
                     durationMultiplier = 15;
                 }
 

@@ -1,6 +1,6 @@
 package com.nemonotfound.nemos.creatures.client.render.entity;
 
-import com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers;
+import com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers;
 import com.nemonotfound.nemos.creatures.entity.mob.SandSpiderEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.SpiderEntityRenderer;
@@ -16,7 +16,7 @@ public class SandSpiderEntityRenderer extends SpiderEntityRenderer<SandSpiderEnt
     private static final float SCALE = 0.4f;
 
     public SandSpiderEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, ModEntityModelLayers.SAND_SPIDER);
+        super(context, CreaturesEntityModelLayers.SAND_SPIDER);
         this.shadowRadius *= SCALE;
     }
 

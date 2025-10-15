@@ -20,7 +20,7 @@ public interface ModDispenserBehavior {
 
                 if (!FrozenBoneMealItem.useOnFluidBlock(world, fluidState, blockPos, stack)) {
                     this.setSuccess(false);
-                } else if (!world.isClient) {
+                } else if (!world.isClient()) {
                     world.syncWorldEvent(CreatureWorldEvents.FROZEN_BONE_MEAL_USED, blockPos, 15);
                 }
 
@@ -38,7 +38,7 @@ public interface ModDispenserBehavior {
 
                 if (!ScorchedBoneMealItem.useOnDryableBlock(world, blockState, blockPos, stack)) {
                     this.setSuccess(false);
-                } else if (!world.isClient) {
+                } else if (!world.isClient()) {
                     world.syncWorldEvent(CreatureWorldEvents.SCORCHED_BONE_MEAL_USED, blockPos, 15);
                 }
 
@@ -56,7 +56,7 @@ public interface ModDispenserBehavior {
 
                 if (!CrimsonBoneMealItem.useOnReplaceable(world, blockState, blockPos, stack) && !CrimsonBoneMealItem.useOnCrimsonNylium(stack, world, blockState, blockPos)) {
                     this.setSuccess(false);
-                } else if (!world.isClient) {
+                } else if (!world.isClient()) {
                     world.syncWorldEvent(CreatureWorldEvents.CRIMSON_BONE_MEAL_USED, blockPos, 15);
                 }
 
@@ -74,7 +74,7 @@ public interface ModDispenserBehavior {
 
                 if (!WarpedBoneMealItem.useOnReplaceable(world, blockState, blockPos, stack) && !WarpedBoneMealItem.useOnWarpedNylium(stack, world, blockState, blockPos)) {
                     this.setSuccess(false);
-                } else if (!world.isClient) {
+                } else if (!world.isClient()) {
                     world.syncWorldEvent(CreatureWorldEvents.WARPED_BONE_MEAL_USED, blockPos, 15);
                 }
 

@@ -11,10 +11,11 @@ import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.passive.TurtleEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -90,30 +91,27 @@ public class WarpedSkeletonEntity extends AbstractSkeletonEntity {
     @Override
     public void equipStack(EquipmentSlot slot, ItemStack stack) {
         super.equipStack(slot, stack);
-        if (!this.getWorld().isClient) {
+        if (!this.getEntityWorld().isClient()) {
             this.updateAttackType();
         }
     }
 
     @Override
     public void shootAt(LivingEntity target, float pullProgress) {
-        ItemStack bow = this.getStackInHand(ProjectileUtil.getHandPossiblyHolding(this, Items.BOW));
-        ItemStack projectile = this.getProjectileType(bow);
-        PersistentProjectileEntity persistentProjectileEntity = this.createArrowProjectile(projectile, pullProgress, bow);
-        double distanceX = target.getX() - this.getX();
-        double distanceY = target.getBodyY(0.3333333333333333) - persistentProjectileEntity.getY();
-        double distanceZ = target.getZ() - this.getZ();
-        double g = Math.sqrt(distanceX * distanceX + distanceZ * distanceZ);
-        boolean isXTooClose = distanceX < 1 && distanceX > -1;
-        boolean isZTooClose = distanceZ < 1 && distanceZ > -1;
-        double newDistanceX = isXTooClose ? 0 : distanceX > 1 ? -1 : 1;
-        double newDistanceZ = isZTooClose ? 0 : distanceZ > 1 ? -1 : 1;
-        double newXPosition = isXTooClose ? this.getX() : target.getX() + newDistanceX;
-        double newZPosition = isZTooClose ? this.getZ() : target.getZ() + newDistanceZ;
+        var bow = this.getStackInHand(ProjectileUtil.getHandPossiblyHolding(this, Items.BOW));
+        var projectile = this.getProjectileType(bow);
+        var persistentProjectileEntity = this.createArrowProjectile(projectile, pullProgress, bow);
+        persistentProjectileEntity.setInvisible(true);
+        var d = target.getX() - this.getX();
+        var e = target.getBodyY(0.3333333333333333) - persistentProjectileEntity.getY();
+        var f = target.getZ() - this.getZ();
+        var g = Math.sqrt(d * d + f * f);
+        var world = getEntityWorld();
 
-        persistentProjectileEntity.updatePosition(newXPosition, target.getBodyY(0.3333333333333333), newZPosition);
-        persistentProjectileEntity.setVelocity(distanceX, distanceY + g * (double)0.2f, distanceZ, 1.8f, 0);
+        if (world instanceof ServerWorld serverWorld) {
+            ProjectileEntity.spawnWithVelocity(persistentProjectileEntity, serverWorld, projectile, d, e + g * (double)0.1f, f, 2.5f, 7 - world.getDifficulty().getId() * 4);
+        }
+
         this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0f, 1.0f / (this.getRandom().nextFloat() * 0.2f + 0.6f));
-        this.getWorld().spawnEntity(persistentProjectileEntity);
     }
 }

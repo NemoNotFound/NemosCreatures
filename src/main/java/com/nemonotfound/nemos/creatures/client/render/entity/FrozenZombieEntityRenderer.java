@@ -1,10 +1,11 @@
 package com.nemonotfound.nemos.creatures.client.render.entity;
 
-import com.nemonotfound.nemos.creatures.client.render.entity.model.ModEntityModelLayers;
+import com.nemonotfound.nemos.creatures.client.render.entity.model.CreaturesEntityModelLayers;
 import com.nemonotfound.nemos.creatures.entity.mob.FrozenZombieEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.ZombieBaseEntityRenderer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.minecraft.client.render.entity.model.EquipmentModelData;
 import net.minecraft.client.render.entity.model.ZombieEntityModel;
 import net.minecraft.client.render.entity.state.ZombieEntityRenderState;
 import net.minecraft.util.Identifier;
@@ -16,17 +17,17 @@ public class FrozenZombieEntityRenderer extends ZombieBaseEntityRenderer<FrozenZ
     private static final Identifier TEXTURE = Identifier.of(MOD_ID, "textures/entity/zombie/frozen_zombie.png");
 
     public FrozenZombieEntityRenderer(EntityRendererFactory.Context context) {
-        this(context, ModEntityModelLayers.FROZEN_ZOMBIE, ModEntityModelLayers.FROZEN_ZOMBIE_BABY, ModEntityModelLayers.FROZEN_ZOMBIE_INNER_ARMOR, ModEntityModelLayers.FROZEN_ZOMBIE_OUTER_ARMOR, ModEntityModelLayers.FROZEN_ZOMBIE_BABY_INNER_ARMOR, ModEntityModelLayers.FROZEN_ZOMBIE_BABY_OUTER_ARMOR);
+        this(context, CreaturesEntityModelLayers.FROZEN_ZOMBIE, CreaturesEntityModelLayers.FROZEN_ZOMBIE_BABY, CreaturesEntityModelLayers.FROZEN_ZOMBIE_EQUIPMENT, CreaturesEntityModelLayers.FROZEN_ZOMBIE_BABY_EQUIPMENT);
     }
 
-    public FrozenZombieEntityRenderer(EntityRendererFactory.Context context, EntityModelLayer body, EntityModelLayer baby, EntityModelLayer innerArmor, EntityModelLayer outerArmor, EntityModelLayer babyInnerArmor, EntityModelLayer babyOuterArmor) {
-        super(context,
+    public FrozenZombieEntityRenderer(EntityRendererFactory.Context context, EntityModelLayer body, EntityModelLayer baby, EquipmentModelData<EntityModelLayer> equipmentModelData, EquipmentModelData<EntityModelLayer> babyEquipmentModelData) {
+        super(
+                context,
                 new ZombieEntityModel<>(context.getPart(body)),
                 new ZombieEntityModel<>(context.getPart(baby)),
-                new ZombieEntityModel<>(context.getPart(innerArmor)),
-                new ZombieEntityModel<>(context.getPart(outerArmor)),
-                new ZombieEntityModel<>(context.getPart(babyInnerArmor)),
-                new ZombieEntityModel<>(context.getPart(babyOuterArmor)));
+                EquipmentModelData.mapToEntityModel(equipmentModelData, context.getEntityModels(), ZombieEntityModel::new),
+                EquipmentModelData.mapToEntityModel(babyEquipmentModelData, context.getEntityModels(), ZombieEntityModel::new)
+        );
     }
 
     @Override

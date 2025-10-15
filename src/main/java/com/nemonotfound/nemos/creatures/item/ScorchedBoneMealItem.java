@@ -42,7 +42,7 @@ public class ScorchedBoneMealItem extends Item {
         var itemStack = context.getStack();
 
         if (useOnDryableBlock(world, blockState, blockPos, itemStack)) {
-            if (!world.isClient) {
+            if (!world.isClient()) {
                 context.getPlayer().emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
                 world.syncWorldEvent(CreatureWorldEvents.SCORCHED_BONE_MEAL_USED, blockPos, 15);
 
