@@ -113,7 +113,7 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
 	mainFile.displayName = findProperty('mod_name') + ' ' + findProperty('version')
 	mainFile.releaseType = 'release'
 	mainFile.addEnvironment('Client', 'Server')
-	mainFile.addJavaVersion('21')
+	mainFile.addJavaVersion('Java 21')
 }
 
 modrinth {
