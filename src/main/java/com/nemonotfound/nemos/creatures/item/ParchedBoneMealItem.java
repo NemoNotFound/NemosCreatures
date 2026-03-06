@@ -20,7 +20,7 @@ import net.minecraft.world.event.GameEvent;
 
 import java.util.Map;
 
-public class ScorchedBoneMealItem extends Item {
+public class ParchedBoneMealItem extends Item {
 
     private static final Map<Block, Block> BLOCK_REPLACEMENT_MAP = Map.of(
             Blocks.GRASS_BLOCK, Blocks.SAND,
@@ -30,7 +30,7 @@ public class ScorchedBoneMealItem extends Item {
             Blocks.BUSH, Blocks.DEAD_BUSH
     );
 
-    public ScorchedBoneMealItem(Settings settings) {
+    public ParchedBoneMealItem(Settings settings) {
         super(settings);
     }
 
@@ -44,7 +44,7 @@ public class ScorchedBoneMealItem extends Item {
         if (useOnDryableBlock(world, blockState, blockPos, itemStack)) {
             if (!world.isClient()) {
                 context.getPlayer().emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
-                world.syncWorldEvent(CreatureWorldEvents.SCORCHED_BONE_MEAL_USED, blockPos, 15);
+                world.syncWorldEvent(CreatureWorldEvents.PARCHED_BONE_MEAL_USED, blockPos, 15);
 
             }
 

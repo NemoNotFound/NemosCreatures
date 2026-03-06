@@ -1,3 +1,3 @@
-- **Scorched Bone Block**
+- **Parched Bone Block**
 - **Crimson Bone Block**
 - **Warped Bone Block**

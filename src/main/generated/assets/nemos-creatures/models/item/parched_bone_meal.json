@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "nemos-creatures:item/mummy_spawn_egg"
+    "layer0": "nemos-creatures:item/parched_bone_meal"
   }
 }

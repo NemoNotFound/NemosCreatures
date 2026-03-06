@@ -21,9 +21,7 @@ public class CreaturesEntityModels {
         EntityRendererFactories.register(CreaturesEntityTypes.VENOMOUS_SPIDER, VenomousSpiderEntityRenderer::new);
         EntityRendererFactories.register(CreaturesEntityTypes.VENOMOUS_ZOMBIE, VenomousZombieEntityRenderer::new);
         EntityRendererFactories.register(CreaturesEntityTypes.VENOMOUS_CREEPER, VenomousCreeperEntityRenderer::new);
-        EntityRendererFactories.register(CreaturesEntityTypes.SCORCHED_SKELETON, ScorchedSkeletonEntityRenderer::new);
         EntityRendererFactories.register(CreaturesEntityTypes.SAND_SPIDER, SandSpiderEntityRenderer::new);
-        EntityRendererFactories.register(CreaturesEntityTypes.MUMMY, MummyEntityRenderer::new);
         EntityRendererFactories.register(CreaturesEntityTypes.SCORCHED_CREEPER, ScorchedCreeperEntityRenderer::new);
         EntityRendererFactories.register(CreaturesEntityTypes.CRIMSON_SKELETON, CrimsonSkeletonEntityRenderer::new);
         EntityRendererFactories.register(CreaturesEntityTypes.WARPED_SKELETON, WarpedSkeletonEntityRenderer::new);
@@ -51,7 +49,6 @@ public class CreaturesEntityModels {
         var skeletonOuterPantsTexturedModelData = bipedTexturedModelData64x32(new Dilation(0.25f));
         var zombieTexturedModelData64x64 = zombieTexturedModelData(Dilation.NONE, 64);
         var zombieOuterTexturedModelData64x64 = zombieTexturedModelData(OUTER_DILATION, 64);
-        var mummyOuterTexturedModelData = zombieTexturedModelData(new Dilation(0.25f), 64);
         var zombieTexturedModelData64x32 = zombieTexturedModelData(Dilation.NONE, 32);
         var zombieOuterTexturedModelData64x32 = zombieTexturedModelData(OUTER_DILATION, 32);
 
@@ -64,13 +61,8 @@ public class CreaturesEntityModels {
         builder.put(CreaturesEntityModelLayers.VENOMOUS_ZOMBIE_OUTER, zombieOuterTexturedModelData64x64);
         builder.put(CreaturesEntityModelLayers.VENOMOUS_ZOMBIE_BABY, zombieTexturedModelData64x64.transform(BipedEntityModel.BABY_TRANSFORMER));
         builder.put(CreaturesEntityModelLayers.VENOMOUS_ZOMBIE_BABY_OUTER, zombieOuterTexturedModelData64x64.transform(BipedEntityModel.BABY_TRANSFORMER));
-        builder.put(CreaturesEntityModelLayers.SCORCHED_SKELETON, SkeletonEntityModel.getTexturedModelData());
         builder.put(CreaturesEntityModelLayers.SAND_SPIDER, SpiderEntityModel.getTexturedModelData());
         builder.put(CreaturesEntityModelLayers.SCORCHED_CREEPER_OUTER, CreeperEntityModel.getTexturedModelData(OUTER_DILATION));
-        builder.put(CreaturesEntityModelLayers.MUMMY, zombieTexturedModelData64x64);
-        builder.put(CreaturesEntityModelLayers.MUMMY_OUTER, mummyOuterTexturedModelData);
-        builder.put(CreaturesEntityModelLayers.MUMMY_BABY, zombieTexturedModelData64x64.transform(BipedEntityModel.BABY_TRANSFORMER));
-        builder.put(CreaturesEntityModelLayers.MUMMY_BABY_OUTER, mummyOuterTexturedModelData.transform(BipedEntityModel.BABY_TRANSFORMER));
         builder.put(CreaturesEntityModelLayers.CRIMSON_SKELETON, SkeletonEntityModel.getTexturedModelData());
         builder.put(CreaturesEntityModelLayers.WARPED_SKELETON, SkeletonEntityModel.getTexturedModelData());
         builder.put(CreaturesEntityModelLayers.WILD_BOAR, WildBoarEntityModel.getTexturedModelData());
@@ -97,9 +89,6 @@ public class CreaturesEntityModels {
         CreaturesEntityModelLayers.VENOMOUS_SKELETON_EQUIPMENT.addTo(bipedEquipmentModelData, builder);
         CreaturesEntityModelLayers.VENOMOUS_ZOMBIE_EQUIPMENT.addTo(bipedEquipmentModelData, builder);
         CreaturesEntityModelLayers.VENOMOUS_ZOMBIE_BABY_EQUIPMENT.addTo(babyBipedEquipmentModelData, builder);
-        CreaturesEntityModelLayers.SCORCHED_SKELETON_EQUIPMENT.addTo(bipedEquipmentModelData, builder);
-        CreaturesEntityModelLayers.MUMMY_EQUIPMENT.addTo(bipedEquipmentModelData, builder);
-        CreaturesEntityModelLayers.MUMMY_BABY_EQUIPMENT.addTo(babyBipedEquipmentModelData, builder);
         CreaturesEntityModelLayers.CRIMSON_SKELETON_EQUIPMENT.addTo(bipedEquipmentModelData, builder);
         CreaturesEntityModelLayers.WARPED_SKELETON_EQUIPMENT.addTo(bipedEquipmentModelData, builder);
         CreaturesEntityModelLayers.SNOWY_SKELETON_EQUIPMENT.addTo(bipedEquipmentModelData, builder);

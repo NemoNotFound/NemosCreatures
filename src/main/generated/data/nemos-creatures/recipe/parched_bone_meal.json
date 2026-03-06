@@ -3,10 +3,10 @@
   "category": "misc",
   "group": "bonemeal",
   "ingredients": [
-    "nemos-creatures:scorched_bone"
+    "nemos-creatures:parched_bone"
   ],
   "result": {
     "count": 3,
-    "id": "nemos-creatures:scorched_bone_meal"
+    "id": "nemos-creatures:parched_bone_meal"
   }
 }

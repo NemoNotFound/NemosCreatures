@@ -31,10 +31,10 @@ public class RecipeProvider extends FabricRecipeProvider {
                         .criterion("has_frozen_bone", this.conditionsFromItem(CreaturesItems.FROZEN_BONE))
                         .offerTo(this.exporter);
                 
-                this.createShapeless(RecipeCategory.MISC, CreaturesItems.SCORCHED_BONE_MEAL, 3)
-                        .input(CreaturesItems.SCORCHED_BONE)
+                this.createShapeless(RecipeCategory.MISC, CreaturesItems.PARCHED_BONE_MEAL, 3)
+                        .input(CreaturesItems.PARCHED_BONE)
                         .group("bonemeal")
-                        .criterion("has_scorched_bone", this.conditionsFromItem(CreaturesItems.SCORCHED_BONE))
+                        .criterion("has_parched_bone", this.conditionsFromItem(CreaturesItems.PARCHED_BONE))
                         .offerTo(this.exporter);
 
                 this.createShapeless(RecipeCategory.MISC, CreaturesItems.CRIMSON_BONE_MEAL, 3)
@@ -62,12 +62,12 @@ public class RecipeProvider extends FabricRecipeProvider {
                 
                 this.offerReversibleCompactingRecipes(
                         RecipeCategory.MISC,
-                        CreaturesItems.SCORCHED_BONE_MEAL,
+                        CreaturesItems.PARCHED_BONE_MEAL,
                         RecipeCategory.BUILDING_BLOCKS,
-                        CreaturesItems.SCORCHED_BONE_BLOCK,
-                        getRecipeName(CreaturesItems.SCORCHED_BONE_BLOCK),
+                        CreaturesItems.PARCHED_BONE_BLOCK,
+                        getRecipeName(CreaturesItems.PARCHED_BONE_BLOCK),
                         "bone_meal_block",
-                        "scorched_bone_meal_from_scorched_bone_block",
+                        "parched_bone_meal_from_parched_bone_block",
                         "bonemeal"
                 );
 

@@ -1,8 +1,8 @@
-# Scorched Bone
-A dry and brittle bone scorched by the desert sun. <br>
-Dropped by **Scorched Skeleton** and used to craft **Scorched Bone Meal**.
+# Parched Bone
+A dry and brittle bone parched by the desert sun. <br>
+Dropped by **Parched** and used to craft **Parched Bone Meal**.
 
-# Scorched Bone Meal
+# Parched Bone Meal
 A special bone meal infused with scorching heat.
 
 - Transforms **Grass** and **Dirt** into **Sand**

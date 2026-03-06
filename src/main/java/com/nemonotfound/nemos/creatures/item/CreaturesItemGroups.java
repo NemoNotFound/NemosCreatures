@@ -36,10 +36,8 @@ public class CreaturesItemGroups {
                     entries.add(FROZEN_SPIDER_SPAWN_EGG);
                     entries.add(FROZEN_ZOMBIE_SPAWN_EGG);
                     entries.add(ICE_SPIDER_SPAWN_EGG);
-                    entries.add(MUMMY_SPAWN_EGG);
                     entries.add(SAND_SPIDER_SPAWN_EGG);
                     entries.add(SCORCHED_CREEPER_SPAWN_EGG);
-                    entries.add(SCORCHED_SKELETON_SPAWN_EGG);
                     entries.add(SNOW_SPIDER_SPAWN_EGG);
                     entries.add(SNOWY_COW_SPAWN_EGG);
                     entries.add(SNOWY_CREEPER_SPAWN_EGG);
@@ -57,9 +55,9 @@ public class CreaturesItemGroups {
                     entries.add(FROZEN_BONE_BLOCK);
                     entries.add(FROZEN_BONE_MEAL);
                     entries.add(FROZEN_BONE);
-                    entries.add(SCORCHED_BONE_BLOCK);
-                    entries.add(SCORCHED_BONE_MEAL);
-                    entries.add(SCORCHED_BONE);
+                    entries.add(PARCHED_BONE_BLOCK);
+                    entries.add(PARCHED_BONE_MEAL);
+                    entries.add(PARCHED_BONE);
                     entries.add(CRIMSON_BONE_BLOCK);
                     entries.add(CRIMSON_BONE_MEAL);
                     entries.add(CRIMSON_BONE);

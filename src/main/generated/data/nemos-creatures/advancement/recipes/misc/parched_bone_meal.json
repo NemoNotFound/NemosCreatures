@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_scorched_bone_meal": {
+    "has_parched_bone": {
       "conditions": {
         "items": [
           {
-            "items": "nemos-creatures:scorched_bone_meal"
+            "items": "nemos-creatures:parched_bone"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nemos-creatures:scorched_bone_block"
+        "recipe": "nemos-creatures:parched_bone_meal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_scorched_bone_meal"
+      "has_parched_bone"
     ]
   ],
   "rewards": {
     "recipes": [
-      "nemos-creatures:scorched_bone_block"
+      "nemos-creatures:parched_bone_meal"
     ]
   }
 }

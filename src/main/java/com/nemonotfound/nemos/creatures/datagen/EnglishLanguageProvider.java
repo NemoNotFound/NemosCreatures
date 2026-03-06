@@ -26,12 +26,8 @@ public class EnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(CreaturesItems.VENOMOUS_ZOMBIE_SPAWN_EGG, "Venomous Zombie Spawn Egg");
         translationBuilder.add(CreaturesEntityTypes.VENOMOUS_CREEPER, "Venomous Creeper");
         translationBuilder.add(CreaturesItems.VENOMOUS_CREEPER_SPAWN_EGG, "Venomous Creeper Spawn Egg");
-        translationBuilder.add(CreaturesEntityTypes.SCORCHED_SKELETON, "Scorched Skeleton");
-        translationBuilder.add(CreaturesItems.SCORCHED_SKELETON_SPAWN_EGG, "Scorched Skeleton Spawn Egg");
         translationBuilder.add(CreaturesEntityTypes.SAND_SPIDER, "Sand Spider");
         translationBuilder.add(CreaturesItems.SAND_SPIDER_SPAWN_EGG, "Sand Spider Spawn Egg");
-        translationBuilder.add(CreaturesEntityTypes.MUMMY, "Mummy");
-        translationBuilder.add(CreaturesItems.MUMMY_SPAWN_EGG, "Mummy Spawn Egg");
         translationBuilder.add(CreaturesEntityTypes.SCORCHED_CREEPER, "Scorched Creeper");
         translationBuilder.add(CreaturesItems.SCORCHED_CREEPER_SPAWN_EGG, "Scorched Creeper Spawn Egg");
         translationBuilder.add(CreaturesEntityTypes.CRIMSON_SKELETON, "Crimson Skeleton");
@@ -72,9 +68,9 @@ public class EnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(CreaturesItems.FROZEN_BONE, "Frozen Bone");
         translationBuilder.add(CreaturesItems.FROZEN_BONE_MEAL, "Frozen Bone Meal");
         translationBuilder.add(CreaturesItems.FROZEN_BONE_BLOCK, "Frozen Bone Block");
-        translationBuilder.add(CreaturesItems.SCORCHED_BONE, "Scorched Bone");
-        translationBuilder.add(CreaturesItems.SCORCHED_BONE_MEAL, "Scorched Bone Meal");
-        translationBuilder.add(CreaturesItems.SCORCHED_BONE_BLOCK, "Scorched Bone Block");
+        translationBuilder.add(CreaturesItems.PARCHED_BONE, "Parched Bone");
+        translationBuilder.add(CreaturesItems.PARCHED_BONE_MEAL, "Parched Bone Meal");
+        translationBuilder.add(CreaturesItems.PARCHED_BONE_BLOCK, "Parched Bone Block");
         translationBuilder.add(CreaturesItems.CRIMSON_BONE, "Crimson Bone");
         translationBuilder.add(CreaturesItems.CRIMSON_BONE_MEAL, "Crimson Bone Meal");
         translationBuilder.add(CreaturesItems.CRIMSON_BONE_BLOCK, "Crimson Bone Block");

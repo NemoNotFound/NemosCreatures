@@ -2,7 +2,7 @@ package com.nemonotfound.nemos.creatures.mixin;
 
 import com.nemonotfound.nemos.creatures.item.CrimsonBoneMealItem;
 import com.nemonotfound.nemos.creatures.item.FrozenBoneMealItem;
-import com.nemonotfound.nemos.creatures.item.ScorchedBoneMealItem;
+import com.nemonotfound.nemos.creatures.item.ParchedBoneMealItem;
 import com.nemonotfound.nemos.creatures.item.WarpedBoneMealItem;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.client.world.WorldEventHandler;
@@ -31,8 +31,8 @@ public class WorldEventHandlerMixin {
                 FrozenBoneMealItem.createParticles(this.world, pos, count);
                 FrozenBoneMealItem.playSound(this.world, pos);
                 playBoneMealUseSound(pos);
-            case SCORCHED_BONE_MEAL_USED:
-                ScorchedBoneMealItem.createParticles(this.world, pos, count);
+            case PARCHED_BONE_MEAL_USED:
+                ParchedBoneMealItem.createParticles(this.world, pos, count);
                 playBoneMealUseSound(pos);
             case CRIMSON_BONE_MEAL_USED:
                 CrimsonBoneMealItem.createParticles(this.world, pos, count);

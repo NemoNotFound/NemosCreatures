@@ -46,21 +46,6 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
         RegistryEntryLookup<EntityType<?>> entityTypeRegistryEntryLookup = this.registries.getOrThrow(RegistryKeys.ENTITY_TYPE);
 
         this.register(
-                CreaturesEntityTypes.SCORCHED_SKELETON,
-                LootTable.builder()
-                        .pool(
-                                LootPool.builder()
-                                        .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(itemEntryBuilder(Items.ARROW))
-                        )
-                        .pool(
-                                LootPool.builder()
-                                        .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(itemEntryBuilder(CreaturesItems.SCORCHED_BONE))
-                        )
-        );
-
-        this.register(
                 CreaturesEntityTypes.CRIMSON_SKELETON,
                 LootTable.builder()
                         .pool(
@@ -72,6 +57,11 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                                 LootPool.builder()
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
                                         .with(itemEntryBuilder(CreaturesItems.CRIMSON_BONE))
+                        )
+                        .pool(
+                                LootPool.builder()
+                                        .rolls(ConstantLootNumberProvider.create(1.0F))
+                                        .with(itemEntryBuilder(Items.BONE))
                         )
                         .pool(
                                 LootPool.builder()
@@ -96,6 +86,11 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                                 LootPool.builder()
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
                                         .with(itemEntryBuilder(CreaturesItems.WARPED_BONE))
+                        )
+                        .pool(
+                                LootPool.builder()
+                                        .rolls(ConstantLootNumberProvider.create(1.0F))
+                                        .with(itemEntryBuilder(Items.BONE))
                         )
                         .pool(
                                 LootPool.builder()
@@ -134,6 +129,11 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                                         .rolls(ConstantLootNumberProvider.create(1.0F))
                                         .with(itemEntryBuilder(CreaturesItems.FROZEN_BONE))
                         )
+                        .pool(
+                                LootPool.builder()
+                                        .rolls(ConstantLootNumberProvider.create(1.0F))
+                                        .with(itemEntryBuilder(Items.BONE))
+                        )
                         .pool(tippedArrowLootPoolBuilder(Potions.SLOWNESS))
         );
 
@@ -153,30 +153,6 @@ public class EntityLootTableProvider extends FabricEntityLootTableProvider {
                                         .with(ItemEntry.builder(Items.POTATO).apply(FurnaceSmeltLootFunction.builder().conditionally(this.createSmeltLootCondition())))
                                         .conditionally(KilledByPlayerLootCondition.builder())
                                         .conditionally(RandomChanceWithEnchantedBonusLootCondition.builder(this.registries, 0.025F, 0.01F))
-                        )
-        );
-
-        this.register(
-                CreaturesEntityTypes.MUMMY,
-                LootTable.builder()
-                        .pool(
-                                LootPool.builder()
-                                        .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(itemEntryBuilder(Items.ROTTEN_FLESH))
-                        )
-                        .pool(
-                                LootPool.builder()
-                                        .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(ItemEntry.builder(Items.IRON_INGOT))
-                                        .with(ItemEntry.builder(Items.CARROT))
-                                        .with(ItemEntry.builder(Items.POTATO).apply(FurnaceSmeltLootFunction.builder().conditionally(this.createSmeltLootCondition())))
-                                        .conditionally(KilledByPlayerLootCondition.builder())
-                                        .conditionally(RandomChanceWithEnchantedBonusLootCondition.builder(this.registries, 0.025F, 0.01F))
-                        )
-                        .pool(
-                                LootPool.builder()
-                                        .rolls(ConstantLootNumberProvider.create(1.0F))
-                                        .with(itemEntryBuilder(Items.STRING))
                         )
         );
 

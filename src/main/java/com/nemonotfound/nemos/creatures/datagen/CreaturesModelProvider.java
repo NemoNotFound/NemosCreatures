@@ -18,7 +18,7 @@ public class CreaturesModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerAxisRotated(CreaturesBlocks.FROZEN_BONE_BLOCK, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerAxisRotated(CreaturesBlocks.SCORCHED_BONE_BLOCK, TexturedModel.CUBE_COLUMN);
+        blockStateModelGenerator.registerAxisRotated(CreaturesBlocks.PARCHED_BONE_BLOCK, TexturedModel.CUBE_COLUMN);
         blockStateModelGenerator.registerAxisRotated(CreaturesBlocks.CRIMSON_BONE_BLOCK, TexturedModel.CUBE_COLUMN);
         blockStateModelGenerator.registerAxisRotated(CreaturesBlocks.WARPED_BONE_BLOCK, TexturedModel.CUBE_COLUMN);
     }
@@ -29,9 +29,7 @@ public class CreaturesModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CreaturesItems.VENOMOUS_SPIDER_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(CreaturesItems.VENOMOUS_ZOMBIE_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(CreaturesItems.VENOMOUS_CREEPER_SPAWN_EGG, Models.GENERATED);
-        itemModelGenerator.register(CreaturesItems.SCORCHED_SKELETON_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(CreaturesItems.SAND_SPIDER_SPAWN_EGG, Models.GENERATED);
-        itemModelGenerator.register(CreaturesItems.MUMMY_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(CreaturesItems.SCORCHED_CREEPER_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(CreaturesItems.CRIMSON_SKELETON_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(CreaturesItems.WARPED_SKELETON_SPAWN_EGG, Models.GENERATED);
@@ -51,8 +49,8 @@ public class CreaturesModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CreaturesItems.SAND_DUST, Models.GENERATED);
         itemModelGenerator.register(CreaturesItems.FROZEN_BONE, Models.GENERATED);
         itemModelGenerator.register(CreaturesItems.FROZEN_BONE_MEAL, Models.GENERATED);
-        itemModelGenerator.register(CreaturesItems.SCORCHED_BONE, Models.GENERATED);
-        itemModelGenerator.register(CreaturesItems.SCORCHED_BONE_MEAL, Models.GENERATED);
+        itemModelGenerator.register(CreaturesItems.PARCHED_BONE, Models.GENERATED);
+        itemModelGenerator.register(CreaturesItems.PARCHED_BONE_MEAL, Models.GENERATED);
         itemModelGenerator.register(CreaturesItems.CRIMSON_BONE, Models.GENERATED);
         itemModelGenerator.register(CreaturesItems.CRIMSON_BONE_MEAL, Models.GENERATED);
         itemModelGenerator.register(CreaturesItems.WARPED_BONE, Models.GENERATED);

@@ -24,16 +24,8 @@ public class CreaturesEntityModelLayers {
     public static final EntityModelLayer VENOMOUS_ZOMBIE_BABY = createEntityModelLayer("venomous_zombie_baby", MAIN);
     public static final EquipmentModelData<EntityModelLayer> VENOMOUS_ZOMBIE_BABY_EQUIPMENT = registerEquipment("venomous_zombie_baby");
     public static final EntityModelLayer VENOMOUS_ZOMBIE_BABY_OUTER = createEntityModelLayer("venomous_zombie_baby", OUTER);
-    public static final EntityModelLayer SCORCHED_SKELETON = createEntityModelLayer("scorched_skeleton", MAIN);
-    public static final EquipmentModelData<EntityModelLayer> SCORCHED_SKELETON_EQUIPMENT = registerEquipment("scorched_skeleton");
     public static final EntityModelLayer SAND_SPIDER = createEntityModelLayer("sand_spider", MAIN);
     public static final EntityModelLayer SCORCHED_CREEPER_OUTER = createEntityModelLayer("scorched_creeper", OUTER);
-    public static final EntityModelLayer MUMMY = createEntityModelLayer("mummy", MAIN);
-    public static final EquipmentModelData<EntityModelLayer> MUMMY_EQUIPMENT = registerEquipment("mummy");
-    public static final EntityModelLayer MUMMY_OUTER = createEntityModelLayer("mummy", OUTER);
-    public static final EntityModelLayer MUMMY_BABY = createEntityModelLayer("mummy_baby", MAIN);
-    public static final EquipmentModelData<EntityModelLayer> MUMMY_BABY_EQUIPMENT = registerEquipment("mummy_baby");
-    public static final EntityModelLayer MUMMY_BABY_OUTER = createEntityModelLayer("mummy_baby", OUTER);
     public static final EntityModelLayer CRIMSON_SKELETON = createEntityModelLayer("crimson_skeleton", MAIN);
     public static final EquipmentModelData<EntityModelLayer> CRIMSON_SKELETON_EQUIPMENT = registerEquipment("crimson_skeleton");
     public static final EntityModelLayer WARPED_SKELETON = createEntityModelLayer("warped_skeleton", MAIN);

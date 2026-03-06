@@ -28,7 +28,7 @@ public interface ModDispenserBehavior {
             }
         });
 
-        DispenserBlock.registerBehavior(CreaturesItems.SCORCHED_BONE_MEAL, new FallibleItemDispenserBehavior() {
+        DispenserBlock.registerBehavior(CreaturesItems.PARCHED_BONE_MEAL, new FallibleItemDispenserBehavior() {
             @Override
             protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
                 this.setSuccess(true);
@@ -36,10 +36,10 @@ public interface ModDispenserBehavior {
                 var blockPos = pointer.pos().offset(pointer.state().get(DispenserBlock.FACING));
                 var blockState = world.getBlockState(blockPos);
 
-                if (!ScorchedBoneMealItem.useOnDryableBlock(world, blockState, blockPos, stack)) {
+                if (!ParchedBoneMealItem.useOnDryableBlock(world, blockState, blockPos, stack)) {
                     this.setSuccess(false);
                 } else if (!world.isClient()) {
-                    world.syncWorldEvent(CreatureWorldEvents.SCORCHED_BONE_MEAL_USED, blockPos, 15);
+                    world.syncWorldEvent(CreatureWorldEvents.PARCHED_BONE_MEAL_USED, blockPos, 15);
                 }
 
                 return stack;

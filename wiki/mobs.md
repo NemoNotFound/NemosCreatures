@@ -39,8 +39,6 @@
 **Drops:** Arrows, bones & tipped arrows (slowness) <br>
 **Attack:** Shoots slowness arrows
 
-## Scorched Skeleton
-
 ## Snowy Skeleton
 
 ## Venomous Skeleton
@@ -87,8 +85,6 @@
 **Spawns in:** Icy biomes <br>
 **Drops:** Rotten flesh, iron ingot, carrot & potato <br>
 **Attack:** Inflicts slowness effect on you
-
-## Mummy
 
 ## Snowy Zombie
 

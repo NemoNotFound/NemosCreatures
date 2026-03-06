@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "nemos-creatures:item/scorched_bone"
+    "model": "nemos-creatures:item/parched_bone"
   }
 }

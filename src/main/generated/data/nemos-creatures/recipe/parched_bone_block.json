@@ -3,7 +3,7 @@
   "category": "building",
   "group": "bone_meal_block",
   "key": {
-    "#": "nemos-creatures:scorched_bone_meal"
+    "#": "nemos-creatures:parched_bone_meal"
   },
   "pattern": [
     "###",
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "nemos-creatures:scorched_bone_block"
+    "id": "nemos-creatures:parched_bone_block"
   }
 }

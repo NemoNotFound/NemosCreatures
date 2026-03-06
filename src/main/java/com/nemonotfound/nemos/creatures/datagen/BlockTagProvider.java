@@ -37,7 +37,7 @@ public class BlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(PICKAXE_MINEABLE)
                 .add(CreaturesBlocks.FROZEN_BONE_BLOCK)
                 .add(CreaturesBlocks.CRIMSON_BONE_BLOCK)
-                .add(CreaturesBlocks.SCORCHED_BONE_BLOCK)
+                .add(CreaturesBlocks.PARCHED_BONE_BLOCK)
                 .add(CreaturesBlocks.WARPED_BONE_BLOCK);
     }
 }

@@ -4,6 +4,9 @@
     "nemos-creatures:snowy_skeleton",
     "nemos-creatures:frozen_skeleton",
     "nemos-creatures:venomous_skeleton",
-    "nemos-creatures:warped_skeleton"
+    "nemos-creatures:warped_skeleton",
+    "nemos-creatures:snowy_zombie",
+    "nemos-creatures:frozen_zombie",
+    "nemos-creatures:venomous_zombie"
   ]
 }

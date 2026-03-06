@@ -3,6 +3,7 @@ package com.nemonotfound.nemos.creatures.client.render.entity.feature;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.RenderLayers;
 import net.minecraft.client.render.entity.feature.EyesFeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
 import net.minecraft.client.render.entity.model.SkeletonEntityModel;
@@ -19,7 +20,7 @@ public class CustomSkeletonGlowFeatureRenderer<M extends SkeletonEntityModel<Ske
 
     public CustomSkeletonGlowFeatureRenderer(FeatureRendererContext<SkeletonEntityRenderState, M> featureRendererContext, String path) {
         super(featureRendererContext);
-        eyes = RenderLayer.getEyes(Identifier.of(MOD_ID, path));
+        eyes = RenderLayers.eyes(Identifier.of(MOD_ID, path));
     }
 
     @Override

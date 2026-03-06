@@ -23,8 +23,8 @@ public class CreaturesBlocks {
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.BONE)
     );
-    public static final Block SCORCHED_BONE_BLOCK = register(
-            "scorched_bone_block",
+    public static final Block PARCHED_BONE_BLOCK = register(
+            "parched_bone_block",
             PillarBlock::new,
             AbstractBlock.Settings.create()
                     .mapColor(MapColor.BROWN)

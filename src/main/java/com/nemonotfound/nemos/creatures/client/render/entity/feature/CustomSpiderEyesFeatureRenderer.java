@@ -1,6 +1,7 @@
 package com.nemonotfound.nemos.creatures.client.render.entity.feature;
 
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.RenderLayers;
 import net.minecraft.client.render.entity.feature.EyesFeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
 import net.minecraft.client.render.entity.model.SpiderEntityModel;
@@ -15,7 +16,7 @@ public class CustomSpiderEyesFeatureRenderer<M extends SpiderEntityModel> extend
 
     public CustomSpiderEyesFeatureRenderer(FeatureRendererContext<LivingEntityRenderState, M> featureRendererContext, String path) {
         super(featureRendererContext);
-        eyes = RenderLayer.getEyes(Identifier.of(MOD_ID, path));
+        eyes = RenderLayers.eyes(Identifier.of(MOD_ID, path));
     }
 
     public RenderLayer getEyesTexture() {

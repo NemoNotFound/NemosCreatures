@@ -38,7 +38,6 @@ import net.minecraft.world.biome.Biome;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.UUID;
 
 public class WildBoarEntity extends AnimalEntity implements Angerable {
 
@@ -49,9 +48,8 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
     public int attackAnimationTimeout = 0;
     private static final Ingredient BREEDING_INGREDIENT = Ingredient.ofItems(Items.CARROT, Items.POTATO, Items.BEETROOT);
     private static final UniformIntProvider ANGER_TIME_RANGE = TimeHelper.betweenSeconds(20, 39);
-    private int angerTime;
-    @Nullable
-    private UUID angryAt;
+    private long angerEndTime;
+    private LazyEntityReference<LivingEntity> angryAt;
 
     public WildBoarEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
@@ -201,28 +199,27 @@ public class WildBoarEntity extends AnimalEntity implements Angerable {
 
     @Override
     public void chooseRandomAngerTime() {
-        this.setAngerTime(ANGER_TIME_RANGE.get(this.random));
+        this.setAngerEndTime(ANGER_TIME_RANGE.get(this.random));
     }
 
     @Override
-    public void setAngerTime(int angerTime) {
-        this.angerTime = angerTime;
+    public long getAngerEndTime() {
+        return this.angerEndTime;
     }
 
     @Override
-    public int getAngerTime() {
-        return this.angerTime;
+    public void setAngerEndTime(long angerEndTime) {
+        this.angerEndTime = angerEndTime;
     }
 
     @Override
-    public void setAngryAt(@Nullable UUID angryAt) {
-        this.angryAt = angryAt;
-    }
-
-    @Override
-    @Nullable
-    public UUID getAngryAt() {
+    public LazyEntityReference<LivingEntity> getAngryAt() {
         return this.angryAt;
+    }
+
+    @Override
+    public void setAngryAt(LazyEntityReference<LivingEntity> angryAt) {
+        this.angryAt = angryAt;
     }
 
     @Override
