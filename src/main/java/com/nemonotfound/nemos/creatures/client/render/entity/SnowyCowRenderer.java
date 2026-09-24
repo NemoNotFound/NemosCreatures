@@ -10,7 +10,8 @@ import org.jspecify.annotations.NonNull;
 
 public class SnowyCowRenderer extends CowRenderer {
 
-    private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(MOD_ID, "textures/entity/cow/snowy_cow.png");
+    private static final Identifier ADULT_TEXTURE = Identifier.fromNamespaceAndPath(MOD_ID, "textures/entity/cow/snowy_cow.png");
+    private static final Identifier BABY_TEXTURE = Identifier.fromNamespaceAndPath(MOD_ID, "textures/entity/cow/snowy_cow_baby.png");
 
     public SnowyCowRenderer(EntityRendererProvider.Context context) {
         super(context);
@@ -18,6 +19,6 @@ public class SnowyCowRenderer extends CowRenderer {
 
     @Override
     public @NonNull Identifier getTextureLocation(@NonNull CowRenderState cowRenderState) {
-        return TEXTURE;
+        return cowRenderState.isBaby ? BABY_TEXTURE : ADULT_TEXTURE;
     }
 }

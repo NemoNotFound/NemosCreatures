@@ -127,3 +127,9 @@ modrinth {
 	}
 }
 tasks.modrinth.dependsOn(tasks.jar)
+
+tasks.register('publishMod') {
+	group = 'publishing'
+	description = 'Publishes the mod to CurseForge and Modrinth.'
+	dependsOn(tasks.publishCurseForge, tasks.modrinth)
+}
