@@ -3,11 +3,13 @@ package com.nemonotfound.nemos.creatures.datagen;
 import com.nemonotfound.nemos.creatures.item.CreaturesItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Recipe;
 import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -19,8 +21,12 @@ public class CreaturesRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    protected @NonNull RecipeProvider createRecipeProvider(HolderLookup.@NonNull Provider wrapperLookup, @NonNull RecipeOutput recipeExporter) {
-        return new RecipeProvider(wrapperLookup, recipeExporter) {
+    protected @NonNull RecipeProvider createRecipeProvider(
+            HolderLookup.@NonNull Provider wrapperLookup,
+            @NonNull BootstrapContext<Recipe<?>> recipeOutput,
+            @NonNull BootstrapContext<Advancement> advancementOutput
+    ) {
+        return new RecipeProvider(recipeOutput, advancementOutput) {
 
             @Override
             public void buildRecipes() {

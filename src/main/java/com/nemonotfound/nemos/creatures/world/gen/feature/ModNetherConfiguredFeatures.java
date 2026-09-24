@@ -1,23 +1,19 @@
 package com.nemonotfound.nemos.creatures.world.gen.feature;
 
 import com.nemonotfound.nemos.creatures.registry.tag.CreatureBlockTags;
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.NetherForestVegetationConfig;
-import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.SimpleBlockFeature;
+import net.minecraft.world.level.levelgen.feature.VegetationPatchFeature;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
@@ -26,14 +22,13 @@ import static com.nemonotfound.nemos.creatures.NemosCreatures.MOD_ID;
 
 public class ModNetherConfiguredFeatures {
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> CRIMSON_FOREST_VEGETATION_PATCH = of("crimson_forest_vegetation_patch");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> CRIMSON_FOREST_VEGETATION_PATCH_BONEMEAL = of("crimson_forest_vegetation_patch_bonemeal");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> WARPED_FOREST_VEGETATION_PATCH = of("warped_forest_vegetation_patch");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> WARPED_FOREST_VEGETATION_PATCH_BONEMEAL = of("warped_forest_vegetation_patch_bonemeal");
+    public static final ResourceKey<Feature> CRIMSON_FOREST_VEGETATION_PATCH = of("crimson_forest_vegetation_patch");
+    public static final ResourceKey<Feature> CRIMSON_FOREST_VEGETATION_PATCH_BONEMEAL = of("crimson_forest_vegetation_patch_bonemeal");
+    public static final ResourceKey<Feature> WARPED_FOREST_VEGETATION_PATCH = of("warped_forest_vegetation_patch");
+    public static final ResourceKey<Feature> WARPED_FOREST_VEGETATION_PATCH_BONEMEAL = of("warped_forest_vegetation_patch_bonemeal");
 
-    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> featureRegisterable) {
-        HolderGetter<Block> blockLookup = featureRegisterable.lookup(Registries.BLOCK);
-        HolderGetter<ConfiguredFeature<?, ?>> registryEntryLookup = featureRegisterable.lookup(Registries.CONFIGURED_FEATURE);
+    public static void bootstrap(BootstrapContext<Feature> featureRegisterable) {
+        var blockLookup = featureRegisterable.lookup(Registries.BLOCK);
 
         WeightedStateProvider crimsonWeightedBlockStateProvider = new WeightedStateProvider(
                 WeightedList.<BlockState>builder()
@@ -41,21 +36,15 @@ public class ModNetherConfiguredFeatures {
                         .add(Blocks.CRIMSON_FUNGUS.defaultBlockState(), 13)
         );
 
-        FeatureUtils.register(
-                featureRegisterable,
-                CRIMSON_FOREST_VEGETATION_PATCH,
-                Feature.NETHER_FOREST_VEGETATION,
-                new NetherForestVegetationConfig(crimsonWeightedBlockStateProvider, 3, 4)
-        );
+        var crimsonVegetation = new SimpleBlockFeature(crimsonWeightedBlockStateProvider);
+        featureRegisterable.register(CRIMSON_FOREST_VEGETATION_PATCH, crimsonVegetation);
 
-        FeatureUtils.register(
-                featureRegisterable,
+        featureRegisterable.register(
                 CRIMSON_FOREST_VEGETATION_PATCH_BONEMEAL,
-                Feature.VEGETATION_PATCH,
-                new VegetationPatchConfiguration(
+                new VegetationPatchFeature(
                         blockLookup.getOrThrow(CreatureBlockTags.CRIMSON_BONE_MEAL_REPLACEABLE),
-                        BlockStateProvider.simple(Blocks.CRIMSON_NYLIUM),
-                        PlacementUtils.inlinePlaced(registryEntryLookup.getOrThrow(CRIMSON_FOREST_VEGETATION_PATCH)),
+                        BlockStateProvider.holderOf(Blocks.CRIMSON_NYLIUM),
+                        PlacementUtils.inlinePlaced(crimsonVegetation),
                         CaveSurface.FLOOR,
                         ConstantInt.of(1),
                         0.0F,
@@ -72,21 +61,15 @@ public class ModNetherConfiguredFeatures {
                         .add(Blocks.WARPED_FUNGUS.defaultBlockState(), 13)
         );
 
-        FeatureUtils.register(
-                featureRegisterable,
-                WARPED_FOREST_VEGETATION_PATCH,
-                Feature.NETHER_FOREST_VEGETATION,
-                new NetherForestVegetationConfig(warpedWeightedBlockStateProvider, 3, 4)
-        );
+        var warpedVegetation = new SimpleBlockFeature(warpedWeightedBlockStateProvider);
+        featureRegisterable.register(WARPED_FOREST_VEGETATION_PATCH, warpedVegetation);
 
-        FeatureUtils.register(
-                featureRegisterable,
+        featureRegisterable.register(
                 WARPED_FOREST_VEGETATION_PATCH_BONEMEAL,
-                Feature.VEGETATION_PATCH,
-                new VegetationPatchConfiguration(
+                new VegetationPatchFeature(
                         blockLookup.getOrThrow(CreatureBlockTags.WARPED_BONE_MEAL_REPLACEABLE),
-                        BlockStateProvider.simple(Blocks.WARPED_NYLIUM),
-                        PlacementUtils.inlinePlaced(registryEntryLookup.getOrThrow(WARPED_FOREST_VEGETATION_PATCH)),
+                        BlockStateProvider.holderOf(Blocks.WARPED_NYLIUM),
+                        PlacementUtils.inlinePlaced(warpedVegetation),
                         CaveSurface.FLOOR,
                         ConstantInt.of(1),
                         0.0F,
@@ -98,7 +81,7 @@ public class ModNetherConfiguredFeatures {
         );
     }
 
-    public static ResourceKey<ConfiguredFeature<?, ?>> of(String id) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Identifier.fromNamespaceAndPath(MOD_ID, id));
+    public static ResourceKey<Feature> of(String id) {
+        return ResourceKey.create(Registries.FEATURE, Identifier.fromNamespaceAndPath(MOD_ID, id));
     }
 }

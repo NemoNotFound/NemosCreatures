@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nemos-creatures:parched_bone_meal"
+        "recipes": "nemos-creatures:parched_bone_meal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

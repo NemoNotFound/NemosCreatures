@@ -2,4 +2,3 @@ accessWidener v2 official
 
 extendable method net/minecraft/world/entity/monster/skeleton/AbstractSkeleton getStepSound ()Lnet/minecraft/sounds/SoundEvent;
 accessible method net/minecraft/tags/BiomeTags create (Ljava/lang/String;)Lnet/minecraft/tags/TagKey;
-accessible method net/minecraft/world/item/Items registerBlock (Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/world/item/Item;

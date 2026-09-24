@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nemos-creatures:warped_bone_meal"
+        "recipes": "nemos-creatures:warped_bone_meal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

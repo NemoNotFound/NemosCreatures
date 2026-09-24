@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nemos-creatures:frozen_bone_meal_from_frozen_bone_block"
+        "recipes": "nemos-creatures:frozen_bone_meal_from_frozen_bone_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -85,7 +85,7 @@ public class WarpedBoneMealItem extends Item {
 
         if (world instanceof ServerLevel serverWorld) {
             world.registryAccess()
-                    .lookup(Registries.CONFIGURED_FEATURE)
+                    .lookup(Registries.FEATURE)
                     .flatMap(registry -> registry.get(ModNetherConfiguredFeatures.WARPED_FOREST_VEGETATION_PATCH_BONEMEAL))
                     .ifPresent(entry -> entry.value().place(serverWorld, serverWorld.getChunkSource().getGenerator(), serverWorld.getRandom(), pos.above()));
 

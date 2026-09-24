@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nemos-creatures:warped_bone_block"
+        "recipes": "nemos-creatures:warped_bone_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

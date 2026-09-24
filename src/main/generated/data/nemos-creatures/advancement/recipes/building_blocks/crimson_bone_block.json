@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nemos-creatures:crimson_bone_block"
+        "recipes": "nemos-creatures:crimson_bone_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

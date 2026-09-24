@@ -1,14 +1,13 @@
 package com.nemonotfound.nemos.creatures.datagen;
 
-import com.nemonotfound.nemos.creatures.world.entity.CreaturesEntityTypes;
 import com.nemonotfound.nemos.creatures.item.CreaturesItems;
+import com.nemonotfound.nemos.creatures.world.entity.CreaturesEntityTypes;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricEntityLootSubProvider;
 import net.minecraft.advancements.predicates.entity.EntityPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EntityType;
@@ -29,13 +28,20 @@ import net.minecraft.world.level.storage.loot.functions.SmeltItemFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithEnchantedBonusCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.ints.UniformGenerator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
 public class EntityLootTableProvider extends FabricEntityLootSubProvider {
+
+    private static Holder<net.minecraft.world.level.storage.loot.providers.number.floats.ContextFloatProvider> floatUniform(float min, float max) {
+        return Holder.direct(new net.minecraft.world.level.storage.loot.providers.number.floats.UniformGenerator(
+                Holder.direct(new net.minecraft.world.level.storage.loot.providers.number.floats.ConstantValue(min)),
+                Holder.direct(new net.minecraft.world.level.storage.loot.providers.number.floats.ConstantValue(max))
+        ));
+    }
 
     public EntityLootTableProvider(FabricPackOutput output, @NotNull CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(output, registryLookup);
@@ -43,33 +49,33 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
 
     @Override
     public void generate() {
-        HolderGetter<EntityType<?>> entityTypeRegistryEntryLookup = this.registries.lookupOrThrow(Registries.ENTITY_TYPE);
+        HolderGetter<EntityType<?>> entityTypeRegistryEntryLookup = this.entityTypes;
 
         this.add(
                 CreaturesEntityTypes.CRIMSON_SKELETON,
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(Items.ARROW))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(CreaturesItems.CRIMSON_BONE))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(Items.BONE))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(
                                                 LootItem.lootTableItem(Items.CRIMSON_FUNGUS)
-                                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
-                                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F)))
+                                                        .apply(SetItemCountFunction.setCount(Holder.direct(new UniformGenerator(Holder.direct(new ConstantValue(0)), Holder.direct(new ConstantValue(1))))))
+                                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, floatUniform(0.0F, 1.0F)))
                                         )
                         )
         );
@@ -79,26 +85,26 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(Items.ARROW))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(CreaturesItems.WARPED_BONE))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(Items.BONE))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(
                                                 LootItem.lootTableItem(Items.WARPED_FUNGUS)
-                                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
-                                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F)))
+                                                        .apply(SetItemCountFunction.setCount(Holder.direct(new UniformGenerator(Holder.direct(new ConstantValue(0)), Holder.direct(new ConstantValue(1))))))
+                                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, floatUniform(0.0F, 1.0F)))
                                         )
                         )
         );
@@ -121,17 +127,17 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(Items.ARROW))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(CreaturesItems.FROZEN_BONE))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(Items.BONE))
                         )
                         .withPool(tippedArrowLootPoolBuilder(Potions.SLOWNESS))
@@ -142,17 +148,17 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(Items.ROTTEN_FLESH))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(LootItem.lootTableItem(Items.IRON_INGOT))
                                         .add(LootItem.lootTableItem(Items.CARROT))
                                         .add(LootItem.lootTableItem(Items.POTATO).apply(SmeltItemFunction.smelted().when(this.shouldSmeltLoot())))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
-                                        .when(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.025F, 0.01F))
+                                        .when(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.enchantments, 0.025F, 0.01F))
                         )
         );
 
@@ -161,16 +167,16 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(Items.ROTTEN_FLESH))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(LootItem.lootTableItem(Items.IRON_INGOT))
                                         .add(LootItem.lootTableItem(Items.POISONOUS_POTATO))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
-                                        .when(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.025F, 0.01F))
+                                        .when(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.enchantments, 0.025F, 0.01F))
                         )
         );
 
@@ -179,17 +185,17 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(Items.ROTTEN_FLESH))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(LootItem.lootTableItem(Items.IRON_INGOT))
                                         .add(LootItem.lootTableItem(Items.CARROT))
                                         .add(LootItem.lootTableItem(Items.POTATO).apply(SmeltItemFunction.smelted().when(this.shouldSmeltLoot())))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
-                                        .when(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.025F, 0.01F))
+                                        .when(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.enchantments, 0.025F, 0.01F))
                         )
                         .withPool(lootPoolBuilder(Items.SNOWBALL))
         );
@@ -201,13 +207,13 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(Items.GUNPOWDER))
                                         .add(itemEntryBuilder(CreaturesItems.SAND_DUST))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .add(TagEntry.expandTag(ItemTags.CREEPER_DROP_MUSIC_DISCS))
+                                        .add(TagEntry.expandTag(this.items.getOrThrow(ItemTags.CREEPER_DROP_MUSIC_DISCS)))
                                         .when(
                                                 LootItemEntityPropertyCondition.hasProperties(
                                                         LootContext.EntityTarget.ATTACKER,
@@ -250,17 +256,17 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(itemEntryBuilder(Items.LEATHER))
                         )
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(
                                                 LootItem.lootTableItem(Items.BEEF)
-                                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+                                                        .apply(SetItemCountFunction.setCount(Holder.direct(new UniformGenerator(Holder.direct(new ConstantValue(1)), Holder.direct(new ConstantValue(3))))))
                                                         .apply(SmeltItemFunction.smelted().when(this.shouldSmeltLoot()))
-                                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F)))
+                                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, floatUniform(0.0F, 1.0F)))
                                         )
                         )
                         .withPool(lootPoolBuilder(Items.SNOWBALL))
@@ -271,12 +277,12 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(
                                                 LootItem.lootTableItem(Items.PORKCHOP)
-                                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+                                                        .apply(SetItemCountFunction.setCount(Holder.direct(new UniformGenerator(Holder.direct(new ConstantValue(1)), Holder.direct(new ConstantValue(3))))))
                                                         .apply(SmeltItemFunction.smelted().when(this.shouldSmeltLoot()))
-                                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F)))
+                                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, floatUniform(0.0F, 1.0F)))
                                         )
                         )
                         .withPool(lootPoolBuilder(Items.SNOWBALL))
@@ -287,12 +293,12 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .setRolls(Holder.direct(new ConstantValue(1)))
                                         .add(
                                                 LootItem.lootTableItem(Items.PORKCHOP)
-                                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+                                                        .apply(SetItemCountFunction.setCount(Holder.direct(new UniformGenerator(Holder.direct(new ConstantValue(1)), Holder.direct(new ConstantValue(3))))))
                                                         .apply(SmeltItemFunction.smelted().when(this.shouldSmeltLoot()))
-                                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F)))
+                                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, floatUniform(0.0F, 1.0F)))
                                         )
                         )
         );
@@ -300,41 +306,41 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
 
     private LootPool.Builder lootPoolBuilder(Item item) {
         return LootPool.lootPool()
-                .setRolls(ConstantValue.exactly(1.0F))
+                .setRolls(Holder.direct(new ConstantValue(1)))
                 .add(
                         LootItem.lootTableItem(item)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F)))
-                                .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F)))
+                                .apply(SetItemCountFunction.setCount(Holder.direct(new UniformGenerator(Holder.direct(new ConstantValue(0)), Holder.direct(new ConstantValue(2))))))
+                                .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, floatUniform(0.0F, 1.0F)))
                 );
     }
 
     private LootPoolEntryContainer.Builder<?> itemEntryBuilder(Item item) {
         return LootItem.lootTableItem(item)
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F)))
-                .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F)));
+                .apply(SetItemCountFunction.setCount(Holder.direct(new UniformGenerator(Holder.direct(new ConstantValue(0)), Holder.direct(new ConstantValue(2))))))
+                .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, floatUniform(0.0F, 1.0F)));
     }
 
     private LootTable.Builder defaultSkeletonLootTableBuilder() {
         return LootTable.lootTable()
                 .withPool(
                         LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(Holder.direct(new ConstantValue(1)))
                                 .add(itemEntryBuilder(Items.ARROW))
                 )
                 .withPool(
                         LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(Holder.direct(new ConstantValue(1)))
                                 .add(itemEntryBuilder(Items.BONE))
                 );
     }
 
     private LootPool.Builder tippedArrowLootPoolBuilder(Holder<Potion> potion) {
         return LootPool.lootPool()
-                .setRolls(ConstantValue.exactly(1.0F))
+                .setRolls(Holder.direct(new ConstantValue(1)))
                 .add(
                         LootItem.lootTableItem(Items.TIPPED_ARROW)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
-                                .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F)).setLimit(1))
+                                .apply(SetItemCountFunction.setCount(Holder.direct(new UniformGenerator(Holder.direct(new ConstantValue(0)), Holder.direct(new ConstantValue(1))))))
+                                .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, floatUniform(0.0F, 1.0F)).setLimit(1))
                                 .apply(SetPotionFunction.setPotion(potion))
                 )
                 .when(LootItemKilledByPlayerCondition.killedByPlayer());
@@ -344,12 +350,12 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
         return LootTable.lootTable()
                 .withPool(
                         LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(Holder.direct(new ConstantValue(1)))
                                 .add(itemEntryBuilder(Items.GUNPOWDER))
                 )
                 .withPool(
                         LootPool.lootPool()
-                                .add(TagEntry.expandTag(ItemTags.CREEPER_DROP_MUSIC_DISCS))
+                                .add(TagEntry.expandTag(this.items.getOrThrow(ItemTags.CREEPER_DROP_MUSIC_DISCS)))
                                 .when(
                                         LootItemEntityPropertyCondition.hasProperties(
                                                 LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.entity().of(registryEntryLookup, EntityTypeTags.SKELETONS)
@@ -362,16 +368,16 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
         return LootTable.lootTable()
                 .withPool(
                         LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(Holder.direct(new ConstantValue(1)))
                                 .add(itemEntryBuilder(Items.STRING))
                 )
                 .withPool(
                         LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(Holder.direct(new ConstantValue(1)))
                                 .add(
                                         LootItem.lootTableItem(Items.SPIDER_EYE)
-                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(-1.0F, 1.0F)))
-                                                .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F)))
+                                                .apply(SetItemCountFunction.setCount(Holder.direct(new UniformGenerator(Holder.direct(new ConstantValue(-1)), Holder.direct(new ConstantValue(1))))))
+                                                .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, floatUniform(0.0F, 1.0F)))
                                 )
                                 .when(LootItemKilledByPlayerCondition.killedByPlayer())
                 );

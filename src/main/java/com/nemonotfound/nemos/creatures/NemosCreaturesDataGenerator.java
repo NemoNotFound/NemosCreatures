@@ -24,6 +24,6 @@ public class NemosCreaturesDataGenerator implements DataGeneratorEntrypoint {
 
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, ModNetherConfiguredFeatures::bootstrap);
+		registryBuilder.add(Registries.FEATURE, ModNetherConfiguredFeatures::bootstrap);
 	}
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nemos-creatures:sand"
+        "recipes": "nemos-creatures:sand"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
