@@ -1,4 +1,4 @@
-# Changelog v2.0.1
+# Changelog v2.0.2
 
 ## Fixes
-- Fixed baby texture of snowy pig and snowy cow babies
+- Fixed exception when entering Nether
