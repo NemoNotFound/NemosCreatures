@@ -1,4 +1,4 @@
-# Changelog v2.0.2
+# Changelog v2.0.3
 
 ## Fixes
 - Fixed exception when entering Nether

@@ -58,7 +58,7 @@ public class NetherFossilGeneratorMixin {
     };
 
     @ModifyArg(method = "addPieces", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/levelgen/structure/pieces/StructurePiecesBuilder;addPiece(Lnet/minecraft/world/level/levelgen/structure/StructurePiece;)V"), index = 0)
-    private static StructurePiece addPieces(StructurePiece piece, @Local(argsOnly = true) StructureTemplateManager manager, @Local(argsOnly = true) BlockPos pos, @Local(name = "nextRotation", argsOnly = true) Rotation rotation, @Local(argsOnly = true) RandomSource random) {
+    private static StructurePiece addPieces(StructurePiece piece, @Local(argsOnly = true) StructureTemplateManager manager, @Local(argsOnly = true) BlockPos pos, @Local Rotation rotation, @Local(argsOnly = true) RandomSource random) {
         var combinedFossils = Stream.concat(Arrays.stream(FOSSILS), Arrays.stream(CUSTOM_FOSSILS))
                 .toArray(Identifier[]::new);
 
